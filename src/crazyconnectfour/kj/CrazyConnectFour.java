@@ -10,13 +10,13 @@ package crazyconnectfour.kj;
  *
  * @author Kera
  */
-public class CrazyconnectfourKJ {
+public class CrazyConnectFour {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        CrazyConnectFourmyGame = nowCrazyConnectFour();
     }
     
 }
