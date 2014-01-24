@@ -32,16 +32,4 @@ public class CrazyConnectFour {
         System.out.println("\nWelcome " + this.name + "\n");
         System.out.println(this.instructions);
        }
-public class Player{
-
-}
-public class Computer{
-   
-}
-public class Board{
-    
-}
-public class Scoreboard{
-    
-}
 }
