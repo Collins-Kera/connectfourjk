@@ -33,7 +33,7 @@ public class CrazyConnectFour {
         System.out.println(this.instructions);
        }
 public class Player{
-    
+
 }
 public class Computer{
    
