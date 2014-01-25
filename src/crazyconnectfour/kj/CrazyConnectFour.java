@@ -14,14 +14,17 @@ import java.util.Scanner;
  */
 public class CrazyConnectFour {
     String name;
-    String instructions = "This is game crazy connect four\n"
-            +"This game you can play against the computer or another player.\n"
+    String instructions = "This is the game, crazy connect four.\n"
+            +"In this game you can play against the computer or another player.\n"
             +"To win this game you have to connect four token in a row before"
             +"your competitor!";
     public static void main(String[] args) {
         CrazyConnectFour myGame = new CrazyConnectFour();
         myGame.getName();
         myGame.displayHelp();
+        GameBoard board = new GameBoard();
+        board.displayWelcome();
+        
     }
     public void getName(){
         Scanner input = new Scanner(System.in);

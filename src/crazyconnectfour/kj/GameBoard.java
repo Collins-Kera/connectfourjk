@@ -11,5 +11,12 @@ package crazyconnectfour.kj;
  * @author Kera
  */
 public class GameBoard {
-    
+    String welcome = "Welcome to Crazy Connect Four!\n"
+                    + "Get ready to start in 3,2,1...";
+    Token token = new Token();
+  
+    public void displayWelcome(){
+        System.out.println(welcome);
+        token.color();
+    }
 }
