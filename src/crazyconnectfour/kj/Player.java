@@ -22,6 +22,6 @@ public class Player {
        }
   
   public void displayName (){
-    System.out.println("\nWelcome " + this.name + "you are player one");
+    System.out.println("\nWelcome " + this.name + " you are player one");
 }
 }

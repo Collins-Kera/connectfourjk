@@ -17,11 +17,11 @@ public class Computer {
             
 public void getLabel(){
         Scanner input = new Scanner(System.in);
-        System.out.println("Give the computer a unique name ");
+        System.out.println("Give the computer a unique name: ");
         this.namecomp = input.next();
        }
 
 public void displayLabel(){
-        System.out.println("\nThe computers name is " + this.namecomp + "\n");
+        System.out.println("\nThe computer's name is " + this.namecomp + "\n");
        }  
 }

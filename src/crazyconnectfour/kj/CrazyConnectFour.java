@@ -14,20 +14,23 @@ import java.util.Scanner;
  */
 public class CrazyConnectFour {
     String instructions = "Welcome, this is the game Crazy Connect Four!\n"
-            +"In this game you can play against the computer or another player.\n"
-            +"To win this game you have to connect four token in a row before"
+            +"In this game you can play against the computer.\n"
+            +"To win this game you have to connect four tokens in a row before "
             +"your competitor!";
     
     public static void main(String[] args) {
         CrazyConnectFour myGame = new CrazyConnectFour();
-        myGame.getName();
         myGame.displayHelp();
-        GameBoard board = new GameBoard();
-        board.displayWelcome();
+        Player playerName = new Player();
+        playerName.getName();
+        playerName.displayName();
         Scoreboard points = new Scoreboard();
         points.score();
-        Computer play = new Computer();
-        play.displayComputer();
+        Computer computerName = new Computer();
+        computerName.getLabel();
+        computerName.displayLabel();
+        GameBoard board = new GameBoard();
+        board.displayWelcome();
     }
   
     public void displayHelp(){
