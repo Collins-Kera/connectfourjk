@@ -24,7 +24,10 @@ public class CrazyConnectFour {
         myGame.displayHelp();
         GameBoard board = new GameBoard();
         board.displayWelcome();
-        
+        Scoreboard points = new Scoreboard();
+        points.score();
+        Computer play = new Computer();
+        play.displayComputer();
     }
     public void getName(){
         Scanner input = new Scanner(System.in);

@@ -11,5 +11,9 @@ package crazyconnectfour.kj;
  * @author Jeanette
  */
 public class Computer {
-    
+    String computerPlay ="Player has chosen to play against the computer.";
+            
+    public void displayComputer() {
+        System.out.println(computerPlay);
+    }   
 }
