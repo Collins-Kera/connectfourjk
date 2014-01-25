@@ -13,11 +13,11 @@ import java.util.Scanner;
  * @author Kera
  */
 public class CrazyConnectFour {
-    String name;
-    String instructions = "This is the game, crazy connect four.\n"
+    String instructions = "Welcome, this is the game Crazy Connect Four!\n"
             +"In this game you can play against the computer or another player.\n"
             +"To win this game you have to connect four token in a row before"
             +"your competitor!";
+    
     public static void main(String[] args) {
         CrazyConnectFour myGame = new CrazyConnectFour();
         myGame.getName();
@@ -29,13 +29,8 @@ public class CrazyConnectFour {
         Computer play = new Computer();
         play.displayComputer();
     }
-    public void getName(){
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter your name: ");
-        this.name = input.next();
-       }
+  
     public void displayHelp(){
-        System.out.println("\nWelcome " + this.name + "\n");
         System.out.println(this.instructions);
        }
 }
