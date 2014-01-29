@@ -6,7 +6,7 @@
 
 package crazyconnectfour.kj;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  *
@@ -24,13 +24,15 @@ public class CrazyConnectFour {
         Player playerName = new Player();
         playerName.getName();
         playerName.displayName();
-        Scoreboard points = new Scoreboard();
-        points.score();
         Computer computerName = new Computer();
         computerName.getLabel();
         computerName.displayLabel();
+        Scoreboard points = new Scoreboard();
+        points.score();
         GameBoard board = new GameBoard();
         board.displayWelcome();
+        Scoreboard totalWins = new Scoreboard();
+        totalWins.calculateWinnerScore(1);
     }
   
     public void displayHelp(){
