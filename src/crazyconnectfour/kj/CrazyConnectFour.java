@@ -32,7 +32,7 @@ public class CrazyConnectFour {
         GameBoard board = new GameBoard();
         board.displayWelcome();
         Scoreboard totalWins = new Scoreboard();
-        totalWins.calculateWinnerScore(1);
+        totalWins.calculateWinnerScore(0);
     }
   
     public void displayHelp(){

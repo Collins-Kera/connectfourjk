@@ -11,25 +11,37 @@ package crazyconnectfour.kj;
  * @author Kera
  */
 public class Scoreboard {
-    int numberPlayerWins = 0;
+    int numberPlayerWins = 5;
     int numberComputerWins = 0;
-    String playerScoreUpdate = "Your score is now ";
-    String computerScoreUpdate = "The computer's score is now ";
+    int numberOfTies = 0;
     double percentageWins;
             
     public void calculateWinnerScore(int win){
-        if(win == 0){
+        if(win == 0 & numberPlayerWins < 5){
             numberPlayerWins += 1;
-            System.out.println(playerScoreUpdate + numberPlayerWins + "\n");
         }
-        else if(win == 1) {
+        else if (numberPlayerWins == 5){
+            System.out.println("Congrats, you are the winner.");
+            return;
+        }
+        else if(win == 1 & numberComputerWins < 5) {
             numberComputerWins += 1;
-            System.out.println(computerScoreUpdate + numberComputerWins + "\n");
         }
-        else {
+        else if(numberComputerWins == 5){
+            System.out.println("Sorry, you lose.");
+            return;
+        }
+        else if (win == 2){
+            numberOfTies += 1;
             System.out.println("It's a tie!");
         }
-        percentageWins =  numberPlayerWins/(numberPlayerWins + numberComputerWins)* 100;
+        else {
+            System.out.println("Invalid input");
+            return;
+        }
+        System.out.println("SCORES:" + "\n" + "Player - " + numberPlayerWins + "\t" + 
+                "Computer - " + numberComputerWins + "\t" + "Ties - " + numberOfTies + "\n");
+        percentageWins =  numberPlayerWins/(numberPlayerWins + numberComputerWins + numberOfTies)* 100;
         System.out.println("You have won " + (int)percentageWins + "%" + " of the rounds so far.");
     }
     
