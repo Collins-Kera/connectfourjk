@@ -11,7 +11,7 @@ package crazyconnectfour.kj;
  * @author Kera
  */
 public class Scoreboard {
-    int numberPlayerWins = 5;
+    int numberPlayerWins = 0;
     int numberComputerWins = 0;
     int numberOfTies = 0;
     double percentageWins;
