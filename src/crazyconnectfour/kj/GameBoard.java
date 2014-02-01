@@ -72,11 +72,11 @@ public class GameBoard {
         
         if((int)numberTokenRight == 3){
             if(insertedTokenColor == 1) {//player won
-                System.out.println("Congrats, you have won the round!\n");
+                System.out.println("\"Congrats, you have won the round!\"\n");
                 return 1;
             }
             else{
-                System.out.println("Sorry, you lost the round! \n");
+                System.out.println("\"Sorry, you lost the round!\"\n");
                 return 2; //computer won
             }
         }
@@ -99,11 +99,11 @@ public class GameBoard {
         
         if(numberTokenRight + numberTokenLeft == 3){
             if(insertedTokenColor == 1){ //player won
-                System.out.println("Congrats, you have won the round!\n");
+                System.out.println("\"Congrats, you have won the round!\"\n");
                 return 1;
             }
             else {
-                System.out.println("Sorry, you lost the round! \n");
+                System.out.println("\"Sorry, you lost the round!\" \n");
                 return 2; //computer won
             }
         }
