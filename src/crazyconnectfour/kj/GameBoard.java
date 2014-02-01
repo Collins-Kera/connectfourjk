@@ -19,6 +19,7 @@ public class GameBoard {
     public GameBoard()
     {
         tokenGrid[0][0] = new Token();
+        // tokenGrid[0][0].tokenColor = 3; test of invalid token color
         tokenGrid[0][1] = new Token();
         tokenGrid[0][2] = new Token();
         tokenGrid[0][3] = new Token();
@@ -30,13 +31,29 @@ public class GameBoard {
     
     public int calculateWinLoss(int x, int y){
         
-        Token insertedToken = tokenGrid[x][y];
+        if (x <0 || x > 4){
+            System.out.println("Out of grid bounds.");
+            return 0;
+        }
         
-        int insertedTokenColor = insertedToken.tokenColor;
+         if (y <0 || y > 4){
+            System.out.println("Out of grid bounds.");
+            return 0;
+        }
+         
+         Token insertedToken = tokenGrid[x][y];
+         
+         int insertedTokenColor = insertedToken.tokenColor;
+         
+         if (insertedTokenColor <1 || insertedTokenColor >2){
+             System.out.println ("Invalid token color.");
+             return 0;
+         }
         
         double numberTokenRight = 0;
         
         double numberTokenLeft = 0;
+        
         
         for(int i=0; i<3; i++){
             if(y+i+1 > 4){
@@ -94,5 +111,3 @@ public class GameBoard {
     }
     
 }
-//insert token 
-// tell my function where the token is

@@ -36,6 +36,8 @@ public class CrazyConnectFour {
         GameBoard board = new GameBoard();
         board.displayWelcome();
         board.calculateWinLoss(0, 0);
+        board.calculateWinLoss(-1, 0);
+        board.calculateWinLoss(0, -1);
        
         Scoreboard totalWins = new Scoreboard();
         totalWins.calculateWinnerScore(0);
