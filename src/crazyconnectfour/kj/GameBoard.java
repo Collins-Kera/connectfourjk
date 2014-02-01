@@ -6,32 +6,93 @@
 
 package crazyconnectfour.kj;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Kera
  */
 public class GameBoard {
     String welcome = "Get ready to start in 3,2,1...";
-    Token[][] tokenLocations = new Token[5][5]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
+    Token[][] tokenGrid = new Token[5][5]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
     
     Token token = new Token();
   
+    public GameBoard()
+    {
+        tokenGrid[0][0] = new Token();
+        tokenGrid[0][1] = new Token();
+        tokenGrid[0][2] = new Token();
+        tokenGrid[0][3] = new Token();
+    }
     public void displayWelcome(){
         token.color();
         System.out.println(welcome); 
     }
     
-    public void calculateWinLoss(int x, int y){
-        tokenLocations[0][0] = token;
-        //recognize four tokens in a row, who gt the token in a row, return 0 for player win, 1 computer win, 2 for a tie.
+    public int calculateWinLoss(int x, int y){
         
-        //for loop(){ // scan gameboard for tokens
+        Token insertedToken = tokenGrid[x][y];
+        
+        int insertedTokenColor = insertedToken.tokenColor;
+        
+        double numberTokenRight = 0;
+        
+        double numberTokenLeft = 0;
+        
+        for(int i=0; i<3; i++){
+            if(y+i+1 > 4){
+                break;
+            }
+            Token a = tokenGrid[x][y+i+1];
+            int tokenColor = a.tokenColor;
             
-       // }
+            if (insertedTokenColor == tokenColor){
+                numberTokenRight += 1;  
+            }
+            else{
+                break;
+            }  
+        }
         
-     //insert token // tell my function where the token is
+        if((int)numberTokenRight == 3){
+            if(insertedTokenColor == 1) {//player won
+                System.out.println("Congrats, you have won the round!\n");
+                return 1;
+            }
+            else{
+                System.out.println("Sorry, you lost the round! \n");
+                return 2; //computer won
+            }
+        }
+        
+        //check lefthand side
+        for(int i=0; i<3; i++){
+            if(y-i-1 < 0){
+                break;
+            }
+            Token a = tokenGrid[x][y-i-1];
+            int tokenColor = a.tokenColor;
+            
+            if (insertedTokenColor == tokenColor){
+                numberTokenLeft += 1;  
+            }
+            else{
+                break;
+            }  
+        }
+        
+        if(numberTokenRight + numberTokenLeft == 3){
+            if(insertedTokenColor == 1){ //player won
+                System.out.println("Congrats, you have won the round!\n");
+                return 1;
+            }
+            else {
+                System.out.println("Sorry, you lost the round! \n");
+                return 2; //computer won
+            }
+        }
+        return 0;//default, no one has won yet
     }
     
 }
+//insert token 
+// tell my function where the token is

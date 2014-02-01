@@ -21,16 +21,22 @@ public class CrazyConnectFour {
     public static void main(String[] args) {
         CrazyConnectFour myGame = new CrazyConnectFour();
         myGame.displayHelp();
+        
         Player playerName = new Player();
         playerName.getName();
         playerName.displayName();
+        
         Computer computerName = new Computer();
         computerName.getLabel();
         computerName.displayLabel();
+        
         Scoreboard points = new Scoreboard();
         points.score();
+        
         GameBoard board = new GameBoard();
         board.displayWelcome();
+        board.calculateWinLoss(0, 0);
+       
         Scoreboard totalWins = new Scoreboard();
         totalWins.calculateWinnerScore(0);
     }
