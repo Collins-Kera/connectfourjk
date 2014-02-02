@@ -6,22 +6,63 @@
 
 package crazyconnectfour.kj;
 
+import java.util.Scanner;
+
 /**
  *
- * @author Kera
+ * @author Kera and Jeanette
  */
 public class GameBoard {
+    
     String welcome = "Get ready to start in 3,2,1...";
     Token[][] tokenGrid = new Token[5][5]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
     
     Token token = new Token();
-  
-    public GameBoard()
-    {
+    
+/*    
+// This is Jeanette's programming mess
+public void enterTokens () {    
+    String placement;
+
+ //will ask player for input of row, send it through loop and send final
+ //       coordinate to the next function to calculate
+   
+//ask player where they want to play and get column input from them  
+Scanner columnInput = new Scanner(System.in);
+   System.out.println("Type in the column where you want to play (0-4): ");
+   this. (int)placement = columnInput.next();
+        
+//issues because placement is a String, not sure how to get numberic 
+    //input from the user 
+    
+//if it is greater then an option, show an error    
+   
+   if (placement > 5){   
+        System.out.println("Invalid entry!");
+            break; 
+//break ends, but return will return a value & needs int instead of void
+            }
+    else if (placement < 0) {  
+        System.out.println("Invalid entry!");
+            break; //break ends, but return will return a value & needs int instead of void
+            } 
+    else if (placement == Nan) {
+         System.out.println("Invalid entry!");
+            break; //break ends, but return will return a value & needs int instead of void
+            }  
+    else {
+//send the information to the gameBoard function. not sure how to do this.
+            }
+    
+   */
+    
+    public GameBoard(){
         tokenGrid[0][0] = new Token();
         tokenGrid[0][1] = new Token();
         tokenGrid[0][2] = new Token();
         tokenGrid[0][3] = new Token();
+        
+        //output will go into gameboard
     }
     public void displayWelcome(){
         token.color();
