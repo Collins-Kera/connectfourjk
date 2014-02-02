@@ -13,7 +13,7 @@ package crazyconnectfour.kj;
 public class Token {
     int tokenColor = 1; //1 = Blue 2 = Red
     
-    public void color (){
+public void color (){
         if(tokenColor==1)
             System.out.println("You are blue.");
         else{
