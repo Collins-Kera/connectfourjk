@@ -58,6 +58,7 @@ Scanner columnInput = new Scanner(System.in);
     
     public GameBoard(){
         tokenGrid[0][0] = new Token();
+        // tokenGrid[0][0].tokenColor = 3; test of invalid token color
         tokenGrid[0][1] = new Token();
         tokenGrid[0][2] = new Token();
         tokenGrid[0][3] = new Token();
@@ -71,13 +72,29 @@ Scanner columnInput = new Scanner(System.in);
     
     public int calculateWinLoss(int x, int y){
         
-        Token insertedToken = tokenGrid[x][y];
+        if (x <0 || x > 4){
+            System.out.println("Out of grid bounds.");
+            return 0;
+        }
         
-        int insertedTokenColor = insertedToken.tokenColor;
+         if (y <0 || y > 4){
+            System.out.println("Out of grid bounds.");
+            return 0;
+        }
+         
+         Token insertedToken = tokenGrid[x][y];
+         
+         int insertedTokenColor = insertedToken.tokenColor;
+         
+         if (insertedTokenColor <1 || insertedTokenColor >2){
+             System.out.println ("Invalid token color.");
+             return 0;
+         }
         
         double numberTokenRight = 0;
         
         double numberTokenLeft = 0;
+        
         
         for(int i=0; i<3; i++){
             if(y+i+1 > 4){
@@ -96,11 +113,11 @@ Scanner columnInput = new Scanner(System.in);
         
         if((int)numberTokenRight == 3){
             if(insertedTokenColor == 1) {//player won
-                System.out.println("Congrats, you have won the round!\n");
+                System.out.println("\"Congrats, you have won the round!\"\n");
                 return 1;
             }
             else{
-                System.out.println("Sorry, you lost the round! \n");
+                System.out.println("\"Sorry, you lost the round!\"\n");
                 return 2; //computer won
             }
         }
@@ -123,11 +140,11 @@ Scanner columnInput = new Scanner(System.in);
         
         if(numberTokenRight + numberTokenLeft == 3){
             if(insertedTokenColor == 1){ //player won
-                System.out.println("Congrats, you have won the round!\n");
+                System.out.println("\"Congrats, you have won the round!\"\n");
                 return 1;
             }
             else {
-                System.out.println("Sorry, you lost the round! \n");
+                System.out.println("\"Sorry, you lost the round!\" \n");
                 return 2; //computer won
             }
         }
@@ -135,5 +152,3 @@ Scanner columnInput = new Scanner(System.in);
     }
     
 }
-//insert token 
-// tell my function where the token is
