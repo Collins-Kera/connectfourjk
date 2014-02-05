@@ -22,6 +22,9 @@ public class CrazyConnectFour {
         CrazyConnectFour myGame = new CrazyConnectFour();
         myGame.displayHelp();
         
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.getInput();
+        
         Player playerName = new Player();
         playerName.getName();
         playerName.displayName();
