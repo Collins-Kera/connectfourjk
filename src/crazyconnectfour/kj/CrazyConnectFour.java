@@ -27,6 +27,9 @@ public class CrazyConnectFour {
         
         NewGameView gameView = new NewGameView();
         gameView.getChoice();
+        
+        OptionsMenuView optionsView = new OptionsMenuView();
+        optionsView.getInfo();
         /*
         Player playerName = new Player();
         playerName.getName();
