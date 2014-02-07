@@ -22,12 +22,16 @@ public class CrazyConnectFour {
         CrazyConnectFour myGame = new CrazyConnectFour();
         myGame.displayHelp();
         
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.whereToGo();
+    
+/* //embedded all of these into other menus. trouble with the scoreoard and gameboard    
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.getInput();
         
         NewGameView gameView = new NewGameView();
         gameView.getChoice();
-        /*
+        
         Player playerName = new Player();
         playerName.getName();
         playerName.displayName();
@@ -35,7 +39,8 @@ public class CrazyConnectFour {
         Computer computerName = new Computer();
         computerName.getLabel();
         computerName.displayLabel();
-        */
+        
+ //put scoreboard and game board into the NewGameView under 'Start'       
         Scoreboard points = new Scoreboard();
         points.score();
         
@@ -47,6 +52,7 @@ public class CrazyConnectFour {
        
         Scoreboard totalWins = new Scoreboard();
         totalWins.calculateWinnerScore(0);
+        */
     }
   
     public void displayHelp(){

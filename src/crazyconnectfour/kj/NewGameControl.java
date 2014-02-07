@@ -18,9 +18,7 @@ public void displayOptions() {
         System.out.println();
         displayBorder();     
         System.out.println( 
-                 "\tThis is where there will be a connection to an options menu"
-                         + "that will allow them to choose their token color and "
-                         + "maybe their board size as well."    
+                 "\n\tThis is where Kera's menu will connect in.\n"    
                 ); 
         displayBorder();
     }   
