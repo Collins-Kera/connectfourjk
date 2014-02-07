@@ -6,6 +6,8 @@
 
 package crazyconnectfour.kj;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Jeanette
@@ -14,11 +16,59 @@ public class MainMenuView {
        
     private final static String[][] menuMainOptions = {
         
-        {"P", "Play game"},
+        {"S", "Start new game"},
         {"H", "Help menu"},       
-        {"Q", "Quit Help"}        
+        {"Q", "Quit Game"}        
     };
-    
-    
-    
+  //calls from the different classes    
+   private NewGameView newGameView = new NewGameView();;
+   private HelpMenuView callHelpMenu = new HelpMenuView();
+
+//constructor 
+public MainMenuView() {
+        
+    } 
+
+public void whereToGo() {       
+              
+        String main;
+        Scanner mainChoice = new Scanner(System.in);
+        
+        do {
+            
+            this.output(); // display the main menu
+            
+            // get the directions entered
+            main = mainChoice.nextLine();
+            main = main.trim().toUpperCase();
+                   
+        switch (main) {
+                case "S":
+                    this.newGameView.getChoice();
+                    break;
+                case "H":
+                    this.callHelpMenu.getInput();                  
+                    break; 
+                case "Q": 
+                    break;
+                default:
+                    new CrazyConnectFourError().displayError("Invalid entry. Please enter a valid letter.");
+                    continue;
+            }
+        } while (!main.equals("Q"));  
+                return;
+    }   
+    public final void output() {
+        System.out.println("\n\t***************************************************************");
+        System.out.println("\tEnter the letter of the Menu Option you want to view:");
+
+        for (int i = 0; i < MainMenuView.menuMainOptions.length; i++) {
+            System.out.println("\t   " + menuMainOptions[i][0] + "\t" + menuMainOptions[i][1]);
+        }
+        System.out.println("\t***************************************************************\n");
+    }
 }
+  
+    
+    
+

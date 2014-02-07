@@ -14,19 +14,24 @@ import java.util.Scanner;
 public class NewGameView {
     
     private final static String[][] menuNewOptions = {
-        
+    //how will the game 'start'? connect with display board/score?    
         {"N", "Enter your name"},
-        {"C", "Name the computer"}, 
-        {"O", "Options menu"},
+        {"C", "Name the computer"},
+        {"S", "Start"},
+        {"O", "Options menu"}, 
         {"H", "Help menu"},       
-        {"Q", "Quit Help"}        
+        {"Q", "Quit game menu"}        
     };
     
+//calls from the different classes    
    private NewGameControl newGameControl = new NewGameControl();
    private Player playerName = new Player();
    private Computer computerName = new Computer();
    private HelpMenuView callHelpMenu = new HelpMenuView();
-    
+    //calling gameboard and score board under S start 
+   private GameBoard newGameBoard = new GameBoard();
+   private Scoreboard newScoreBoard = new Scoreboard();
+   
 //constructor 
 public NewGameView() {
         
@@ -44,8 +49,7 @@ public void getChoice() {
             // get the directions entered
             choice = menuChoice.nextLine();
             choice = choice.trim().toUpperCase();
-            
-    //how do i put borders in if i call it somewhere else?        
+                   
         switch (choice) {
                 case "N":
                     this.playerName.getName();
@@ -55,10 +59,16 @@ public void getChoice() {
                     this.computerName.getLabel();
                     this.computerName.displayLabel();
                     break;
+                case "S":
+                    this.newGameBoard.displayWelcome();
+               //how to run calculateWinLoss?
+                    //this.newGameBoard.calculateWinLoss();
+               //how to run calculateWinnerScore? 
+                    //this.newScoreBoard.calculateWinnerScore(int win);
+                    break;  //add a label and break out of menu?   
                 case "O":
                     this.newGameControl.displayOptions();
                     break;  
-        //how do i call the help menu?
                 case "H":
                     this.callHelpMenu.getInput();
                     break; 
@@ -71,7 +81,6 @@ public void getChoice() {
         } while (!choice.equals("Q"));  
                 return;
     }   
-// displays the help menu
     public final void show() {
         System.out.println("\n\t***************************************************************");
         System.out.println("\tEnter the letter of the New Game Menu option you want to view:");
