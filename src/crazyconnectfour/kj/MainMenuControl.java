@@ -10,6 +10,6 @@ package crazyconnectfour.kj;
  *
  * @author Jeanette
  */
-public class newGameControl {
+public class MainMenuControl {
     
 }

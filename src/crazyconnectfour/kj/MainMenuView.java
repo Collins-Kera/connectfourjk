@@ -10,6 +10,15 @@ package crazyconnectfour.kj;
  *
  * @author Jeanette
  */
-public class newGameView {
+public class MainMenuView {
+       
+    private final static String[][] menuMainOptions = {
+        
+        {"P", "Play game"},
+        {"H", "Help menu"},       
+        {"Q", "Quit Help"}        
+    };
+    
+    
     
 }

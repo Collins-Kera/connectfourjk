@@ -25,6 +25,9 @@ public class CrazyConnectFour {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.getInput();
         
+        NewGameView gameView = new NewGameView();
+        gameView.getChoice();
+        /*
         Player playerName = new Player();
         playerName.getName();
         playerName.displayName();
@@ -32,7 +35,7 @@ public class CrazyConnectFour {
         Computer computerName = new Computer();
         computerName.getLabel();
         computerName.displayLabel();
-        
+        */
         Scoreboard points = new Scoreboard();
         points.score();
         
