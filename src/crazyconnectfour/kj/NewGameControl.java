@@ -17,16 +17,16 @@ public class NewGameControl {
 public void displayGameStart() {
         displayBorder();     
         System.out.println( 
-                 "\nHi player name, you are playing against computer name. "
-                         + "\nThe default board size is 5x5, but you can change "
-                         + "\nthat by going to options if you want.\n" );
+                 "\tHi player name, you are playing against computer name. "
+                         + "\n\tThe default board size is 5x5, but you can change "
+                         + "\n\tthat by going to options if you want." );
         displayBorder();
                 
     }   
 
    public void displayBorder() {       
         System.out.println(
-            "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+            "\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     }
     
 }

@@ -18,18 +18,18 @@ public class Computer {
 public void getLabel(){
         Scanner input = new Scanner(System.in);
         displayBorder();
-        System.out.println("\nGive the computer a unique name: ");
+        System.out.println("\tGive the computer a unique name: ");
         this.namecomp = input.next();
        }
 
 public void displayLabel(){
-        System.out.println("\nThe computer's name is " + this.namecomp + "\n");
+        System.out.println("\tThe computer's name is " + this.namecomp + " ");
         displayBorder();
        } 
 
 //border like in help menu
     public void displayBorder() {       
         System.out.println(
-        "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+        "\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     }
 }

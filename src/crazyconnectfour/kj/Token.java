@@ -15,9 +15,9 @@ public class Token {
     
 public void color (){
         if(tokenColor==1)
-            System.out.println("You are blue.");
+            System.out.println("\tYou are blue.");
         else{
-            System.out.println("You are red.");
+            System.out.println("\tYou are red.");
         }        
     } 
 }
