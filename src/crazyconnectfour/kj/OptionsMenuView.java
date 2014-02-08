@@ -20,7 +20,7 @@ public class OptionsMenuView {
         {"B", "Set Board Size"}, 
         {"P", "Player Options"},
         {"H", "Help Menu"},      
-        {"Q", "Quit Help"}        
+        {"Q", "Quit Options Menu"}        
     };
     
  private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();

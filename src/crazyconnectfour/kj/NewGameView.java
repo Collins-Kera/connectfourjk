@@ -15,12 +15,12 @@ public class NewGameView {
     
     private final static String[][] menuNewOptions = {
     //how will the game 'start'? connect with display board/score?    
-        {"N", "Enter your name"},
-        {"C", "Name the computer"},
+        {"N", "Enter Your Name"},
+        {"C", "Name the Computer"},
         {"S", "Start"},
-        {"O", "Options menu"}, 
-        {"H", "Help menu"},       
-        {"Q", "Quit game menu"}        
+        {"O", "Options Menu"}, 
+        {"H", "Help Menu"},       
+        {"Q", "Quit Game Menu"}        
     };
     
 //calls from the different classes    
@@ -31,6 +31,7 @@ public class NewGameView {
     //calling gameboard and score board under S start 
    private GameBoard newGameBoard = new GameBoard();
    private Scoreboard newScoreBoard = new Scoreboard();
+   private OptionsMenuView optMenu = new OptionsMenuView();
    
 //constructor 
 public NewGameView() {
@@ -60,6 +61,7 @@ public void getChoice() {
                     this.computerName.displayLabel();
                     break;
                 case "S":
+                    this.newGameControl.displayGameStart();
                     this.newGameBoard.displayWelcome();
                //how to run calculateWinLoss?
                     //this.newGameBoard.calculateWinLoss();
@@ -67,7 +69,7 @@ public void getChoice() {
                     //this.newScoreBoard.calculateWinnerScore(int win);
                     break;  //add a label and break out of menu?   
                 case "O":
-                    this.newGameControl.displayOptions();
+                    this.optMenu.getInfo();
                     break;  
                 case "H":
                     this.callHelpMenu.getInput();

@@ -24,9 +24,6 @@ public class CrazyConnectFour {
         
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.whereToGo();
-        
-        OptionsMenuView optionsView = new OptionsMenuView();
-        optionsView.getInfo();
     
 /* //embedded all of these into other menus. trouble with the scoreoard and gameboard    
         HelpMenuView helpMenu = new HelpMenuView();
@@ -42,6 +39,9 @@ public class CrazyConnectFour {
         Computer computerName = new Computer();
         computerName.getLabel();
         computerName.displayLabel();
+        
+        OptionsMenuView optionsView = new OptionsMenuView();
+        optionsView.getInfo();
         
  //put scoreboard and game board into the NewGameView under 'Start'       
         Scoreboard points = new Scoreboard();

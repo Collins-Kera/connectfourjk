@@ -14,18 +14,19 @@ public class NewGameControl {
     public NewGameControl(){
         
     }
-public void displayOptions() {
-        System.out.println();
+public void displayGameStart() {
         displayBorder();     
         System.out.println( 
-                 "\n\tThis is where Kera's menu will connect in.\n"    
-                ); 
+                 "\nHi player name, you are playing against computer name. "
+                         + "\nThe default board size is 5x5, but you can change "
+                         + "\nthat by going to options if you want.\n" );
         displayBorder();
+                
     }   
 
    public void displayBorder() {       
         System.out.println(
-        "\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+            "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     }
     
 }
