@@ -19,6 +19,17 @@ public class GameBoard {
     
     Token token = new Token();
     
+    /**
+     *
+     */
+    public int boardSize() {
+      input = 
+        
+       4x4
+        6x6
+        8x8
+                }
+    
 /*    
 // This is Jeanette's programming mess
 public void enterTokens () {    
