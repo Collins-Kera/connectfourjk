@@ -43,12 +43,15 @@ public class GameBoard {
             boardSize = boardSize.replace(',', ' '); 
             
             if (Integer.parseInt(boardSize) == 4) { // value entered 4x4
+                System.out.println("\n\n\tThe board size you have selected is 4x4.");
                 return 4;
             }    
             else if (Integer.parseInt(boardSize) == 6) { // value entered 6x6
+                System.out.println("\n\n\tThe board size you have selected is 6x6.");
                 return 6;
             }    
             else if (Integer.parseInt(boardSize) == 8) { // value entered 8x8
+                System.out.println("\n\n\tThe board size you have selected is 8x8.");
                 return 8;
             }  
 
