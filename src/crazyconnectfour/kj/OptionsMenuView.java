@@ -46,7 +46,7 @@ public void getInfo() {
             
         switch (directions) {
                 case "T":
-                    this.optionsMenuControl.tokenColor();
+                    this.optionsMenuControl.getTokenColor();
                     break;
                 case "B":
                     this.optionsMenuControl.boardSize();

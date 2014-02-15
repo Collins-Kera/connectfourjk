@@ -28,10 +28,11 @@ public class NewGameView {
    private Player playerName = new Player();
    private Computer computerName = new Computer();
    private HelpMenuView callHelpMenu = new HelpMenuView();
+   private OptionsMenuView optMenu = new OptionsMenuView();
     //calling gameboard and score board under S start 
    private GameBoard newGameBoard = new GameBoard();
    private Scoreboard newScoreBoard = new Scoreboard();
-   private OptionsMenuView optMenu = new OptionsMenuView();
+   
    
 //constructor 
 public NewGameView() {
