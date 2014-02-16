@@ -19,6 +19,9 @@ public class GameBoard {
     
     Token token = new Token();
     
+    int rowCount = 5;
+    int columnCount = 5;
+    
     /**
      *
      */

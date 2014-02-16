@@ -27,6 +27,9 @@ public class CrazyConnectFour {
         
         GameBoard sizeOfBoard = new GameBoard();
         sizeOfBoard.getBoardSize();
+        
+        BoardView displayBoard = new BoardView();
+        displayBoard.displayBoard(sizeOfBoard);
     
 /* //embedded all of these into other menus. trouble with the scoreoard and gameboard    
         HelpMenuView helpMenu = new HelpMenuView();

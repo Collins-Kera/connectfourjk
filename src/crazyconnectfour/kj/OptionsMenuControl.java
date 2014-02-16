@@ -59,9 +59,12 @@ public class OptionsMenuControl {
                     new CrazyConnectFourError().displayError(
                         "You must enter either 1, 2, 3 or 4 for it to be valid.");
             }
-            
         
-     public void boardSize() {
+       } return 0;
+                
+    }
+    
+    public void boardSize() {
         System.out.println();
         displayBorder();     
         System.out.println( 
@@ -70,7 +73,7 @@ public class OptionsMenuControl {
                 + "\n\tcan choose from. "
                 ); 
         displayBorder();
-    }    
+    }   
 
     public void playerOptions() {
         System.out.println();

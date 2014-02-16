@@ -20,4 +20,11 @@ public void color (){
             System.out.println("\tYou are red.");
         }        
     } 
+
+public String getTokenColor () {
+    if(tokenColor==1)
+        return "B";
+    else
+        return "R" ;
+}
 }
