@@ -21,10 +21,10 @@ public class OptionsMenuControl {
   
     public int getTokenColor() { 
         Scanner inFile = new Scanner(System.in); // get input file      
-        int i = 0;
+        
         
         // prompt the user for the token color
-        for (;i<5;) {
+        for (int i =0; i<5; i++) {
             // prompt user for gameboard size
             System.out.println("\tYou can choose from 4 different token colors. Enter a letter "
                         + "to make your choice. "
