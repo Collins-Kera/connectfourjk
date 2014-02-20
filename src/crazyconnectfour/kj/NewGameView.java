@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class NewGameView {
     
     private final static String[][] menuNewOptions = {
-    //how will the game 'start'? connect with display board/score?    
+    //how will the game 'start'? connect with display board/score? 
         {"N", "Enter Your Name"},
         {"C", "Name the Computer"},
         {"S", "Start"},

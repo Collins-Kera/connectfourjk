@@ -25,12 +25,17 @@ public class CrazyConnectFour {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.whereToGo();
         
-        GameBoard sizeOfBoard = new GameBoard();
-        sizeOfBoard.getBoardSize();
+        //GameBoard sizeOfBoard = new GameBoard();
+        //sizeOfBoard.getBoardSize();
         
-        BoardView displayBoard = new BoardView();
-        displayBoard.displayBoard(sizeOfBoard);
-    
+       // BoardView displayBoard = new BoardView();
+        //displayBoard.displayBoard(sizeOfBoard);
+        
+        GetPlayerListView testRun = new GetPlayerListView();
+        testRun.getPlayerNameInput();
+        
+        GetPlayerListView testRunTwo = new GetPlayerListView();
+        testRunTwo.sortList(args);
 /* //embedded all of these into other menus. trouble with the scoreoard and gameboard    
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.getInput();
