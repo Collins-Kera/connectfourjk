@@ -25,11 +25,17 @@ public class CrazyConnectFour {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.whereToGo();
         
-        //GameBoard sizeOfBoard = new GameBoard();
-        //sizeOfBoard.getBoardSize();
+        ScoreSum playerone = new ScoreSum();
+        playerone.playerOneScore();
         
-       // BoardView displayBoard = new BoardView();
-        //displayBoard.displayBoard(sizeOfBoard);
+        ScoreSum compscore = new ScoreSum();
+        compscore.computerScore();
+        
+        GameBoard sizeOfBoard = new GameBoard();
+        sizeOfBoard.getBoardSize();
+        
+        BoardView displayBoard = new BoardView();
+        displayBoard.displayBoard(sizeOfBoard);
         
         GetPlayerListView testRun = new GetPlayerListView();
         testRun.getPlayerNameInput();
