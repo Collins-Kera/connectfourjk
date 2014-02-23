@@ -72,9 +72,6 @@ public class GameBoard {
             }   
     }
 
-    
-   
-//This is Jeanette's programming mess
 public void enterTokens () {    
     String placement = "0";
     boolean x = true;
