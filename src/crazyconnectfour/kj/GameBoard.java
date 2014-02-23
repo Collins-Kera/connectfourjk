@@ -19,8 +19,8 @@ public class GameBoard {
     
     Token token = new Token();
     
-    int rowCount = 5;
-    int columnCount = 5;
+    int rowCount = 0;
+    int columnCount = 0;
     
     /**
      *
@@ -46,15 +46,21 @@ public class GameBoard {
             boardSize = boardSize.replace(',', ' '); 
             
             if (Integer.parseInt(boardSize) == 4) { // value entered 4x4
+                this.rowCount = 4;
+                this.columnCount = 4;
                 System.out.println("\n\n\tThe board size you have selected is 4x4.");
                 return 4;
             }    
             else if (Integer.parseInt(boardSize) == 6) { // value entered 6x6
+                this.rowCount = 6;
+                this.columnCount = 6;
                 System.out.println("\n\n\tThe board size you have selected is 6x6.");
                 return 6;
             }    
             else if (Integer.parseInt(boardSize) == 8) { // value entered 8x8
                 System.out.println("\n\n\tThe board size you have selected is 8x8.");
+                this.rowCount = 8;
+                this.columnCount = 8;
                 return 8;
             }  
 
@@ -67,43 +73,55 @@ public class GameBoard {
     }
 
     
-/*    
-// This is Jeanette's programming mess
+   
+//This is Jeanette's programming mess
 public void enterTokens () {    
-    String placement;
+    String placement = "0";
+    boolean x = true;
+    
+    //this function will ask player for column they want to drop token in
+    //and then drop it in that spot.
+    while(x){ 
+       //ask player where they want to play and get column input from them  
+       Scanner columnInput = new Scanner(System.in);
+       System.out.println("Type in the column where you want to play " + "(1-" + columnCount + ")");
+       placement = columnInput.next();
+       
+       try{
+        //if it is greater then an option, show an error     
+        if (Integer.parseInt(placement)>columnCount){   
+            System.out.println("Invalid entry!");
+                break; 
+                }
+        else if (Integer.parseInt(placement)< 1) {  
+            System.out.println("Invalid entry!");
+                break; 
+                } 
+        else {
+           x = false;
+             }  
+       } catch(NumberFormatException ex)
+            {
+                System.out.println("Invalid entry!");
+            }
+    }
+    
+    //place token in desired column
+    int i=0;
+    for(Token location : tokenGrid [Integer.parseInt(placement)-1]){
+       //starting from the bottom check each place in column to see if token
+        //there. If there is a token move to next spot until an empty one is found.
+        //Place token in the empty spot.
+        if(location == null) {
+            Token blueToken = new Token();
+            blueToken.tokenColor = 1;
+           tokenGrid[Integer.parseInt(placement)-1] [i] = blueToken;
+           break;
+        }
+        i++;
+    }
+}
 
- //will ask player for input of row, send it through loop and send final
- //       coordinate to the next function to calculate
-   
-//ask player where they want to play and get column input from them  
-Scanner columnInput = new Scanner(System.in);
-   System.out.println("Type in the column where you want to play (0-4): ");
-   this. (int)placement = columnInput.next();
-        
-//issues because placement is a String, not sure how to get numberic 
-    //input from the user 
-    
-//if it is greater then an option, show an error    
-   
-   if (placement > 5){   
-        System.out.println("Invalid entry!");
-            break; 
-//break ends, but return will return a value & needs int instead of void
-            }
-    else if (placement < 0) {  
-        System.out.println("Invalid entry!");
-            break; //break ends, but return will return a value & needs int instead of void
-            } 
-    else if (placement == Nan) {
-         System.out.println("Invalid entry!");
-            break; //break ends, but return will return a value & needs int instead of void
-            }  
-    else {
-//send the information to the gameBoard function. not sure how to do this.
-            }
-    
-   */
-    
     public GameBoard(){
         tokenGrid[0][0] = new Token();
         // tokenGrid[0][0].tokenColor = 3; test of invalid token color

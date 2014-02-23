@@ -37,6 +37,9 @@ public class CrazyConnectFour {
         BoardView displayBoard = new BoardView();
         displayBoard.displayBoard(sizeOfBoard);
         
+        sizeOfBoard.enterTokens();
+        displayBoard.displayBoard(sizeOfBoard);
+        
         GetPlayerListView testRun = new GetPlayerListView();
         testRun.getPlayerNameInput();
         
