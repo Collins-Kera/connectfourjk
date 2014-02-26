@@ -79,8 +79,7 @@ public class OptionsMenuControl {
         System.out.println();
         displayBorder();     
         System.out.println( 
-                "\tA Here the player will be able to pick whether they want to play "
-                + "\n\tthe computer or another player."
+                "\tA Here the player will be able to choose to rename player 1."
                 ); 
         displayBorder();
     }    

@@ -15,10 +15,11 @@ public class NewGameView {
     
     private final static String[][] menuNewOptions = {
     //how will the game 'start'? connect with display board/score? 
-        {"N", "Enter Your Name"},
-        {"C", "Name the Computer"},
+        //{"N", "Enter Your Name"},
+        //{"C", "Name the Computer"},
         {"S", "Start"},
-        {"O", "Options Menu"}, 
+        {"O", "Options Menu"},
+        {"P", "Player Statistics"},
         {"H", "Help Menu"},       
         {"Q", "Quit Game Menu"}        
     };
@@ -32,7 +33,8 @@ public class NewGameView {
     //calling gameboard and score board under S start 
    private GameBoard newGameBoard = new GameBoard();
    private Scoreboard newScoreBoard = new Scoreboard();
-   
+   private ScoreSum currentScores = new ScoreSum();
+   private Scoreboard showScore = new Scoreboard();
    
 //constructor 
 public NewGameView() {
@@ -53,14 +55,15 @@ public void getChoice() {
             choice = choice.trim().toUpperCase();
                    
         switch (choice) {
-                case "N":
-                    this.playerName.getName();
-                    this.playerName.displayName();
-                    break;
-                case "C":
-                    this.computerName.getLabel();
-                    this.computerName.displayLabel();
-                    break;
+            //pulled out the names and have in the beginning and the option menu
+                //case "N":
+                  //  this.playerName.getName();
+                  //  this.playerName.displayName();
+                  //  break;
+                //case "C":
+                  //  this.computerName.getLabel();
+                  //  this.computerName.displayLabel();
+                  //  break;
                 case "S":
                     this.newGameControl.displayGameStart();
                     this.newGameBoard.displayWelcome();
@@ -75,6 +78,13 @@ public void getChoice() {
                 case "H":
                     this.callHelpMenu.getInput();
                     break; 
+                case "P":
+                    this.currentScores.playerOneScore();
+                    this.currentScores.computerScore();
+                    this.showScore.score();
+                    //call calculateWinnerScore from Scoreboard, but it isn't working
+                    
+                   
                 case "Q": 
                     break;
                 default:

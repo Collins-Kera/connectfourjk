@@ -118,7 +118,7 @@ public class GetPlayerListView {
     
     public void displayNameList(String[] names) {
         System.out.println("\n\t***************************************************************");
-        System.out.println("\tHere is the list of players in the game");
+        System.out.println("\tHere is the list of players in the game: ");
 
         for (int i = 0; i < names.length; i++) {
             if (names[i] == null) {
@@ -128,7 +128,10 @@ public class GetPlayerListView {
             int namePosition = i+1;
             System.out.println("\t   " + namePosition + "\t" + names[i]);
         }
-        System.out.println("\n\t***************************************************************");
+        System.out.println("\n\tIf you want to give the computer a unique name, "
+                + "\n\tspecify the board size, or choose what color of token you "
+                + "\n\thave then check out the option menu.");
+        System.out.println("\t***************************************************************");
     }
     
     
