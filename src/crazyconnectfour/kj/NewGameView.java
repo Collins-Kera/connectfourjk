@@ -15,10 +15,10 @@ public class NewGameView {
     
     private final static String[][] menuNewOptions = {
     //how will the game 'start'? connect with display board/score? 
-        //{"N", "Enter Your Name"},
+        {"N", "Enter Your Name"},
         //{"C", "Name the Computer"},
-        {"S", "Start"},
-        {"O", "Options Menu"},
+        {"T", "Take Your Turn"},
+        //{"O", "Options Menu"},
         {"P", "Player Statistics"},
         {"H", "Help Menu"},       
         {"Q", "Quit Game Menu"}        
@@ -35,14 +35,15 @@ public class NewGameView {
    private Scoreboard newScoreBoard = new Scoreboard();
    private BoardView newBoardView = new BoardView();
    private GetPlayerListView newGetPlayerListView = new GetPlayerListView();
-   private ScoreSum currentScores = new ScoreSum();
-   private Scoreboard showScore = new Scoreboard();
+  // private ScoreSum currentScores = new ScoreSum();
+ 
 
    
 //constructor 
 public NewGameView() {
         
     } 
+
 
 public void getChoice() {       
               
@@ -62,20 +63,19 @@ public void getChoice() {
 
 
             //pulled out the names and have in the beginning and the option menu
-                //case "N":
-                  //  this.playerName.getName();
-                  //  this.playerName.displayName();
-                  //  break;
+                case "N":
+                    this.newGetPlayerListView.getPlayerNameInput(); // has them put in  name list
+                    this.newGetPlayerListView.pickPlayerName(); // has them pick their name
+                    break;
                 //case "C":
                   //  this.computerName.getLabel();
                   //  this.computerName.displayLabel();
                   //  break;
 
 
-                case "S":
-                    System.out.println("Welcome to Crazy Connect Four! Select the player names for you and the computer.");  
-                    this.newGetPlayerListView.getPlayerNameInput(); // has them put in  name list
-                    this.newGetPlayerListView.pickPlayerName(); // has them pick their name and computer name
+                case "T":
+                   //this.newGetPlayerListView.getPlayerNameInput(); // has them put in  name list
+                    //this.newGetPlayerListView.pickPlayerName(); // has them pick their name and computer name
                     this.newGameControl.displayGameStart(); 
                     //Create a refined start menu. Add take turn function & start new game function. 
                     this.newBoardView.displayBoard(newGameBoard);
@@ -99,9 +99,10 @@ public void getChoice() {
                     this.callHelpMenu.getInput();
                     break; 
                 case "P":
-                    this.currentScores.playerOneScore();
-                    this.currentScores.computerScore();
-                    this.showScore.score();
+                   // this.currentScores.playerOneScore();
+                    //this.currentScores.computerScore();
+                    // this.showScore.score();
+                    this.newScoreBoard.calculateWinnerScore(1);
                     //call calculateWinnerScore from Scoreboard, but it isn't working
                     
                    

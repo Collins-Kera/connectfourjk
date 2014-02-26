@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class GameBoard {
     
     String welcome = "\tGet ready to start in 3,2,1...";
-    Token[][] tokenGrid = new Token[5][5]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
+    Token[][] tokenGrid = new Token[6][6]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
     
     Token token = new Token();
     

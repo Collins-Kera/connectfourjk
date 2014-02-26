@@ -25,8 +25,8 @@ public class CrazyConnectFour {
         System.out.println("\t***************************************************************\n");
         
         //gets all of the names
-        GetPlayerListView testRun = new GetPlayerListView();
-        testRun.getPlayerNameInput();
+       // GetPlayerListView testRun = new GetPlayerListView();
+       // testRun.getPlayerNameInput();
         
         //sorts them in a list and prints them out
         GetPlayerListView testRunTwo = new GetPlayerListView();

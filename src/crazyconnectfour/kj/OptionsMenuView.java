@@ -17,8 +17,8 @@ public class OptionsMenuView {
      private final static String[][] optionsMenu = {
         
         {"T", "Pick Token Color"},
-        {"B", "Set Board Size"}, 
-        {"P", "Player Options"},
+        //{"B", "Set Board Size"}, maybe add back in later
+        //{"P", "Player Options"},
         {"H", "Help Menu"},      
         {"Q", "Quit Options Menu"}        
     };

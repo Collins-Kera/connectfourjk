@@ -17,12 +17,14 @@ public class MainMenuView {
     private final static String[][] menuMainOptions = {
         
         {"S", "Start new game"},
+        {"O", "Options Menu"},
         {"H", "Help menu"},       
         {"Q", "Quit Game"}        
     };
   //calls from the different classes    
    private NewGameView newGameView = new NewGameView();;
    private HelpMenuView callHelpMenu = new HelpMenuView();
+    private OptionsMenuView optMenu = new OptionsMenuView();
 
 //constructor 
 public MainMenuView() {
@@ -46,6 +48,9 @@ public void whereToGo() {
                 case "S":
                     this.newGameView.getChoice();
                     break;
+                case "O":
+                    this.optMenu.getInfo();
+                    break;  
                 case "H":
                     this.callHelpMenu.getInput();                  
                     break; 

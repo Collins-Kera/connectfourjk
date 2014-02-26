@@ -27,14 +27,15 @@ public class GetPlayerListView {
         
         System.out.println("\n\t***************************************************************");
         System.out.println("\tEnter a list of names of any players who want to play Crazy "
-                + "\n\tConnect Four. ");
+                + "\n\tConnect Four. You will be able to choose from the list who is going to"
+                + "\n\t play first");
         System.out.println("\n\t***************************************************************");
         
         int playerIndex = 0;
         boolean done = false;
         while (playerIndex < 10  && !done) { 
-            System.out.println("\tPlease enter the name of a player "
-                    + "or enter \"Q\" to quit.");
+            System.out.println("\tPlease enter the name of a player who is going"
+                    + "to play first or enter \"Q\" to quit.");
             String playersName;
             playersName = inFile.nextLine();
             playersName = playersName.trim();
@@ -128,16 +129,15 @@ public class GetPlayerListView {
             int namePosition = i+1;
             System.out.println("\t   " + namePosition + "\t" + names[i]);
         }
-        System.out.println("\n\tIf you want to give the computer a unique name, "
-                + "\n\tspecify the board size, or choose what color of token you "
-                + "\n\thave then check out the option menu.");
+        System.out.println("\n\tIf you want to choose what color of token you are"
+                + "\n\tthen check out the option menu.");
         System.out.println("\t***************************************************************");
     }
     
     public void pickPlayerName(){
         String[] selectedPlayerNames = new String[2];
         
-            System.out.println("\tPlease enter the number of your name.");
+            System.out.println("\tPlease enter the number of the person who wants to play first.");
             
             // get players name
             selectedPlayerNames[0] = this.getName(listOfPlayerNames);
@@ -146,10 +146,10 @@ public class GetPlayerListView {
             }
             
             // get computers name
-            System.out.println("\tPlease enter the number of the computer name.");
-            selectedPlayerNames[1] = this.getName(listOfPlayerNames);
+            //System.out.println("\tPlease enter the number of the computer name.");
+            //selectedPlayerNames[1] = this.getName(listOfPlayerNames);
             if (selectedPlayerNames[0].equals(selectedPlayerNames[1])) {
-                
+               System.out.println(selectedPlayerNames + " is going to play first."); 
             }
             if (selectedPlayerNames[1] ==  null) {
                 return;

@@ -19,10 +19,10 @@ public class HelpMenuControl {
         System.out.println();
         this.displayBorder();             
         System.out.println( 
-                "\tThe game board for Crazy Connect Four consists of a 5x5 grid. "
+                "\tThe game board for Crazy Connect Four consists of a 6x6 grid. "
                 + "\n\tPlayers choose which column they want to play their "
                 + "\n\ttoken in. The token will go into the next empty slot. Each column "
-                + "\n\tonly holds 5 tokens.");
+                + "\n\tonly holds 6 tokens.");
         displayBorder();
     }
     
@@ -31,7 +31,7 @@ public class HelpMenuControl {
         displayBorder();     
         System.out.println( 
                  "\tThe objective of the game is to be the first player to reach 5 points. "
-                + "\n\tTo get a point the player has to connect four tokens vertically (for now). "
+                + "\n\tTo get a point the player has to connect four tokens vertically or horizontally. "
                 + "\n\tEach player takes turns placing their token in one of the locations in the "
                 + "\n\tgrid. The first player to get \"four-in-a-row\" is the winner of the round."
                 + "\n\tIf no one connects four in a round, then the score board shows a tie and "
@@ -73,9 +73,9 @@ public class HelpMenuControl {
         System.out.println();
         displayBorder();     
         System.out.println( 
-               "\tEach player has a specific color of token where the computer is red "
-                + "\n\tand the real player is blue. These are displayed as colored cirlces"
-                + "\n\tin the location on the grid seleted."
+               "\tThe human player can pick their color of token in the options menu."
+                + "\n\tThe tokens are displayed as the first letter of the color."
+                + "\n\tThe computer is letter 'C'. "
                 ); 
         displayBorder();
     } 
