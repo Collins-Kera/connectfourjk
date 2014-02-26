@@ -60,6 +60,7 @@ public void getChoice() {
         switch (choice) {
 
 
+
             //pulled out the names and have in the beginning and the option menu
                 //case "N":
                   //  this.playerName.getName();
@@ -69,6 +70,7 @@ public void getChoice() {
                   //  this.computerName.getLabel();
                   //  this.computerName.displayLabel();
                   //  break;
+
 
                 case "S":
                     System.out.println("Welcome to Crazy Connect Four! Select the player names for you and the computer.");  
