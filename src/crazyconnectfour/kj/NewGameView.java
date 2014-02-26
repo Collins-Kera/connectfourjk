@@ -32,6 +32,8 @@ public class NewGameView {
     //calling gameboard and score board under S start 
    private GameBoard newGameBoard = new GameBoard();
    private Scoreboard newScoreBoard = new Scoreboard();
+   private BoardView newBoardView = new BoardView();
+   private GetPlayerListView newGetPlayerListView = new GetPlayerListView();
    
    
 //constructor 
@@ -53,17 +55,29 @@ public void getChoice() {
             choice = choice.trim().toUpperCase();
                    
         switch (choice) {
-                case "N":
+                case "N":// get rid of
                     this.playerName.getName();
                     this.playerName.displayName();
                     break;
-                case "C":
+                case "C": //get rid of
                     this.computerName.getLabel();
                     this.computerName.displayLabel();
                     break;
                 case "S":
-                    this.newGameControl.displayGameStart();
-                    this.newGameBoard.displayWelcome();
+                    System.out.println("Welcome to Crazy Connect Four! Select the player names for you and the computer.");  
+                    this.newGetPlayerListView.getPlayerNameInput(); // has them put in  name list
+                    this.newGetPlayerListView.pickPlayerName(); // has them pick their name and computer name
+                    this.newGameControl.displayGameStart(); 
+                    //Create a refined start menu. Add take turn function & start new game function. 
+                    this.newBoardView.displayBoard(newGameBoard);
+                    this.newGameBoard.enterTokens();//prompt where they should play token
+                    this.newBoardView.displayBoard(newGameBoard);
+                    this.newScoreBoard.calculateWinnerScore(1);//display scoreboard
+                    //computer plays
+                    //display gameboard
+                    //display scoreboard
+                    //loop back to start menu. push number to take another turn
+                    
                //how to run calculateWinLoss?
                     //this.newGameBoard.calculateWinLoss();
                //how to run calculateWinnerScore? 

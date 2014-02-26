@@ -131,5 +131,77 @@ public class GetPlayerListView {
         System.out.println("\n\t***************************************************************");
     }
     
+    public void pickPlayerName(){
+        String[] selectedPlayerNames = new String[2];
+        
+            System.out.println("\tPlease enter the number of your name.");
+            
+            // get players name
+            selectedPlayerNames[0] = this.getName(listOfPlayerNames);
+            if (selectedPlayerNames[0] ==  null) {
+                return;
+            }
+            
+            // get computers name
+            System.out.println("\tPlease enter the number of the computer name.");
+            selectedPlayerNames[1] = this.getName(listOfPlayerNames);
+            if (selectedPlayerNames[0].equals(selectedPlayerNames[1])) {
+                
+            }
+            if (selectedPlayerNames[1] ==  null) {
+                return;
+            }
+        
+        return;
+        
+    }
+
+public String getName(String[] nameList) {
+
+        Scanner inFile = new Scanner(System.in);
+        String name = null;
+        boolean valid = false;
+        do {
+            String strNumber = inFile.nextLine();
+            
+            if (strNumber.length() < 1) { // was a value entered ?
+                new CrazyConnectFourError().displayError("You must enter a name or enter a \"Q\" to quit. Try again.");
+                continue;
+            }
+            
+            strNumber = strNumber.trim(); // trim off all blanks from front and back    
+            strNumber = strNumber.substring(0, 1); // get only the first character
+            
+            if (strNumber.toUpperCase().equals("Q")) { // quit?
+                return null;
+            }
+                       
+            if (!strNumber.matches("[0-9]+")) { // is the value entered a number?
+                new CrazyConnectFourError().displayError("You must enter a number in the list. Try again.");
+                continue;
+            }
+            
+            int numberSelected = Integer.parseInt(strNumber); // convert string to integer
+            
+            // is the number outside the range of the list of names
+            if (numberSelected < 1  ||  numberSelected > nameList.length) {
+                new CrazyConnectFourError().displayError(
+                        "You must enter a number from the list. Try again.");
+                continue;
+            }
+            
+            name = nameList[numberSelected-1]; // get the name from the list
+//            if (alreadyInList(nameList, name)) {
+//                new CrazyConnectFourError().displayError(
+//                        "That name has already been selected. Try again.");
+//                continue;
+//            }
+            
+            valid = true; // names selected successfully
+      
+        } while (!valid);
+        
+        return name;
+    }
     
 }
