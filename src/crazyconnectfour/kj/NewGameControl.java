@@ -17,9 +17,8 @@ public class NewGameControl {
 public void displayGameStart() {
         displayBorder();     
         System.out.println( 
-                 "\tHi player name, you are playing against the computer. "
-                         + "\n\tThe board size is 6x6, but you can change "
-                         + "\n\tthat by going to options if you want." );
+                 "\tHello!! Welcome to the game! To get started press 'T' to take your turn."
+                         );
         displayBorder();
                 
     }   

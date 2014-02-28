@@ -49,6 +49,7 @@ public void getChoice() {
               
         String choice;
         Scanner menuChoice = new Scanner(System.in);
+        String playerName = "Player";
         
         do {
             
@@ -65,7 +66,8 @@ public void getChoice() {
             //pulled out the names and have in the beginning and the option menu
                 case "N":
                     this.newGetPlayerListView.getPlayerNameInput(); // has them put in  name list
-                    this.newGetPlayerListView.pickPlayerName(); // has them pick their name
+                    playerName = this.newGetPlayerListView.pickPlayerName(); // has them pick their name
+                    newScoreBoard.player = playerName;
                     break;
                 //case "C":
                   //  this.computerName.getLabel();
@@ -78,9 +80,16 @@ public void getChoice() {
                     //this.newGetPlayerListView.pickPlayerName(); // has them pick their name and computer name
                     this.newGameControl.displayGameStart(); 
                     //Create a refined start menu. Add take turn function & start new game function. 
-                    this.newBoardView.displayBoard(newGameBoard);
-                    this.newGameBoard.enterTokens();//prompt where they should play token
-                    this.newBoardView.displayBoard(newGameBoard);
+                    boolean george = true;
+                    while (george) {
+                        this.newBoardView.displayBoard(newGameBoard);
+                        int result = this.newGameBoard.enterTokens();//prompt where they should play token
+                        if (result == 5) {
+                            george = false;
+                        }
+                        this.newGameBoard.computerPlay();
+                    }
+                    
                     this.newScoreBoard.calculateWinnerScore(1);//display scoreboard
                     //computer plays
                     //display gameboard

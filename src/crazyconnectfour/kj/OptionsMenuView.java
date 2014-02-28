@@ -14,6 +14,7 @@ import java.util.Scanner;
  */
 public class OptionsMenuView {
     
+    
      private final static String[][] optionsMenu = {
         
         {"T", "Pick Token Color"},

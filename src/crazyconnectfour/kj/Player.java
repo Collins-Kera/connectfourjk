@@ -13,23 +13,20 @@ import java.util.Scanner;
  * @author Jeanette
  */
 public class Player {
-    String name;
+    String name = "";
     
-  public void getName(){
-        Scanner input = new Scanner(System.in);
-        System.out.println();
-        displayBorder(); 
-        System.out.println("\tEnter your name: ");
-        this.name = input.next();
+  public String getName(){
+        return name;
        }
   
-  public void displayName (){
-    System.out.println("\tWelcome " + this.name + " you are player one");
-    displayBorder();
-  }
+
+//  public void displayName (){
+//    System.out.println("\tWelcome " + this.name + " you are player one");
+//    displayBorder();
+//  }
   //border like in help menu
-    public void displayBorder() {       
-        System.out.println(
-        "\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-    }
+   // public void displayBorder() {       
+        //System.out.println(
+       // "\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    //}
 }

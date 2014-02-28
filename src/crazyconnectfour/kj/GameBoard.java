@@ -6,6 +6,7 @@
 
 package crazyconnectfour.kj;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -19,8 +20,8 @@ public class GameBoard {
     
     Token token = new Token();
     
-    int rowCount = 0;
-    int columnCount = 0;
+    int boardSize = 6;
+    
     
     /**
      *
@@ -46,21 +47,18 @@ public class GameBoard {
             boardSize = boardSize.replace(',', ' '); 
             
             if (Integer.parseInt(boardSize) == 4) { // value entered 4x4
-                this.rowCount = 4;
-                this.columnCount = 4;
+                this.boardSize = 4;
                 System.out.println("\n\n\tThe board size you have selected is 4x4.");
                 return 4;
             }    
             else if (Integer.parseInt(boardSize) == 6) { // value entered 6x6
-                this.rowCount = 6;
-                this.columnCount = 6;
+                this.boardSize = 6;
                 System.out.println("\n\n\tThe board size you have selected is 6x6.");
                 return 6;
             }    
             else if (Integer.parseInt(boardSize) == 8) { // value entered 8x8
                 System.out.println("\n\n\tThe board size you have selected is 8x8.");
-                this.rowCount = 8;
-                this.columnCount = 8;
+                this.boardSize = 8;
                 return 8;
             }  
 
@@ -72,7 +70,7 @@ public class GameBoard {
             }   
     }
 
-public void enterTokens () {    
+public int enterTokens () {    
     String placement = "0";
     boolean x = true;
     
@@ -81,12 +79,16 @@ public void enterTokens () {
     while(x){ 
        //ask player where they want to play and get column input from them  
        Scanner columnInput = new Scanner(System.in);
-       System.out.println("Type in the column where you want to play " + "(1-" + columnCount + ")");
+       System.out.println("Type in the column where you want to play " + "(1-" + boardSize + ") or Q to quit.");
        placement = columnInput.next();
+            
+       if ("Q".equals(placement) || "q".equals(placement)) {
+                return 5;
+       }
        
        try{
         //if it is greater then an option, show an error     
-        if (Integer.parseInt(placement)>columnCount){   
+        if (Integer.parseInt(placement)>boardSize){   
             System.out.println("Invalid entry!");
                 break; 
                 }
@@ -104,30 +106,41 @@ public void enterTokens () {
     }
     
     //place token in desired column
-    int i=0;
-    for(Token location : tokenGrid [Integer.parseInt(placement)-1]){
+    for(int i=0;i<tokenGrid.length;i++){
        //starting from the bottom check each place in column to see if token
         //there. If there is a token move to next spot until an empty one is found.
         //Place token in the empty spot.
+        Token location = tokenGrid[i][Integer.parseInt(placement)-1];
         if(location == null) {
             Token blueToken = new Token();
             blueToken.tokenColor = 1;
-           tokenGrid[Integer.parseInt(placement)-1] [i] = blueToken;
+           tokenGrid[i][Integer.parseInt(placement)-1] = blueToken;
            break;
         }
-        i++;
-    }
+    } 
+    
+    return 0;
 }
 
-    public GameBoard(){
-        tokenGrid[0][0] = new Token();
-        // tokenGrid[0][0].tokenColor = 3; test of invalid token color
-        tokenGrid[0][1] = new Token();
-        tokenGrid[0][2] = new Token();
-        tokenGrid[0][3] = new Token();
-        
-        //output will go into gameboard
-    }
+
+ public void computerPlay() {
+     int x = new Random().nextInt(5);
+     
+     for(int i=0;i<tokenGrid.length;i++){
+       //starting from the bottom check each place in column to see if token
+        //there. If there is a token move to next spot until an empty one is found.
+        //Place token in the empty spot.
+        Token location = tokenGrid[i][x];
+        if(location == null) {
+            Token redToken = new Token();
+            redToken.tokenColor = 2;
+           tokenGrid[i][x] = redToken;
+           break;
+        }
+    } 
+ }
+
+   
     public void displayWelcome(){
         token.color();
         System.out.println(welcome); 

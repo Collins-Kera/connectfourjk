@@ -15,6 +15,7 @@ public class Scoreboard {
     int numberComputerWins = 0;
     int numberOfTies = 0;
     double percentageWins;
+    String player;
             
     public void calculateWinnerScore(int win){
         if(win == 0 & numberPlayerWins < 5){
@@ -39,14 +40,14 @@ public class Scoreboard {
             System.out.println("Invalid input");
             return;
         }
-        System.out.println("SCORES:" + "\n" + "Player - " + numberPlayerWins + "\t" + 
+        System.out.println("SCORES:" + "\n" + player + " - " + numberPlayerWins + "\t" + 
                 "Computer - " + numberComputerWins + "\t" + "Ties - " + numberOfTies + "\n");
         percentageWins =  numberPlayerWins/(numberPlayerWins + numberComputerWins + numberOfTies)* 100;
         System.out.println("You have won " + (int)percentageWins + "%" + " of the rounds so far.");
     }
     
     public void score(){
-       System.out.println("Player One Has " + numberPlayerWins + " points.");
-       System.out.println("Computer Has " + numberComputerWins + " points.");
+       System.out.println(player + " has " + numberPlayerWins + " points.");
+       System.out.println("Computer has " + numberComputerWins + " points.");
    } 
 }

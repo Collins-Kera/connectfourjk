@@ -24,29 +24,32 @@ public class CrazyConnectFour {
         myGame.displayHelp();
         System.out.println("\t***************************************************************\n");
         
+        myGame.play();
+       
+
         //gets all of the names
        // GetPlayerListView testRun = new GetPlayerListView();
        // testRun.getPlayerNameInput();
         
-        //sorts them in a list and prints them out
-        GetPlayerListView testRunTwo = new GetPlayerListView();
-        testRunTwo.sortList(args);
-        
-        //add another function that lets them choose a number of who they want to be
-        //consider using the same function created for choosing a color
-        
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.whereToGo();
-          
-        //where do all of these go in?
-        GameBoard sizeOfBoard = new GameBoard();
-        sizeOfBoard.getBoardSize();
-        
-        BoardView displayBoard = new BoardView();
-        displayBoard.displayBoard(sizeOfBoard);
-        
-        sizeOfBoard.enterTokens();
-        displayBoard.displayBoard(sizeOfBoard);
+//        //sorts them in a list and prints them out
+//        GetPlayerListView testRunTwo = new GetPlayerListView();
+//        testRunTwo.sortList(args);
+//        
+//        //add another function that lets them choose a number of who they want to be
+//        //consider using the same function created for choosing a color
+//        
+//        MainMenuView mainMenu = new MainMenuView();
+//        mainMenu.whereToGo();
+//          
+//        //where do all of these go in?
+//        GameBoard sizeOfBoard = new GameBoard();
+//        sizeOfBoard.getBoardSize();
+//        
+//        BoardView displayBoard = new BoardView();
+//        displayBoard.displayBoard(sizeOfBoard);
+//        
+//        sizeOfBoard.enterTokens();
+//        displayBoard.displayBoard(sizeOfBoard);
       
         //GetPlayerListView testRun = new GetPlayerListView();
         //testRun.getPlayerNameInput();
@@ -96,4 +99,9 @@ public class CrazyConnectFour {
     public void displayHelp(){
         System.out.println(this.instructions);
        }
+    
+    public void play(){
+         MainMenuView mainMenu = new MainMenuView();
+         mainMenu.whereToGo();
+    }
 }

@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author Kera
  */
 public class OptionsMenuControl {
-    String tokenColor;
+    static String tokenColor;
     
     public OptionsMenuControl() {
             

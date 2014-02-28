@@ -21,12 +21,12 @@ public class BoardView {
         this.printDividerRow(); // column dividers
         
         // for all rows
-        for (int i = 0; i < this.board.rowCount; i++) {
+        for (int i = this.board.boardSize-1; i >=0 ; i--) {
             // get the list of columns locations in the row
             Token[] rowOfLocations = this.board.tokenGrid[i];
             
             // print the contents of each location in the row
-            this.printRow(i+1, rowOfLocations); 
+            this.printRow(rowOfLocations); 
             
             this.printDividerRow();// print the ending divider for the row
         }
@@ -40,7 +40,7 @@ public class BoardView {
         System.out.print("\n\t      1   ");
         
         // print remaining header cells in row between the first and last column
-        int columnsInRow = this.board.columnCount;
+        int columnsInRow = this.board.boardSize;
         for (int i = 1; i < columnsInRow - 1; i++) {
             int col = i + 1;
             System.out.print("  " + col + "   ");
@@ -54,7 +54,7 @@ public class BoardView {
         // print the divider for the first column in the row
         System.out.print("\n\t  |------");
         
-        int columnsInRow = this.board.columnCount;
+        int columnsInRow = this.board.boardSize;
         // print remaining divider for each column between the first and last
         for (int i = 1; i < columnsInRow - 1; i++) {
             System.out.print("------");
@@ -63,14 +63,14 @@ public class BoardView {
         System.out.print("-----|");
     }
 
-    private void printRow(int rowNumber, Token[] rowLocations) {
+    private void printRow(Token[] rowLocations) {
         
         // print contents of first column in the row
         String letter = " ";
         if (rowLocations[0] != null) {
             letter = rowLocations[0].getTokenColor();
         }
-        System.out.print("\n\t" + rowNumber + " |  " + letter + "  |");
+        System.out.print("\n\t" + "  |  " + letter + "  |");
 
         // print the contents of the rest of the columns in the row 
         for (int i = 1; i < rowLocations.length; i++) {

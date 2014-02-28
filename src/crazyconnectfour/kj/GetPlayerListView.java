@@ -14,7 +14,8 @@ import java.util.Scanner;
  */
 public class GetPlayerListView {
 
-    public String[] listOfPlayerNames = new String[10];//sets up the array 
+    //public String[] listOfPlayerNames = new String[10];//sets up the array 
+    public Player[] listofPlayers = new Player[10];
     
     public GetPlayerListView() {
         
@@ -53,8 +54,8 @@ public class GetPlayerListView {
                         + "\n\tTry again or enter \"Q\" to quit.");
                 continue;
             }
-            
-            if (alreadyInList(listOfPlayerNames, playersName)) {
+                            
+            if (alreadyInList(listofPlayers, playersName)) {
                 new CrazyConnectFourError().displayError(
                         "That name has already been entered. "
                         + "\n\tTry again or enter \"Q\" to quit.");
@@ -67,7 +68,8 @@ public class GetPlayerListView {
             } 
             
             // add name to list of player names
-            this.listOfPlayerNames[playerIndex] = playersName;
+            listofPlayers[playerIndex]= new Player();
+            this.listofPlayers[playerIndex].name = playersName;
             playerIndex++;
 
             
@@ -75,7 +77,7 @@ public class GetPlayerListView {
         
         String[] newNameList = new String[playerIndex];
         for (int i = 0; i < playerIndex; i++) {
-            newNameList[i] = this.listOfPlayerNames[i];          
+            newNameList[i] = this.listofPlayers[i].name;          
         }
         
 
@@ -106,11 +108,13 @@ public class GetPlayerListView {
         return names;
     }
     
-    private boolean alreadyInList(String[] list, String value) {
-        for (String valueInList : list) {
-            if (value.equals(valueInList)) {
+    private boolean alreadyInList(Player[] list, String value) {
+        for (Player valueInList : list) {
+            if(valueInList != null) {
+               if (value.equals(valueInList.name)) {
                 return true;
-            }           
+            } 
+            }          
         }
         return false;
     }
@@ -134,32 +138,29 @@ public class GetPlayerListView {
         System.out.println("\t***************************************************************");
     }
     
-    public void pickPlayerName(){
-        String[] selectedPlayerNames = new String[2];
+    public String pickPlayerName(){
+        String selectedPlayerNames;
         
             System.out.println("\tPlease enter the number of the person who wants to play first.");
             
             // get players name
-            selectedPlayerNames[0] = this.getName(listOfPlayerNames);
-            if (selectedPlayerNames[0] ==  null) {
-                return;
+            selectedPlayerNames = this.getName(listofPlayers);
+            if (selectedPlayerNames ==  null) {
+                return null;
             }
             
             // get computers name
             //System.out.println("\tPlease enter the number of the computer name.");
             //selectedPlayerNames[1] = this.getName(listOfPlayerNames);
-            if (selectedPlayerNames[0].equals(selectedPlayerNames[1])) {
-               System.out.println(selectedPlayerNames + " is going to play first."); 
-            }
-            if (selectedPlayerNames[1] ==  null) {
-                return;
-            }
+            //if (selectedPlayerNames[0].equals(selectedPlayerNames[1])) {
+               System.out.println("\n\t"+selectedPlayerNames + " is going to play first."); 
+            //}
         
-        return;
+        return selectedPlayerNames;
         
     }
 
-public String getName(String[] nameList) {
+public String getName(Player[] nameList) {
 
         Scanner inFile = new Scanner(System.in);
         String name = null;
@@ -193,7 +194,7 @@ public String getName(String[] nameList) {
                 continue;
             }
             
-            name = nameList[numberSelected-1]; // get the name from the list
+            name = nameList[numberSelected-1].name; // get the name from the list
 //            if (alreadyInList(nameList, name)) {
 //                new CrazyConnectFourError().displayError(
 //                        "That name has already been selected. Try again.");
