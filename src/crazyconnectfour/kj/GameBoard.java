@@ -90,11 +90,11 @@ public int enterTokens () {
         //if it is greater then an option, show an error     
         if (Integer.parseInt(placement)>boardSize){   
             System.out.println("Invalid entry!");
-                break; 
+                continue; 
                 }
         else if (Integer.parseInt(placement)< 1) {  
             System.out.println("Invalid entry!");
-                break; 
+                continue; 
                 } 
         else {
            x = false;
@@ -102,9 +102,16 @@ public int enterTokens () {
        } catch(NumberFormatException ex)
             {
                 System.out.println("Invalid entry!");
+                continue;
             }
+       if (tokenGrid[5][Integer.parseInt(placement)-1] != null){
+           System.out.println("This column is full. Try again.");
+           continue;
+       }
     }
     
+    int xInserted = 0;
+    int yInserted = 0;
     //place token in desired column
     for(int i=0;i<tokenGrid.length;i++){
        //starting from the bottom check each place in column to see if token
@@ -115,17 +122,28 @@ public int enterTokens () {
             Token blueToken = new Token();
             blueToken.tokenColor = 1;
            tokenGrid[i][Integer.parseInt(placement)-1] = blueToken;
+           xInserted = i;
+           yInserted = Integer.parseInt(placement)-1;
            break;
         }
     } 
+    int win = this.calculateWinLoss(xInserted, yInserted);
     
-    return 0;
+    return win;
 }
 
 
- public void computerPlay() {
-     int x = new Random().nextInt(5);
+ public int computerPlay() {
+     int x;
      
+     while(true) {
+       x = new Random().nextInt(5);
+        if (tokenGrid[5][x] == null){
+            break;
+         }
+     } 
+     int xInserted = 0;
+     int yInserted = 0;
      for(int i=0;i<tokenGrid.length;i++){
        //starting from the bottom check each place in column to see if token
         //there. If there is a token move to next spot until an empty one is found.
@@ -135,9 +153,15 @@ public int enterTokens () {
             Token redToken = new Token();
             redToken.tokenColor = 2;
            tokenGrid[i][x] = redToken;
+           xInserted = i;
+           yInserted = x;
            break;
         }
-    } 
+    }
+     
+     int win = this.calculateWinLoss(xInserted, yInserted);
+    
+     return win;
  }
 
    
@@ -148,15 +172,16 @@ public int enterTokens () {
     
     public int calculateWinLoss(int x, int y){
         
-        if (x <0 || x > 4){
+        if (x <0 || x > 5){
             System.out.println("Out of grid bounds.");
             return 0;
         }
         
-         if (y <0 || y > 4){
+         if (y <0 || y > 5){
             System.out.println("Out of grid bounds.");
             return 0;
         }
+        
          
          Token insertedToken = tokenGrid[x][y];
          
@@ -166,7 +191,7 @@ public int enterTokens () {
              System.out.println ("Invalid token color.");
              return 0;
          }
-        
+        //checks horizontally
         double numberTokenRight = 0;
         
         double numberTokenLeft = 0;
@@ -177,6 +202,9 @@ public int enterTokens () {
                 break;
             }
             Token a = tokenGrid[x][y+i+1];
+            if (a == null) {
+                 break;
+             }
             int tokenColor = a.tokenColor;
             
             if (insertedTokenColor == tokenColor){
@@ -204,6 +232,9 @@ public int enterTokens () {
                 break;
             }
             Token a = tokenGrid[x][y-i-1];
+            if (a == null) {
+                 break;
+             }
             int tokenColor = a.tokenColor;
             
             if (insertedTokenColor == tokenColor){
@@ -215,6 +246,71 @@ public int enterTokens () {
         }
         
         if(numberTokenRight + numberTokenLeft == 3){
+            if(insertedTokenColor == 1){ //player won
+                System.out.println("\"Congrats, you have won the round!\"\n");
+                return 1;
+            }
+            else {
+                System.out.println("\"Sorry, you lost the round!\" \n");
+                return 2; //computer won
+            }
+        }
+        
+        //checks vertically
+        double numberTokenUp = 0;
+        
+        double numberTokenDown = 0;
+        
+        //checks up
+        for(int i=0; i<3; i++){
+            if(x+i+1 > 4){
+                break;
+            }
+            Token a = tokenGrid[x+i+1][y];
+            if (a == null) {
+                 break;
+             }
+            int tokenColor = a.tokenColor;
+            
+            if (insertedTokenColor == tokenColor){
+                numberTokenUp += 1;  
+            }
+            else{
+                break;
+            }  
+        }
+        
+        if((int)numberTokenUp == 3){
+            if(insertedTokenColor == 1) {//player won
+                System.out.println("\"Congrats, you have won the round!\"\n");
+                return 1;
+            }
+            else{
+                System.out.println("\"Sorry, you lost the round!\"\n");
+                return 2; //computer won
+            }
+        }
+        
+        //check down
+        for(int i=0; i<3; i++){
+            if(x-i-1 < 0){
+                break;
+            }
+            Token a = tokenGrid[x-i-1][y];
+            if (a == null) {
+                 break;
+             }
+            int tokenColor = a.tokenColor;
+            
+            if (insertedTokenColor == tokenColor){
+                numberTokenDown += 1;  
+            }
+            else{
+                break;
+            }  
+        }
+        
+        if(numberTokenUp + numberTokenDown == 3){
             if(insertedTokenColor == 1){ //player won
                 System.out.println("\"Congrats, you have won the round!\"\n");
                 return 1;

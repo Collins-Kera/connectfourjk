@@ -15,21 +15,27 @@ public class Scoreboard {
     int numberComputerWins = 0;
     int numberOfTies = 0;
     double percentageWins;
-    String player;
+    String player = "Player";
             
     public void calculateWinnerScore(int win){
-        if(win == 0 & numberPlayerWins < 5){
+        if(win == 0 & numberPlayerWins < 4){
             numberPlayerWins += 1;
         }
         else if (numberPlayerWins == 5){
             System.out.println("Congrats, you are the winner.");
+            numberPlayerWins = 0;
+            numberComputerWins = 0;
+            numberOfTies = 0;
             return;
         }
-        else if(win == 1 & numberComputerWins < 5) {
+        else if(win == 1 & numberComputerWins < 4) {
             numberComputerWins += 1;
         }
         else if(numberComputerWins == 5){
             System.out.println("Sorry, you lose.");
+            numberPlayerWins = 0;
+            numberComputerWins = 0;
+            numberOfTies = 0;
             return;
         }
         else if (win == 2){
@@ -41,8 +47,8 @@ public class Scoreboard {
             return;
         }
         System.out.println("SCORES:" + "\n" + player + " - " + numberPlayerWins + "\t" + 
-                "Computer - " + numberComputerWins + "\t" + "Ties - " + numberOfTies + "\n");
-        percentageWins =  numberPlayerWins/(numberPlayerWins + numberComputerWins + numberOfTies)* 100;
+                "Computer - " + numberComputerWins + "\t" /*+ "Ties - " + numberOfTies + "\n"*/);
+        percentageWins =  (double)numberPlayerWins/(numberPlayerWins + numberComputerWins + numberOfTies)* 100;
         System.out.println("You have won " + (int)percentageWins + "%" + " of the rounds so far.");
     }
     

@@ -80,22 +80,40 @@ public void getChoice() {
                     //this.newGetPlayerListView.pickPlayerName(); // has them pick their name and computer name
                     this.newGameControl.displayGameStart(); 
                     //Create a refined start menu. Add take turn function & start new game function. 
-                    boolean george = true;
-                    while (george) {
+                    boolean stop = true;
+                    while (stop) {
                         this.newBoardView.displayBoard(newGameBoard);
                         int result = this.newGameBoard.enterTokens();//prompt where they should play token
                         if (result == 5) {
-                            george = false;
+                            newGameBoard = new GameBoard(); //reset gameboard
+                            break;
                         }
-                        this.newGameBoard.computerPlay();
+                        if (result == 1) { //player won
+                            this.newBoardView.displayBoard(newGameBoard);
+                            this.newScoreBoard.calculateWinnerScore(0);//display scoreboard
+                            newGameBoard = new GameBoard(); //reset gameboard
+                            break;
+                        }
+                        
+                        
+                        
+                        result = this.newGameBoard.computerPlay();
+                        if (result == 5) {
+                            newGameBoard = new GameBoard(); //reset gameboard
+                            break;
+                        }
+                        
+                        if (result == 2){ //computer won
+                            this.newBoardView.displayBoard(newGameBoard);
+                            this.newScoreBoard.calculateWinnerScore(1);//display scoreboard
+                            newGameBoard = new GameBoard(); //reset gameboard
+                            break;
+                        }
+                        
                     }
                     
-                    this.newScoreBoard.calculateWinnerScore(1);//display scoreboard
-                    //computer plays
-                    //display gameboard
-                    //display scoreboard
-                    //loop back to start menu. push number to take another turn
                     
+                  
                //how to run calculateWinLoss?
                     //this.newGameBoard.calculateWinLoss();
                //how to run calculateWinnerScore? 
