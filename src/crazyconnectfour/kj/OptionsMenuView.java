@@ -49,12 +49,12 @@ public void getInfo() {
                 case "T":
                     this.optionsMenuControl.getTokenColor();
                     break;
-                case "B":
-                    this.optionsMenuControl.boardSize();
-                    break;
-                case "P":
-                    this.optionsMenuControl.playerOptions();
-                    break;                  
+                //case "B":
+                  //  this.optionsMenuControl.boardSize();
+                    //break;
+                //case "P":
+                  //  this.optionsMenuControl.playerOptions();
+                    //break;                  
                 case "H":
                     this.callHelpMenu.getInput();
                     break;

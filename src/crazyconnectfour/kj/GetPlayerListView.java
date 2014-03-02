@@ -35,7 +35,7 @@ public class GetPlayerListView {
         int playerIndex = 0;
         boolean done = false;
         while (playerIndex < 10  && !done) { 
-            System.out.println("\tPlease enter the name of a player who is going"
+            System.out.println("\tPlease enter the name of a player who is going "
                     + "to play first or enter \"Q\" to quit.");
             String playersName;
             playersName = inFile.nextLine();

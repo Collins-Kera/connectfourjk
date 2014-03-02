@@ -39,19 +39,19 @@ public class OptionsMenuControl {
             // replace any commas enter with blanks
             tokenColor = tokenColor.replace(',', ' '); 
             
-            if (Integer.parseInt(tokenColor) == 1) { // value entered 4x4
+            if (Integer.parseInt(tokenColor) == 1) { 
                 System.out.println("\n\n\tPlayer 1 you are now token color yellow");
                 return 1;
             }    
-            else if (Integer.parseInt(tokenColor) == 2) { // value entered 6x6
+            else if (Integer.parseInt(tokenColor) == 2) { 
                 System.out.println("\n\n\tPlayer 1 you are now token color red.");
                 return 2;
             }    
-            else if (Integer.parseInt(tokenColor) == 3) { // value entered 8x8
+            else if (Integer.parseInt(tokenColor) == 3) { 
                 System.out.println("\n\n\tPlayer 1 you are now token color blue.");
                 return 3;
             }  
-            else if (Integer.parseInt(tokenColor) == 4) { // value entered 8x8
+            else if (Integer.parseInt(tokenColor) == 4) { 
                 System.out.println("\n\n\tPlayer 1 you are now token color green.");
                 return 4;
             }
