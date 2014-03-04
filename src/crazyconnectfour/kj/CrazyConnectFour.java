@@ -6,13 +6,32 @@
 
 package crazyconnectfour.kj;
 
-//import java.util.Scanner;
+import java.util.Scanner;
+
 
 /**
  *
  * @author Kera
  */
 public class CrazyConnectFour {
+    
+    private static Scanner inFile = new Scanner (System.in);
+
+    public CrazyConnectFour(){
+    }
+    
+    public static Scanner getInputFile() {
+        return CrazyConnectFour.inFile;
+    }
+
+    public String getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
+    }
+    
     String instructions = "\tWelcome, this is the game Crazy Connect Four!\n"
             +"\tIn this game you can play against the computer.\n"
             +"\tTo win this game you have to connect four tokens in a row \n "

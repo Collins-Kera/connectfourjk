@@ -10,9 +10,13 @@ package crazyconnectfour.kj;
  *
  * @author Kera
  */
+
+
+//move into the Player class, and connect with OptionsMenuControl
 public class Token {
     int tokenColor = 1; //1 = Blue 2 = Red
-    
+
+
 public void color (){
         if(tokenColor==1)
             System.out.println("\tYou are blue.");

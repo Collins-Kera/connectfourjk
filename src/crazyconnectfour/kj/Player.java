@@ -18,15 +18,4 @@ public class Player {
   public String getName(){
         return name;
        }
-  
-
-//  public void displayName (){
-//    System.out.println("\tWelcome " + this.name + " you are player one");
-//    displayBorder();
-//  }
-  //border like in help menu
-   // public void displayBorder() {       
-        //System.out.println(
-       // "\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-    //}
 }

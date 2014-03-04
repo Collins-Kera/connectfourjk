@@ -6,18 +6,20 @@
 
 package crazyconnectfour.kj;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Kera
  */
-public class Scoreboard {
-    int numberPlayerWins = 0;
-    int numberComputerWins = 0;
-    int numberOfTies = 0;
-    double percentageWins;
+public class Scoreboard implements Serializable {
+    private int numberPlayerWins = 0;
+    private int numberComputerWins = 0;
+    private int numberOfTies = 0;
+    private double percentageWins;
     String player = "Player";
             
-    public void calculateWinnerScore(int win){
+    public void calculateWinnerScore (int win){
         if(win == 0 & numberPlayerWins < 4){
             numberPlayerWins += 1;
         }
@@ -51,9 +53,4 @@ public class Scoreboard {
         percentageWins =  (double)numberPlayerWins/(numberPlayerWins + numberComputerWins + numberOfTies)* 100;
         System.out.println("You have won " + (int)percentageWins + "%" + " of the rounds so far.");
     }
-    
-    public void score(){
-       System.out.println(player + " has " + numberPlayerWins + " points.");
-       System.out.println("Computer has " + numberComputerWins + " points.");
-   } 
 }
