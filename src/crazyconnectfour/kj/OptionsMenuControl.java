@@ -64,7 +64,7 @@ public class OptionsMenuControl {
                 
     }
      
-   private void displayBorder() {       
+   private static void displayBorder() {       
         System.out.println(
         "\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     }
