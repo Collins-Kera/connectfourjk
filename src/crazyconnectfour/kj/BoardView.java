@@ -14,6 +14,7 @@ public class BoardView {
     
     GameBoard board;
     
+    
     public void displayBoard(GameBoard board) {
         this.board = board;
         
@@ -68,7 +69,7 @@ public class BoardView {
         // print contents of first column in the row
         String letter = " ";
         if (rowLocations[0] != null) {
-            letter = rowLocations[0].getTokenColor();
+            letter = rowLocations[0].TokenColor();
         }
         System.out.print("\n\t" + "  |  " + letter + "  |");
 
@@ -77,7 +78,7 @@ public class BoardView {
             if (rowLocations[i] == null) {
                 letter = " ";
             } else {
-                letter = rowLocations[i].getTokenColor();
+                letter = rowLocations[i].TokenColor();
             }
             
             System.out.print("  " + letter + "  |");

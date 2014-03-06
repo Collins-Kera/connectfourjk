@@ -12,8 +12,9 @@ package crazyconnectfour.kj;
  */
 public class FourConnectingTokenCheck {
     
-    //call tokenGrid from the GameBoard? change the name of calculateWinLoss and connect?
-    
+    //tried calling it this way, if doesn't run check this out
+    Token[][] tokenGrid = new Token[6][6];
+    Token TokenColor = new Token();
     
     public int calculateWinLoss(int x, int y){
         
@@ -30,7 +31,7 @@ public class FourConnectingTokenCheck {
          
          Token insertedToken = tokenGrid[x][y];
          
-         int insertedTokenColor = insertedToken.tokenColor;
+         int insertedTokenColor = insertedToken.tokenColor();
          
          if (insertedTokenColor <1 || insertedTokenColor >2){
              System.out.println ("Invalid token color.");

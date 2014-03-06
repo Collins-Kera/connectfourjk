@@ -15,6 +15,8 @@ public class GameBoard {
     Token token = new Token();
     
     int boardSize = 6;
+    
+    FourConnectingTokenCheck calculateWinLoss = new FourConnectingTokenCheck();
    
 public int enterTokens () {  
    
@@ -75,9 +77,9 @@ public int enterTokens () {
            break;
         }
     } 
-    //int win = this.calculateWinLoss(xInserted, yInserted);
+    int win = this.calculateWinLoss.calculateWinLoss(xInserted, yInserted);
     
-    //return win;
+    return win;
 }
 
 
@@ -107,9 +109,9 @@ public int enterTokens () {
         }
     }
      
-     //int win = this.calculateWinLoss(xInserted, yInserted);
+     int win = this.calculateWinLoss.calculateWinLoss(xInserted, yInserted);
     
-     //return win;
+     return win;
  }
    
 }

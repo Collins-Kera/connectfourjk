@@ -21,7 +21,7 @@ public class Token implements Serializable{
     public Token() {
     }
 
-private String TokenColor () {
+public String TokenColor () {
     if(tokenColor==1)
         return "B";
     else
