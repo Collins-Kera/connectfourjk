@@ -13,17 +13,9 @@ import java.io.Serializable;
  * @author Jeanette
  */
 public class Player implements Serializable{
-    private String name = "";
+    public String name = "";
 
     public Player() {
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }  
 }
 

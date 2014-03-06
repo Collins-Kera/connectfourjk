@@ -17,7 +17,7 @@ public class Scoreboard implements Serializable {
     private int numberComputerWins = 0;
     private int numberOfTies = 0;
     private double percentageWins;
-    private String player = "Player";
+    public String player = "Player";
 
     public Scoreboard() {
     }
@@ -53,15 +53,7 @@ public class Scoreboard implements Serializable {
     public void setPercentageWins(double percentageWins) {
         this.percentageWins = percentageWins;
     }
-
-    public String getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(String player) {
-        this.player = player;
-    }
-    
+  
     public void calculateWinnerScore (int win){
         if(win == 0 & numberPlayerWins < 4){
             numberPlayerWins += 1;

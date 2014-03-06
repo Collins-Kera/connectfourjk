@@ -16,19 +16,10 @@ import java.io.Serializable;
 
 //move into the Player class, and connect with OptionsMenuControl
 public class Token implements Serializable{
-    private int tokenColor = 1; //1 = Blue 2 = Red
+    public int tokenColor = 1; //1 = Blue 2 = Red
 
     public Token() {
     }
-
-    public int getTokenColor() {
-        return tokenColor;
-    }
-
-    public void setTokenColor(int tokenColor) {
-        this.tokenColor = tokenColor;
-    }
-
 
 private String TokenColor () {
     if(tokenColor==1)
