@@ -77,7 +77,7 @@ public int enterTokens () {
            break;
         }
     } 
-    int win = this.calculateWinLoss.calculateWinLoss(xInserted, yInserted);
+    int win = calculateWinLoss.calculateWinLoss(xInserted, yInserted);
     
     return win;
 }
@@ -109,7 +109,7 @@ public int enterTokens () {
         }
     }
      
-     int win = this.calculateWinLoss.calculateWinLoss(xInserted, yInserted);
+     int win = calculateWinLoss.calculateWinLoss(xInserted, yInserted);
     
      return win;
  }

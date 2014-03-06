@@ -15,9 +15,9 @@ public class HelpMenuControl {
     public HelpMenuControl() {
             
         }
-    public void displayBoardHelp() {
+    public static void displayBoardHelp() {
         System.out.println();
-        this.displayBorder();             
+        displayBorder();             
         System.out.println( 
                 "\tThe game board for Crazy Connect Four consists of a 6x6 grid. "
                 + "\n\tPlayers choose which column they want to play their "
@@ -26,7 +26,7 @@ public class HelpMenuControl {
         displayBorder();
     }
     
-    public void displayGameHelp() {
+    public static void displayGameHelp() {
         System.out.println();
         displayBorder();     
         System.out.println( 
@@ -40,7 +40,7 @@ public class HelpMenuControl {
         displayBorder();
     }    
 
-    public void displayRealPlayerHelp() {
+    public static void displayRealPlayerHelp() {
         System.out.println();
         displayBorder();     
         System.out.println( 
@@ -50,7 +50,7 @@ public class HelpMenuControl {
         displayBorder();
     }    
     
-     public void displayComputerPlayerHelp() {
+     public static void displayComputerPlayerHelp() {
         System.out.println();
         displayBorder();     
         System.out.println( 
@@ -60,7 +60,7 @@ public class HelpMenuControl {
         displayBorder();
     }
      
-    public void displayLocationHelp() {
+    public static void displayLocationHelp() {
         System.out.println();
         displayBorder();     
         System.out.println( 
@@ -69,7 +69,7 @@ public class HelpMenuControl {
         displayBorder();
     }
     
-   public void displayTokenHelp() {
+   public static void displayTokenHelp() {
         System.out.println();
         displayBorder();     
         System.out.println( 
@@ -80,7 +80,7 @@ public class HelpMenuControl {
         displayBorder();
     } 
    
-   private void displayBorder() {       
+   private static void displayBorder() {       
         System.out.println(
         "\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     }

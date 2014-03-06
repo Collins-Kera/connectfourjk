@@ -69,7 +69,7 @@ public class BoardView {
         // print contents of first column in the row
         String letter = " ";
         if (rowLocations[0] != null) {
-            letter = rowLocations[0].TokenColor();
+            letter = rowLocations[0].getTokenColor();
         }
         System.out.print("\n\t" + "  |  " + letter + "  |");
 
@@ -78,7 +78,7 @@ public class BoardView {
             if (rowLocations[i] == null) {
                 letter = " ";
             } else {
-                letter = rowLocations[i].TokenColor();
+                letter = rowLocations[i].getTokenColor();
             }
             
             System.out.print("  " + letter + "  |");

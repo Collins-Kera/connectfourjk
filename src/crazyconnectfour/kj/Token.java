@@ -6,7 +6,7 @@
 
 package crazyconnectfour.kj;
 
-import java.io.Serializable;
+
 
 /**
  *
@@ -15,13 +15,10 @@ import java.io.Serializable;
 
 
 //move into the Player class, and connect with OptionsMenuControl
-public class Token implements Serializable{
+public class Token{
     public int tokenColor = 1; //1 = Blue 2 = Red
 
-    public Token() {
-    }
-
-public String TokenColor () {
+public String getTokenColor () {
     if(tokenColor==1)
         return "B";
     else
