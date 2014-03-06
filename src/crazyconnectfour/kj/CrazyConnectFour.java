@@ -20,6 +20,11 @@ public class CrazyConnectFour {
     public CrazyConnectFour(){
     }
     
+    static String instructions = "\tWelcome, this is the game Crazy Connect Four!\n"
+            +"\tIn this game you can play against the computer.\n"
+            +"\tTo win this game you have to connect four tokens in a row \n "
+            +"\tbefore your competitor!";
+    
     public static Scanner getInputFile() {
         return CrazyConnectFour.inFile;
     }
@@ -32,11 +37,6 @@ public class CrazyConnectFour {
         this.instructions = instructions;
     }
     
-    String instructions = "\tWelcome, this is the game Crazy Connect Four!\n"
-            +"\tIn this game you can play against the computer.\n"
-            +"\tTo win this game you have to connect four tokens in a row \n "
-            +"\tbefore your competitor!";
-    
     public static void main(String[] args) {
         System.out.println("\t***************************************************************");
         CrazyConnectFour myGame = new CrazyConnectFour();
@@ -47,7 +47,7 @@ public class CrazyConnectFour {
     }
   
     private void displayHelp(){
-        System.out.println(this.instructions);
+        System.out.println(getInstructions());
        }
     
     private void play(){

@@ -6,6 +6,8 @@
 
 package crazyconnectfour.kj;
 
+
+
 /**
  *
  * @author Kera

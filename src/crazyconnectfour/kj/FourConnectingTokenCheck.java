@@ -14,8 +14,10 @@ public class FourConnectingTokenCheck {
     
     //tried calling it this way, if doesn't run check this out
     Token[][] tokenGrid = new Token[6][6];
+
     Token TokenColor = new Token();
     //GameBoard enterTokens = new GameBoard();
+
     
     public int calculateWinLoss(int x, int y){
         
