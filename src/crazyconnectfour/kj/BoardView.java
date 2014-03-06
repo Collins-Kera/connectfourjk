@@ -8,7 +8,7 @@ package crazyconnectfour.kj;
 
 /**
  *
- * @author Kera
+ * @author Kera and Jeanette
  */
 public class BoardView {
     

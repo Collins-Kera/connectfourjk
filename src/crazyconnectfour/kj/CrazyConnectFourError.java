@@ -8,7 +8,7 @@ package crazyconnectfour.kj;
 
 /**
  *
- * @author Jeanette
+ * @author Jeanette and Kera
  */
 class CrazyConnectFourError {
 

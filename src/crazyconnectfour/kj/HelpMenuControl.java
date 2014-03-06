@@ -8,7 +8,7 @@ package crazyconnectfour.kj;
 
 /**
  *
- * @author Jeanette
+ * @author Jeanette and Kera
  */
 public class HelpMenuControl {
   
@@ -80,7 +80,7 @@ public class HelpMenuControl {
         displayBorder();
     } 
    
-   public void displayBorder() {       
+   private void displayBorder() {       
         System.out.println(
         "\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     }

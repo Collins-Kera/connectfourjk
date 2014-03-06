@@ -8,11 +8,14 @@ package crazyconnectfour.kj;
 
 /**
  *
- * @author Jeanette
+ * @author Jeanette and Kera
  */
 public class FourConnectingTokenCheck {
     
-}    public int calculateWinLoss(int x, int y){
+    //call tokenGrid from the GameBoard? change the name of calculateWinLoss and connect?
+    
+    
+    public int calculateWinLoss(int x, int y){
         
         if (x <0 || x > 5){
             System.out.println("Out of grid bounds.");
@@ -164,3 +167,4 @@ public class FourConnectingTokenCheck {
         }
         return 0;//default, no one has won yet
     }
+}

@@ -68,14 +68,13 @@ public void getInfo() {
         
          return;
     }
-   // displays the help menu
+   // displays the options menu with borders
     public final void display() {
         System.out.println("\n\t***************************************************************");
         System.out.println("\tEnter the letter of the Options Menu you want to view:");
-
-        for (int i = 0; i < OptionsMenuView.optionsMenu.length; i++) {
-            System.out.println("\t   " + optionsMenu[i][0] + "\t" + optionsMenu[i][1]);
-        }
+         for (String[] optionsMenu1 : OptionsMenuView.optionsMenu) {
+             System.out.println("\t   " + optionsMenu1[0] + "\t" + optionsMenu1[1]);
+         }
         System.out.println("\t***************************************************************\n");
     }
 }

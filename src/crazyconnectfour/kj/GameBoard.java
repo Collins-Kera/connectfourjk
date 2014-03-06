@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package crazyconnectfour.kj;
 
 import java.util.Random;
@@ -21,56 +15,7 @@ public class GameBoard {
     Token token = new Token();
     
     int boardSize = 6;
-    
-    
-    /**
-     *
-     */
- /* don't have this as a working option right now
-    public int getBoardSize() {
-
-        Scanner inFile = new Scanner(System.in); // get input file      
-        String boardSize;
-        
-        // prompt the user for the gamboard size
-        while (true) {
-            // prompt user for gameboard size
-            System.out.println("\n\n\tAll gameboards are squares: 4x4, 6x6, & 8x8."
-                + "Enter the size square you want. (4, 6, or 8)");
-            
-            // get the value entered by the user 
-            boardSize = inFile.nextLine(); 
-            
-            // trim off all extra blanks from the input
-            boardSize = boardSize.trim();  
-            
-            // replace any commas enter with blanks
-            boardSize = boardSize.replace(',', ' '); 
-            
-            if (Integer.parseInt(boardSize) == 4) { // value entered 4x4
-                this.boardSize = 4;
-                System.out.println("\n\n\tThe board size you have selected is 4x4.");
-                return 4;
-            }    
-            else if (Integer.parseInt(boardSize) == 6) { // value entered 6x6
-                this.boardSize = 6;
-                System.out.println("\n\n\tThe board size you have selected is 6x6.");
-                return 6;
-            }    
-            else if (Integer.parseInt(boardSize) == 8) { // value entered 8x8
-                System.out.println("\n\n\tThe board size you have selected is 8x8.");
-                this.boardSize = 8;
-                return 8;
-            }  
-
-            else { // wrong number of values entered.
-                    new CrazyConnectFourError().displayError(
-                        "You must enter either 4, 6, or 8 for it to be valid.");
-                    continue;
-                }
-            }   
-    }
-*/
+   
 public int enterTokens () {  
    
     String placement = "0";
@@ -78,6 +23,7 @@ public int enterTokens () {
     
     //this function will ask player for column they want to drop token in
     //and then drop it in that spot.
+    
     while(x){ 
        //ask player where they want to play and get column input from them  
        Scanner columnInput = CrazyConnectFour.getInputFile();
@@ -129,9 +75,9 @@ public int enterTokens () {
            break;
         }
     } 
-    int win = this.calculateWinLoss(xInserted, yInserted);
+    //int win = this.calculateWinLoss(xInserted, yInserted);
     
-    return win;
+    //return win;
 }
 
 
@@ -161,9 +107,9 @@ public int enterTokens () {
         }
     }
      
-     int win = this.calculateWinLoss(xInserted, yInserted);
+     //int win = this.calculateWinLoss(xInserted, yInserted);
     
-     return win;
+     //return win;
  }
    
 }

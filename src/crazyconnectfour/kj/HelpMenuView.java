@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Jeanette
+ * @author Jeanette and Kera
  */
 public class HelpMenuView {
     
@@ -74,13 +74,12 @@ public void getInput() {
         
          return;
     }
-   // displays the help menu
+   // displays the help menu border with options
     public final void display() {
         System.out.println("\n\t***************************************************************");
         System.out.println("\tEnter the letter of the Help Menu option you want to view:");
-
-        for (int i = 0; i < HelpMenuView.menuOptions.length; i++) {
-            System.out.println("\t   " + menuOptions[i][0] + "\t" + menuOptions[i][1]);
+        for (String[] menuOption : HelpMenuView.menuOptions) {
+            System.out.println("\t   " + menuOption[0] + "\t" + menuOption[1]);
         }
         System.out.println("\t***************************************************************\n");
     }

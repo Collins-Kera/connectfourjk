@@ -1,20 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package crazyconnectfour.kj;
 
 import java.util.Scanner;
 
 /**
  *
- * @author Jeanette
+ * @author Jeanette and Kera
  */
 public class GetPlayerListView {
 
-    //public String[] listOfPlayerNames = new String[10];//sets up the array 
+    //sets up the array 
     public Player[] listofPlayers = new Player[10];
     
     public GetPlayerListView() {
@@ -87,7 +81,7 @@ public class GetPlayerListView {
         return newNameList;
     }
     
-    public String[] sortList(String[] names) {
+    private String[] sortList(String[] names) {
         String tmpName;
         int i,j;
         
@@ -120,8 +114,7 @@ public class GetPlayerListView {
     }
     
     
-    
-    public void displayNameList(String[] names) {
+    private void displayNameList(String[] names) {
         System.out.println("\n\t***************************************************************");
         System.out.println("\tHere is the list of players in the game: ");
 
@@ -148,19 +141,14 @@ public class GetPlayerListView {
             if (selectedPlayerNames ==  null) {
                 return null;
             }
-            
-            // get computers name
-            //System.out.println("\tPlease enter the number of the computer name.");
-            //selectedPlayerNames[1] = this.getName(listOfPlayerNames);
-            //if (selectedPlayerNames[0].equals(selectedPlayerNames[1])) {
-               System.out.println("\n\t"+selectedPlayerNames + " is going to play first."); 
-            //}
-        
+           
+            System.out.println("\n\t"+selectedPlayerNames + " is going to play first."); 
+             
         return selectedPlayerNames;
         
     }
 
-public String getName(Player[] nameList) {
+    private String getName(Player[] nameList) {
 
         Scanner inFile = new Scanner(System.in);
         String name = null;
@@ -195,11 +183,6 @@ public String getName(Player[] nameList) {
             }
             
             name = nameList[numberSelected-1].name; // get the name from the list
-//            if (alreadyInList(nameList, name)) {
-//                new CrazyConnectFourError().displayError(
-//                        "That name has already been selected. Try again.");
-//                continue;
-//            }
             
             valid = true; // names selected successfully
       
