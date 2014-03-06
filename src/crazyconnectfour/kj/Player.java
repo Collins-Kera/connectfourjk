@@ -1,6 +1,6 @@
 package crazyconnectfour.kj;
 
-import java.util.Scanner;
+import java.io.Serializable;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,10 +12,18 @@ import java.util.Scanner;
  *
  * @author Jeanette
  */
-public class Player {
-    String name = "";
-    
-  public String getName(){
+public class Player implements Serializable{
+    private String name = "";
+
+    public Player() {
+    }
+
+    public String getName() {
         return name;
-       }
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }  
 }
+

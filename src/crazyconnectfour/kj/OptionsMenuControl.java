@@ -13,14 +13,14 @@ import java.util.Scanner;
  * @author Kera
  */
 public class OptionsMenuControl {
-    static String tokenColor;
+    public static String tokenColor;
     
     public OptionsMenuControl() {
             
         }
   
     public int getTokenColor() { 
-        Scanner inFile = new Scanner(System.in); // get input file      
+        Scanner inFile = CrazyConnectFour.getInputFile(); // get input file      
         
         
         // prompt the user for the token color
@@ -63,28 +63,8 @@ public class OptionsMenuControl {
        } return 0;
                 
     }
-    
-    public void boardSize() {
-        System.out.println();
-        displayBorder();     
-        System.out.println( 
-                 "\tThis is where the player will be able to change the size of "
-                + "\n\tthe board. There will most likely be 3 size options they "
-                + "\n\tcan choose from. "
-                ); 
-        displayBorder();
-    }   
-
-    public void playerOptions() {
-        System.out.println();
-        displayBorder();     
-        System.out.println( 
-                "\tA Here the player will be able to choose to rename player 1."
-                ); 
-        displayBorder();
-    }    
-    
-   public void displayBorder() {       
+     
+   private void displayBorder() {       
         System.out.println(
         "\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     }

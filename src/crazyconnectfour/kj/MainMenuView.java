@@ -13,6 +13,11 @@ import java.util.Scanner;
  * @author Jeanette
  */
 public class MainMenuView {
+    
+      //calls from the different classes    
+   private NewGameView newGameView = new NewGameView();;
+   private HelpMenuView callHelpMenu = new HelpMenuView();
+   private OptionsMenuView optMenu = new OptionsMenuView();
        
     private final static String[][] menuMainOptions = {
         
@@ -21,10 +26,7 @@ public class MainMenuView {
         {"H", "Help menu"},       
         {"Q", "Quit Game"}        
     };
-  //calls from the different classes    
-   private NewGameView newGameView = new NewGameView();;
-   private HelpMenuView callHelpMenu = new HelpMenuView();
-    private OptionsMenuView optMenu = new OptionsMenuView();
+
 
 //constructor 
 public MainMenuView() {
@@ -34,7 +36,7 @@ public MainMenuView() {
 public void whereToGo() {       
               
         String main;
-        Scanner mainChoice = new Scanner(System.in);
+        Scanner mainChoice = CrazyConnectFour.getInputFile();
         
         do {
             
@@ -63,7 +65,7 @@ public void whereToGo() {
         } while (!main.equals("Q"));  
                 return;
     }   
-    public final void output() {
+    private final void output() {
         System.out.println("\n\t***************************************************************");
         System.out.println("\tEnter the letter of the Menu Option you want to view:");
 

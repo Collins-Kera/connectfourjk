@@ -14,19 +14,16 @@ import java.util.Scanner;
  */
 public class OptionsMenuView {
     
+     private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
+     private HelpMenuView callHelpMenu = new HelpMenuView();
     
      private final static String[][] optionsMenu = {
         
         {"T", "Pick Token Color"},
-        //{"B", "Set Board Size"}, maybe add back in later
-        //{"P", "Player Options"},
         {"H", "Help Menu"},      
         {"Q", "Quit Options Menu"}        
     };
     
- private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
- private HelpMenuView callHelpMenu = new HelpMenuView();
-
 //constructor 
 public OptionsMenuView() {
         
@@ -35,7 +32,7 @@ public OptionsMenuView() {
 public void getInfo() {       
               
         String directions;
-        Scanner menuInfo = new Scanner(System.in);
+        Scanner menuInfo = CrazyConnectFour.getInputFile();
         
         do {
             
@@ -48,13 +45,7 @@ public void getInfo() {
         switch (directions) {
                 case "T":
                     this.optionsMenuControl.getTokenColor();
-                    break;
-                //case "B":
-                  //  this.optionsMenuControl.boardSize();
-                    //break;
-                //case "P":
-                  //  this.optionsMenuControl.playerOptions();
-                    //break;                  
+                    break;                  
                 case "H":
                     this.callHelpMenu.getInput();
                     break;
@@ -69,7 +60,7 @@ public void getInfo() {
          return;
     }
    // displays the options menu with borders
-    public final void display() {
+    private final void display() {
         System.out.println("\n\t***************************************************************");
         System.out.println("\tEnter the letter of the Options Menu you want to view:");
          for (String[] optionsMenu1 : OptionsMenuView.optionsMenu) {

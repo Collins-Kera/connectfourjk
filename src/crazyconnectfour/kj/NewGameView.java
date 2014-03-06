@@ -13,42 +13,35 @@ import java.util.Scanner;
  */
 public class NewGameView {
     
-    private final static String[][] menuNewOptions = {
-    //how will the game 'start'? connect with display board/score? 
-        {"N", "Enter Your Name"},
-        //{"C", "Name the Computer"},
-        {"T", "Take Your Turn"},
-        //{"O", "Options Menu"},
-        {"P", "Player Statistics"},
-        {"H", "Help Menu"},       
-        {"Q", "Quit Game Menu"}        
-    };
-    
-//calls from the different classes    
+    //calls from the different classes    
    private NewGameControl newGameControl = new NewGameControl();
    private Player playerName = new Player();
-   private Computer computerName = new Computer();
+   //private Computer computerName = new Computer();
    private HelpMenuView callHelpMenu = new HelpMenuView();
-   private OptionsMenuView optMenu = new OptionsMenuView();
-    //calling gameboard and score board under S start 
+   private OptionsMenuView optMenu = new OptionsMenuView(); //calling gameboard and score board under S start 
    private GameBoard newGameBoard = new GameBoard();
    private Scoreboard newScoreBoard = new Scoreboard();
    private BoardView newBoardView = new BoardView();
    private GetPlayerListView newGetPlayerListView = new GetPlayerListView();
-  // private ScoreSum currentScores = new ScoreSum();
- 
-
+    
+    private final static String[][] menuNewOptions = {
+    //how will the game 'start'? connect with display board/score? 
+        {"N", "Enter Your Name"},
+        {"T", "Take Your Turn"},
+        {"P", "Player Statistics"},
+        {"H", "Help Menu"},       
+        {"Q", "Quit Game Menu"}        
+    };
    
 //constructor 
 public NewGameView() {
         
     } 
 
-
 public void getChoice() {       
               
         String choice;
-        Scanner menuChoice = new Scanner(System.in);
+        Scanner menuChoice = CrazyConnectFour.getInputFile();
         String playerName = "Player";
         
         do {
@@ -60,26 +53,15 @@ public void getChoice() {
             choice = choice.trim().toUpperCase();
                    
         switch (choice) {
-
-
-
+            
             //pulled out the names and have in the beginning and the option menu
                 case "N":
                     this.newGetPlayerListView.getPlayerNameInput(); // has them put in  name list
                     playerName = this.newGetPlayerListView.pickPlayerName(); // has them pick their name
-                    newScoreBoard.player = playerName;
+                    newScoreBoard.player= playerName;
                     break;
-                //case "C":
-                  //  this.computerName.getLabel();
-                  //  this.computerName.displayLabel();
-                  //  break;
-
-
                 case "T":
-                   //this.newGetPlayerListView.getPlayerNameInput(); // has them put in  name list
-                    //this.newGetPlayerListView.pickPlayerName(); // has them pick their name and computer name
                     this.newGameControl.displayGameStart(); 
-                    //Create a refined start menu. Add take turn function & start new game function. 
                     boolean stop = true;
                     while (stop) {
                         this.newBoardView.displayBoard(newGameBoard);
@@ -95,8 +77,6 @@ public void getChoice() {
                             break;
                         }
                         
-                        
-                        
                         result = this.newGameBoard.computerPlay();
                         if (result == 5) {
                             newGameBoard = new GameBoard(); //reset gameboard
@@ -111,14 +91,7 @@ public void getChoice() {
                         }
                         
                     }
-                    
-                    
-                  
-               //how to run calculateWinLoss?
-                    //this.newGameBoard.calculateWinLoss();
-               //how to run calculateWinnerScore? 
-                    //this.newScoreBoard.calculateWinnerScore(int win);
-                    break;  //add a label and break out of menu?   
+                    break;  //break out of menu  
                 case "O":
                     this.optMenu.getInfo();
                     break;  
@@ -126,13 +99,7 @@ public void getChoice() {
                     this.callHelpMenu.getInput();
                     break; 
                 case "P":
-                   // this.currentScores.playerOneScore();
-                    //this.currentScores.computerScore();
-                    // this.showScore.score();
-                    this.newScoreBoard.calculateWinnerScore(1);
-                    //call calculateWinnerScore from Scoreboard, but it isn't working
-                    
-                   
+                    this.newScoreBoard.calculateWinnerScore(1); 
                 case "Q": 
                     break;
                 default:
@@ -142,7 +109,7 @@ public void getChoice() {
         } while (!choice.equals("Q"));  
                 return;
     }   
-    public final void show() {
+    private final void show() {
         System.out.println("\n\t***************************************************************");
         System.out.println("\tEnter the letter of the New Game Menu option you want to view:");
 

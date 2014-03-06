@@ -11,9 +11,11 @@ package crazyconnectfour.kj;
  * @author Jeanette
  */
 public class NewGameControl {
+    
     public NewGameControl(){
         
     }
+    
 public void displayGameStart() {
         displayBorder();     
         System.out.println( 
@@ -23,7 +25,7 @@ public void displayGameStart() {
                 
     }   
 
-   public void displayBorder() {       
+   private void displayBorder() {       
         System.out.println(
             "\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     }
