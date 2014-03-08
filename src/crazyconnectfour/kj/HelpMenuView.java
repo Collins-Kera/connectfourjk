@@ -13,6 +13,14 @@ import java.util.Scanner;
  * @author Jeanette and Kera
  */
 public class HelpMenuView {
+
+    public HelpMenuControl getHelpMenuControl() {
+        return helpMenuControl;
+    }
+
+    public void setHelpMenuControl(HelpMenuControl helpMenuControl) {
+        this.helpMenuControl = helpMenuControl;
+    }
     
     private final static String[][] menuOptions = {
         
@@ -75,7 +83,7 @@ public void getInput() {
          return;
     }
    // displays the help menu border with options
-    public final void display() {
+    private final void display() {
         System.out.println("\n\t***************************************************************");
         System.out.println("\tEnter the letter of the Help Menu option you want to view:");
         for (String[] menuOption : HelpMenuView.menuOptions) {

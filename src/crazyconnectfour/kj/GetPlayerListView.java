@@ -1,12 +1,21 @@
 package crazyconnectfour.kj;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Jeanette and Kera
  */
-public class GetPlayerListView {
+public class GetPlayerListView implements Serializable {
+
+    public Player[] getListofPlayers() {
+        return listofPlayers;
+    }
+
+    public void setListofPlayers(Player[] listofPlayers) {
+        this.listofPlayers = listofPlayers;
+    }
 
     //sets up the array 
     public Player[] listofPlayers = new Player[10];

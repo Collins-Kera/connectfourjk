@@ -6,14 +6,16 @@
 
 package crazyconnectfour.kj;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Kera and Jeanette
  */
-public class BoardView {
+public class BoardView implements Serializable{
     
     GameBoard board;
-    
+    private static GameBoard newerGameBoard = new GameBoard();
     
     public void displayBoard(GameBoard board) {
         this.board = board;
@@ -22,7 +24,7 @@ public class BoardView {
         this.printDividerRow(); // column dividers
         
         // for all rows
-        for (int i = this.board.boardSize-1; i >=0 ; i--) {
+        for (int i = newerGameBoard.getBoardSize()-1; i >=0 ; i--) {
             // get the list of columns locations in the row
             Token[] rowOfLocations = this.board.tokenGrid[i];
             
@@ -41,7 +43,7 @@ public class BoardView {
         System.out.print("\n\t      1   ");
         
         // print remaining header cells in row between the first and last column
-        int columnsInRow = this.board.boardSize;
+        int columnsInRow = newerGameBoard.getBoardSize();
         for (int i = 1; i < columnsInRow - 1; i++) {
             int col = i + 1;
             System.out.print("  " + col + "   ");
@@ -55,7 +57,7 @@ public class BoardView {
         // print the divider for the first column in the row
         System.out.print("\n\t  |------");
         
-        int columnsInRow = this.board.boardSize;
+        int columnsInRow = newerGameBoard.getBoardSize();
         // print remaining divider for each column between the first and last
         for (int i = 1; i < columnsInRow - 1; i++) {
             System.out.print("------");

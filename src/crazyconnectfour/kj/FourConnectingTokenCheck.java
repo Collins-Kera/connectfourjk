@@ -6,16 +6,17 @@
 
 package crazyconnectfour.kj;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jeanette and Kera
  */
-public class FourConnectingTokenCheck {
+public class FourConnectingTokenCheck implements Serializable{
     
-    //tried calling it this way, if doesn't run check this out
-    Token[][] tokenGrid = new Token[6][6];
+    private static Token[][] tokenGrid = new Token[6][6];
 
-    Token TokenColor = new Token();
+    private static Token tokenColor = new Token();
     //GameBoard enterTokens = new GameBoard();
 
     
@@ -34,7 +35,7 @@ public class FourConnectingTokenCheck {
          
          Token insertedToken = tokenGrid[x][y];
          
-         int insertedTokenColor = insertedToken.tokenColor;
+         int insertedTokenColor = tokenColor.getTokenColor();
          
          if (insertedTokenColor <1 || insertedTokenColor >2){
              System.out.println ("Invalid token color.");
@@ -54,7 +55,7 @@ public class FourConnectingTokenCheck {
             if (a == null) {
                  break;
              }
-            int tokenColor = a.tokenColor;
+            int tokenColor = a.getTokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenRight += 1;  
@@ -84,7 +85,7 @@ public class FourConnectingTokenCheck {
             if (a == null) {
                  break;
              }
-            int tokenColor = a.tokenColor;
+            int tokenColor = a.getTokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenLeft += 1;  
@@ -119,7 +120,7 @@ public class FourConnectingTokenCheck {
             if (a == null) {
                  break;
              }
-            int tokenColor = a.tokenColor;
+            int tokenColor = a.getTokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenUp += 1;  
@@ -149,7 +150,7 @@ public class FourConnectingTokenCheck {
             if (a == null) {
                  break;
              }
-            int tokenColor = a.tokenColor;
+            int tokenColor = a.getTokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenDown += 1;  
