@@ -1,5 +1,6 @@
 package crazyconnectfour.kj;
 
+import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,12 +8,34 @@ import java.util.Scanner;
  *
  * @author Kera and Jeanette
  */
-public class GameBoard {
+public class GameBoard implements Serializable{
     
-    String welcome = "\tGet ready to start in 3,2,1...";
     Token[][] tokenGrid = new Token[6][6]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
-    
-    int boardSize = 6;
+    private static int boardSize = 6;
+
+    public Token[][] getTokenGrid() {
+        return tokenGrid;
+    }
+
+    public void setTokenGrid(Token[][] tokenGrid) {
+        this.tokenGrid = tokenGrid;
+    }
+
+    public int getBoardSize() {
+        return boardSize;
+    }
+
+    public void setBoardSize(int boardSize) {
+        this.boardSize = boardSize;
+    }
+
+    public FourConnectingTokenCheck getCalculateWinLoss() {
+        return calculateWinLoss;
+    }
+
+    public void setCalculateWinLoss(FourConnectingTokenCheck calculateWinLoss) {
+        this.calculateWinLoss = calculateWinLoss;
+    }
     
     FourConnectingTokenCheck calculateWinLoss = new FourConnectingTokenCheck();
     

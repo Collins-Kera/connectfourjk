@@ -6,6 +6,7 @@
 
 package crazyconnectfour.kj;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 
@@ -13,7 +14,7 @@ import java.util.Scanner;
  *
  * @author Kera and Jeanette 
  */
-public class CrazyConnectFour {
+public class CrazyConnectFour implements Serializable{
     
     private static Scanner inFile = new Scanner (System.in);
     //private static final MainMenuView MainMenu = new MainMenuView();

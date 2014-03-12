@@ -6,16 +6,17 @@
 
 package crazyconnectfour.kj;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jeanette and Kera
  */
-public class FourConnectingTokenCheck {
+public class FourConnectingTokenCheck implements Serializable{
     
-    //tried calling it this way, if doesn't run check this out
-    Token[][] tokenGrid = new Token[6][6];
+    private static Token[][] tokenGrid = new Token[6][6];
 
-    Token TokenColor = new Token();
+    private static Token tokenColor = new Token();
     //GameBoard enterTokens = new GameBoard();
 
     
