@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Jeanette
  */
-public class NewGameView {
+public class NewGameView extends Menu {
     
     //calls from the different classes    
    private NewGameControl newGameControl = new NewGameControl();
@@ -24,7 +24,7 @@ public class NewGameView {
    private BoardView newBoardView = new BoardView();
    private GetPlayerListView newGetPlayerListView = new GetPlayerListView();
     
-    private final static String[][] menuNewOptions = {
+    private final static String[][] menuItems = {
     //how will the game 'start'? connect with display board/score? 
         {"N", "Enter Your Name"},
         {"T", "Take Your Turn"},
@@ -35,24 +35,21 @@ public class NewGameView {
    
 //constructor 
 public NewGameView() {
-        
+        super(NewGameView.menuItems);
     } 
 
-public void getChoice() {       
+@Override
+public String executeCommands(Object object) {       
               
-        String choice;
-        Scanner menuChoice = CrazyConnectFour.getInputFile();
         String playerName = "Player";
+        
         
         do {
             
-            this.show(); // display the menu
-            
-            // get the directions entered
-            choice = menuChoice.nextLine();
-            choice = choice.trim().toUpperCase();
-                   
-        switch (choice) {
+            this.display(); // display the menu
+            String command = this.getCommand(); 
+                            
+        switch (command) {
             
             //pulled out the names and have in the beginning and the option menu
                 case "N":
@@ -93,10 +90,10 @@ public void getChoice() {
                     }
                     break;  //break out of menu  
                 case "O":
-                    this.optMenu.getInfo();
+                    this.optMenu.executeCommands(object);
                     break;  
                 case "H":
-                    this.callHelpMenu.getInput();
+                    this.callHelpMenu.executeCommands(object);
                     break; 
                 case "P":
                     this.newScoreBoard.calculateWinnerScore(1); 
@@ -106,16 +103,7 @@ public void getChoice() {
                     new CrazyConnectFourError().displayError("Invalid entry. Please enter a valid letter.");
                     continue;
             }
-        } while (!choice.equals("Q"));  
-                return;
+        } while (!getCommand().equals("Q"));  
+                return getCommand();
     }   
-    private final void show() {
-        System.out.println("\n\t***************************************************************");
-        System.out.println("\tEnter the letter of the New Game Menu option you want to view:");
-
-        for (int i = 0; i < NewGameView.menuNewOptions.length; i++) {
-            System.out.println("\t   " + menuNewOptions[i][0] + "\t" + menuNewOptions[i][1]);
-        }
-        System.out.println("\t***************************************************************\n");
-    }
 }

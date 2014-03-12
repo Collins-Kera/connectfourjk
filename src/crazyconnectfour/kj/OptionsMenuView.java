@@ -12,12 +12,12 @@ import java.util.Scanner;
  *
  * @author Kera
  */
-public class OptionsMenuView {
+public class OptionsMenuView extends Menu{
     
      private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
      private HelpMenuView callHelpMenu = new HelpMenuView();
     
-     private final static String[][] optionsMenu = {
+     private final static String[][] menuItems = {
         
         {"T", "Pick Token Color"},
         {"H", "Help Menu"},      
@@ -26,28 +26,22 @@ public class OptionsMenuView {
     
 //constructor 
 public OptionsMenuView() {
-        
+        super(OptionsMenuView.menuItems);
     } 
 
-public void getInfo() {       
-              
-        String directions;
-        Scanner menuInfo = CrazyConnectFour.getInputFile();
+public String executeCommands(Object object) {       
         
         do {
             
             this.display(); // display the menu
-            
-            // get the directions entered
-            directions = menuInfo.nextLine();
-            directions = directions.trim().toUpperCase();
-            
-        switch (directions) {
+            String command = this.getCommand();
+             
+        switch (command) {
                 case "T":
                     this.optionsMenuControl.getTokenColor();
                     break;                  
                 case "H":
-                    this.callHelpMenu.getInput();
+                    this.callHelpMenu.executeCommands(object);
                     break;
                 case "Q":
                     break;
@@ -55,17 +49,8 @@ public void getInfo() {
                     new CrazyConnectFourError().displayError("Invalid entry. Please enter a valid letter.");
                     continue;
             }
-        } while (!directions.equals("Q"));  
+        } while (!getCommand().equals("Q"));  
         
-         return;
-    }
-   // displays the options menu with borders
-    private final void display() {
-        System.out.println("\n\t***************************************************************");
-        System.out.println("\tEnter the letter of the Options Menu you want to view:");
-         for (String[] optionsMenu1 : OptionsMenuView.optionsMenu) {
-             System.out.println("\t   " + optionsMenu1[0] + "\t" + optionsMenu1[1]);
-         }
-        System.out.println("\t***************************************************************\n");
+         return getCommand();
     }
 }

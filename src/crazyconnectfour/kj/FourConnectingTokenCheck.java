@@ -34,7 +34,7 @@ public class FourConnectingTokenCheck {
          
          Token insertedToken = tokenGrid[x][y];
          
-         int insertedTokenColor = insertedToken.tokenColor;
+         int insertedTokenColor = insertedToken.getTokenColor();
          
          if (insertedTokenColor <1 || insertedTokenColor >2){
              System.out.println ("Invalid token color.");
@@ -54,7 +54,7 @@ public class FourConnectingTokenCheck {
             if (a == null) {
                  break;
              }
-            int tokenColor = a.tokenColor;
+            int tokenColor = a.getTokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenRight += 1;  
@@ -84,7 +84,7 @@ public class FourConnectingTokenCheck {
             if (a == null) {
                  break;
              }
-            int tokenColor = a.tokenColor;
+            int tokenColor = a.getTokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenLeft += 1;  
@@ -119,7 +119,7 @@ public class FourConnectingTokenCheck {
             if (a == null) {
                  break;
              }
-            int tokenColor = a.tokenColor;
+            int tokenColor = a.getTokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenUp += 1;  
@@ -149,7 +149,7 @@ public class FourConnectingTokenCheck {
             if (a == null) {
                  break;
              }
-            int tokenColor = a.tokenColor;
+            int tokenColor = a.getTokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenDown += 1;  

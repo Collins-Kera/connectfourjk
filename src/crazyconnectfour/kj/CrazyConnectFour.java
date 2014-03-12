@@ -16,6 +16,7 @@ import java.util.Scanner;
 public class CrazyConnectFour {
     
     private static Scanner inFile = new Scanner (System.in);
+    //private static final MainMenuView MainMenu = new MainMenuView();
 
     public CrazyConnectFour(){
     }
@@ -37,6 +38,10 @@ public class CrazyConnectFour {
         this.instructions = instructions;
     }
     
+//    public static MainMenuView getMainMenuView() {
+//        return MainMenu;
+//    }
+    
     public static void main(String[] args) {
         System.out.println("\t***************************************************************");
         CrazyConnectFour myGame = new CrazyConnectFour();
@@ -50,8 +55,8 @@ public class CrazyConnectFour {
         System.out.println(getInstructions());
        }
     
-    private void play(){
-         MainMenuView mainMenu = new MainMenuView();
-         mainMenu.whereToGo();
+  private void play(){
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.executeCommands(this);
     }
 }

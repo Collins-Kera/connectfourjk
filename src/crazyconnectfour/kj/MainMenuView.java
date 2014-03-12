@@ -12,14 +12,9 @@ import java.util.Scanner;
  *
  * @author Jeanette
  */
-public class MainMenuView {
+public class MainMenuView extends Menu {
     
-      //calls from the different classes    
-   private NewGameView newGameView = new NewGameView();
-   private HelpMenuView callHelpMenu = new HelpMenuView();
-   private OptionsMenuView optMenu = new OptionsMenuView();
-       
-    private final static String[][] menuMainOptions = {
+    private final static String[][] menuItems = {
         
         {"S", "Start new game"},
         {"O", "Options Menu"},
@@ -27,34 +22,33 @@ public class MainMenuView {
         {"Q", "Quit Game"}        
     };
 
-
 //constructor 
 public MainMenuView() {
-        
+       super(MainMenuView.menuItems);  
     } 
 
-public void whereToGo() {       
-              
-        String main;
-        Scanner mainChoice = CrazyConnectFour.getInputFile();
-        
+@Override
+public String executeCommands(Object object) {       
+ 
+     
         do {
             
-            this.output(); // display the main menu
+            this.display(); // display the main menu
+            String command = this.getCommand();
             
-            // get the directions entered
-            main = mainChoice.nextLine();
-            main = main.trim().toUpperCase();
-                   
-        switch (main) {
+                
+        switch (command) {
                 case "S":
-                    this.newGameView.getChoice();
+                    NewGameView newGameView = new NewGameView();
+                    newGameView.executeCommands(null);
                     break;
                 case "O":
-                    this.optMenu.getInfo();
+                    OptionsMenuView optMenu = new OptionsMenuView();
+                    optMenu.executeCommands(null);
                     break;  
                 case "H":
-                    this.callHelpMenu.getInput();                  
+                    HelpMenuView helpMenu = new HelpMenuView();
+                    helpMenu.executeCommands(null);                  
                     break; 
                 case "Q": 
                     break;
@@ -62,18 +56,9 @@ public void whereToGo() {
                     new CrazyConnectFourError().displayError("Invalid entry. Please enter a valid letter.");
                     continue;
             }
-        } while (!main.equals("Q"));  
-                return;
+        } while (!getCommand().equals("Q"));  
+                return getCommand();
     }   
-    private final void output() {
-        System.out.println("\n\t***************************************************************");
-        System.out.println("\tEnter the letter of the Menu Option you want to view:");
-
-        for (int i = 0; i < MainMenuView.menuMainOptions.length; i++) {
-            System.out.println("\t   " + menuMainOptions[i][0] + "\t" + menuMainOptions[i][1]);
-        }
-        System.out.println("\t***************************************************************\n");
-    }
 }
   
     
