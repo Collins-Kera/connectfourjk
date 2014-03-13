@@ -42,10 +42,11 @@ public HelpMenuView() {
 
 @Override
 public String executeCommands(Object object) {       
-             
+           String command;
+           
     do { 
             this.display(); // display the menu 
-            String command = this.getCommand(); 
+            command = this.getCommand(); 
     
         switch (command) {
                 case "B":
@@ -72,9 +73,9 @@ public String executeCommands(Object object) {
                     new CrazyConnectFourError().displayError("Invalid entry. Please enter a valid letter.");
                     continue;
             }
-        } while (!getCommand().equals("Q"));  
+        } while (!command.equals("Q"));  
         
-         return getCommand();
+         return command;
     }
 
     private void displayHelp(String helpType) {

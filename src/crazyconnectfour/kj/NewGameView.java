@@ -42,12 +42,12 @@ public NewGameView() {
 public String executeCommands(Object object) {       
               
         String playerName = "Player";
-        
+        String command;
         
         do {
             
             this.display(); // display the menu
-            String command = this.getCommand(); 
+            command = this.getCommand(); 
                             
         switch (command) {
             
@@ -103,7 +103,7 @@ public String executeCommands(Object object) {
                     new CrazyConnectFourError().displayError("Invalid entry. Please enter a valid letter.");
                     continue;
             }
-        } while (!getCommand().equals("Q"));  
-                return getCommand();
+        } while (!command.equals("Q"));  
+                return command;
     }   
 }
