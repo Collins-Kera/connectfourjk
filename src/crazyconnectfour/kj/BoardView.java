@@ -14,19 +14,18 @@ import java.io.Serializable;
  */
 public class BoardView implements Serializable{
     
-    GameBoard board;
-    private static GameBoard newerGameBoard = new GameBoard();
+    private static GameBoard board = new GameBoard();
     
     public void displayBoard(GameBoard board) {
-        this.board = board;
+        BoardView.board = board;
         
         this.printHeadRow(); // row dividers
         this.printDividerRow(); // column dividers
         
         // for all rows
-        for (int i = newerGameBoard.getBoardSize()-1; i >=0 ; i--) {
+        for (int i = GameBoard.getBoardSize()-1; i >=0 ; i--) {
             // get the list of columns locations in the row
-            Token[] rowOfLocations = this.board.tokenGrid[i];
+            Token[] rowOfLocations = BoardView.board.tokenGrid[i];
             
             // print the contents of each location in the row
             this.printRow(rowOfLocations); 
@@ -43,7 +42,7 @@ public class BoardView implements Serializable{
         System.out.print("\n\t      1   ");
         
         // print remaining header cells in row between the first and last column
-        int columnsInRow = newerGameBoard.getBoardSize();
+        int columnsInRow = GameBoard.getBoardSize();
         for (int i = 1; i < columnsInRow - 1; i++) {
             int col = i + 1;
             System.out.print("  " + col + "   ");
@@ -57,7 +56,7 @@ public class BoardView implements Serializable{
         // print the divider for the first column in the row
         System.out.print("\n\t  |------");
         
-        int columnsInRow = newerGameBoard.getBoardSize();
+        int columnsInRow = GameBoard.getBoardSize();
         // print remaining divider for each column between the first and last
         for (int i = 1; i < columnsInRow - 1; i++) {
             System.out.print("------");

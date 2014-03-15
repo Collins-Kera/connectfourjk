@@ -1,6 +1,7 @@
 package crazyconnectfour.kj;
 
-import java.io.Serializable;
+import java.util.Scanner;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,19 +13,21 @@ import java.io.Serializable;
  *
  * @author Jeanette
  */
-public class Player implements Serializable{
-    private String name = "";
+public class Player extends SuperPlayer{
 
     public Player() {
+        super();
+        setName("Player");
     }
-
-    public String getName() {
-        return name;
+ 
+    @Override
+    public String playToken(){
+        String placement = "0";
+        
+        Scanner columnInput = CrazyConnectFour.getInputFile();
+        System.out.println("Type in the column where you want to play " + "(1-" + GameBoard.getBoardSize() + ") or Q to quit.");
+        placement = columnInput.next();
+        return placement;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    
 }
 

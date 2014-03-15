@@ -21,7 +21,7 @@ public class GameBoard implements Serializable{
         this.tokenGrid = tokenGrid;
     }
 
-    public int getBoardSize() {
+    public static int getBoardSize() {
         return boardSize;
     }
 
@@ -207,9 +207,8 @@ public int enterTokens () {
     
     while(x){ 
        //ask player where they want to play and get column input from them  
-       Scanner columnInput = CrazyConnectFour.getInputFile();
-       System.out.println("Type in the column where you want to play " + "(1-" + boardSize + ") or Q to quit.");
-       placement = columnInput.next();
+       Player input = new Player();
+       placement=input.playToken();
             
        if ("Q".equals(placement) || "q".equals(placement)) {
                 return 5;
@@ -264,9 +263,12 @@ public int enterTokens () {
 
  public int computerPlay() {
      int x;
+     String placement;
      
      while(true) {
-       x = new Random().nextInt(5);
+       Computer input = new Computer();
+       placement=input.playToken();
+       x = Integer.parseInt(placement);
         if (tokenGrid[5][x] == null){
             break;
          }
