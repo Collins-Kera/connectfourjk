@@ -12,13 +12,28 @@ import java.io.Serializable;
  *
  * @author Kera
  */
+public class TokenB extends SuperToken {
+    
+     public TokenB() {
+        super(1);
+   
+    }
+    
+     @Override
+      public String getTokenColorLetter() {
+          //1 = blue , 2 = red
+          return "B";
+      } 
+}
 
 
-//move into the Player class, and connect with OptionsMenuControl
-public class Token implements Serializable{
+
+/*
+//original code on week 9
+public class TokenB implements Serializable{
     private int tokenColor = 1; //1 = Blue 2 = Red
 
-    public Token() {
+    public TokenB() {
     }
 
     public int getTokenColor() {
@@ -36,3 +51,4 @@ public class Token implements Serializable{
             return "R" ;
     }
 }
+*/
