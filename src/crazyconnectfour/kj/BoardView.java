@@ -25,7 +25,7 @@ public class BoardView implements Serializable{
         // for all rows
         for (int i = GameBoard.getBoardSize()-1; i >=0 ; i--) {
             // get the list of columns locations in the row
-            TokenB[] rowOfLocations = BoardView.board.tokenGrid[i];
+            SuperToken[] rowOfLocations = BoardView.board.tokenGrid[i];
             
             // print the contents of each location in the row
             this.printRow(rowOfLocations); 
@@ -65,7 +65,7 @@ public class BoardView implements Serializable{
         System.out.print("-----|");
     }
 
-    private void printRow(TokenB[] rowLocations) {
+    private void printRow(SuperToken[] rowLocations) {
         
         // print contents of first column in the row
         String letter = " ";

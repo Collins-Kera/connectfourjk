@@ -35,7 +35,7 @@ public class FourConnectingTokenCheck implements Serializable{
          
          TokenB insertedToken = tokenGrid[x][y];
          
-         int insertedTokenColor = insertedToken.getTokenColor();
+         int insertedTokenColor = insertedToken.gettokenColor();
          
          if (insertedTokenColor <1 || insertedTokenColor >2){
              System.out.println ("Invalid token color.");
@@ -55,7 +55,7 @@ public class FourConnectingTokenCheck implements Serializable{
             if (a == null) {
                  break;
              }
-            int tokenColor = a.getTokenColor();
+            int tokenColor = a.gettokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenRight += 1;  
@@ -85,7 +85,7 @@ public class FourConnectingTokenCheck implements Serializable{
             if (a == null) {
                  break;
              }
-            int tokenColor = a.getTokenColor();
+            int tokenColor = a.gettokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenLeft += 1;  
@@ -120,7 +120,7 @@ public class FourConnectingTokenCheck implements Serializable{
             if (a == null) {
                  break;
              }
-            int tokenColor = a.getTokenColor();
+            int tokenColor = a.gettokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenUp += 1;  
@@ -150,7 +150,7 @@ public class FourConnectingTokenCheck implements Serializable{
             if (a == null) {
                  break;
              }
-            int tokenColor = a.getTokenColor();
+            int tokenColor = a.gettokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenDown += 1;  
