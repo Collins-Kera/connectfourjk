@@ -10,14 +10,14 @@ import java.util.Scanner;
  */
 public class GameBoard implements Serializable{
     
-    TokenB[][] tokenGrid = new TokenB [6][6]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
+    Token[][] tokenGrid = new Token [6][6]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
     private static int boardSize = 6;
 
-    public TokenB[][] getTokenGrid() {
+    public Token[][] getTokenGrid() {
         return tokenGrid;
     }
 
-    public void setTokenGrid(TokenB[][] tokenGrid) {
+    public void setTokenGrid(Token[][] tokenGrid) {
         this.tokenGrid = tokenGrid;
     }
 
@@ -55,9 +55,9 @@ public class GameBoard implements Serializable{
         }
         
          
-         TokenB insertedToken = tokenGrid[x][y];
+         Token insertedToken = tokenGrid[x][y];
          
-         int insertedTokenColor = insertedToken.getTokenColor();
+         int insertedTokenColor = insertedToken.gettokenColor();
          
          if (insertedTokenColor <1 || insertedTokenColor >2){
              System.out.println ("Invalid token color.");
@@ -73,11 +73,11 @@ public class GameBoard implements Serializable{
             if(y+i+1 > 4){
                 break;
             }
-            TokenB a = tokenGrid[x][y+i+1];
+            Token a = tokenGrid[x][y+i+1];
             if (a == null) {
                  break;
              }
-            int tokenColor = a.getTokenColor();
+            int tokenColor = a.gettokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenRight += 1;  
@@ -103,11 +103,11 @@ public class GameBoard implements Serializable{
             if(y-i-1 < 0){
                 break;
             }
-            TokenB a = tokenGrid[x][y-i-1];
+            Token a = tokenGrid[x][y-i-1];
             if (a == null) {
                  break;
              }
-            int tokenColor = a.getTokenColor();
+            int tokenColor = a.gettokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenLeft += 1;  
@@ -138,11 +138,11 @@ public class GameBoard implements Serializable{
             if(x+i+1 > 4){
                 break;
             }
-            TokenB a = tokenGrid[x+i+1][y];
+            Token a = tokenGrid[x+i+1][y];
             if (a == null) {
                  break;
              }
-            int tokenColor = a.getTokenColor();
+            int tokenColor = a.gettokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenUp += 1;  
@@ -168,11 +168,11 @@ public class GameBoard implements Serializable{
             if(x-i-1 < 0){
                 break;
             }
-            TokenB a = tokenGrid[x-i-1][y];
+            Token a = tokenGrid[x-i-1][y];
             if (a == null) {
                  break;
              }
-            int tokenColor = a.getTokenColor();
+            int tokenColor = a.gettokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenDown += 1;  
@@ -245,9 +245,9 @@ public int enterTokens () {
        //starting from the bottom check each place in column to see if token
         //there. If there is a token move to next spot until an empty one is found.
         //Place token in the empty spot.
-        TokenB location = tokenGrid[i][Integer.parseInt(placement)-1];
+        Token location = tokenGrid[i][Integer.parseInt(placement)-1];
         if(location == null) {
-            TokenB blueToken = new TokenB();
+            Token blueToken = new Token();
             blueToken.setTokenColor(1);
            tokenGrid[i][Integer.parseInt(placement)-1] = blueToken;
            xInserted = i;
@@ -279,10 +279,10 @@ public int enterTokens () {
        //starting from the bottom check each place in column to see if token
         //there. If there is a token move to next spot until an empty one is found.
         //Place token in the empty spot.
-        TokenB location = tokenGrid[i][x];
+        Token location = tokenGrid[i][x];
         if(location == null) {
-            TokenB redToken = new TokenB();
-            redToken.setTokenColor(2);
+            Token redToken = new Token();
+            redToken.settokenColor(2);
            tokenGrid[i][x] = redToken;
            xInserted = i;
            yInserted = x;
