@@ -10,7 +10,7 @@ package crazyconnectfour.kj;
  *
  * @author Jeanette and Kera
  */
-class CrazyConnectFourError {
+public class CrazyConnectFourError {
 
         public Object displayError(Object object) {
         String message = (String) object;

@@ -3,6 +3,7 @@ package crazyconnectfour.kj;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
+import kj.crazyconnectfour.menu.views.BoardView;
 
 /**
  *
@@ -10,7 +11,7 @@ import java.util.Scanner;
  */
 public class GameBoard implements Serializable{
     
-    SuperToken[][] tokenGrid = new SuperToken [6][6]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
+    public SuperToken[][] tokenGrid = new SuperToken [6][6]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
     private static int boardSize = 6;
 
     public SuperToken[][] getTokenGrid() {

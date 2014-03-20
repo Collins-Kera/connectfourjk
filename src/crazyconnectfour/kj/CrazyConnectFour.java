@@ -6,6 +6,7 @@
 
 package crazyconnectfour.kj;
 
+import kj.crazyconnectfour.menu.views.MainMenuView;
 import java.io.Serializable;
 import java.util.Scanner;
 
@@ -58,6 +59,6 @@ public class CrazyConnectFour implements Serializable{
     
   private void play(){
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.executeCommands(this);
+        mainMenu.display(this);
     }
 }
