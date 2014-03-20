@@ -14,9 +14,9 @@ import java.io.Serializable;
  */
 public class FourConnectingTokenCheck implements Serializable{
     
-    private static Token[][] tokenGrid = new Token[6][6];
+    private static TokenB[][] tokenGrid = new TokenB[6][6];
 
-    private static Token tokenColor = new Token();
+    private static TokenB tokenColor = new TokenB();
     //GameBoard enterTokens = new GameBoard();
 
     
@@ -33,7 +33,7 @@ public class FourConnectingTokenCheck implements Serializable{
         }
         
          
-         Token insertedToken = tokenGrid[x][y];
+         SuperToken insertedToken = tokenGrid[x][y];
          
          int insertedTokenColor = insertedToken.gettokenColor();
          
@@ -51,7 +51,7 @@ public class FourConnectingTokenCheck implements Serializable{
             if(y+i+1 > 4){
                 break;
             }
-            Token a = tokenGrid[x][y+i+1];
+            TokenB a = tokenGrid[x][y+i+1];
             if (a == null) {
                  break;
              }
@@ -81,7 +81,7 @@ public class FourConnectingTokenCheck implements Serializable{
             if(y-i-1 < 0){
                 break;
             }
-            Token a = tokenGrid[x][y-i-1];
+            TokenB a = tokenGrid[x][y-i-1];
             if (a == null) {
                  break;
              }
@@ -116,7 +116,7 @@ public class FourConnectingTokenCheck implements Serializable{
             if(x+i+1 > 4){
                 break;
             }
-            Token a = tokenGrid[x+i+1][y];
+            TokenB a = tokenGrid[x+i+1][y];
             if (a == null) {
                  break;
              }
@@ -146,7 +146,7 @@ public class FourConnectingTokenCheck implements Serializable{
             if(x-i-1 < 0){
                 break;
             }
-            Token a = tokenGrid[x-i-1][y];
+            TokenB a = tokenGrid[x-i-1][y];
             if (a == null) {
                  break;
              }

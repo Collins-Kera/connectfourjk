@@ -30,10 +30,10 @@ public class TokenB extends SuperToken {
 
 /*
 //original code on week 9
-public class TokenB implements Serializable{
+public class Token implements Serializable{
     private int tokenColor = 1; //1 = Blue 2 = Red
 
-    public TokenB() {
+    public Token() {
     }
 
     public int getTokenColor() {

@@ -10,14 +10,14 @@ import java.util.Scanner;
  */
 public class GameBoard implements Serializable{
     
-    Token[][] tokenGrid = new Token [6][6]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
+    SuperToken[][] tokenGrid = new SuperToken [6][6]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
     private static int boardSize = 6;
 
-    public Token[][] getTokenGrid() {
+    public SuperToken[][] getTokenGrid() {
         return tokenGrid;
     }
 
-    public void setTokenGrid(Token[][] tokenGrid) {
+    public void setTokenGrid(TokenB[][] tokenGrid) {
         this.tokenGrid = tokenGrid;
     }
 
@@ -55,7 +55,7 @@ public class GameBoard implements Serializable{
         }
         
          
-         Token insertedToken = tokenGrid[x][y];
+         SuperToken insertedToken = tokenGrid[x][y];
          
          int insertedTokenColor = insertedToken.gettokenColor();
          
@@ -73,7 +73,7 @@ public class GameBoard implements Serializable{
             if(y+i+1 > 4){
                 break;
             }
-            Token a = tokenGrid[x][y+i+1];
+            SuperToken a = tokenGrid[x][y+i+1];
             if (a == null) {
                  break;
              }
@@ -103,7 +103,7 @@ public class GameBoard implements Serializable{
             if(y-i-1 < 0){
                 break;
             }
-            Token a = tokenGrid[x][y-i-1];
+            SuperToken a = tokenGrid[x][y-i-1];
             if (a == null) {
                  break;
              }
@@ -138,7 +138,7 @@ public class GameBoard implements Serializable{
             if(x+i+1 > 4){
                 break;
             }
-            Token a = tokenGrid[x+i+1][y];
+            SuperToken a = tokenGrid[x+i+1][y];
             if (a == null) {
                  break;
              }
@@ -168,7 +168,7 @@ public class GameBoard implements Serializable{
             if(x-i-1 < 0){
                 break;
             }
-            Token a = tokenGrid[x-i-1][y];
+            SuperToken a = tokenGrid[x-i-1][y];
             if (a == null) {
                  break;
              }
@@ -245,10 +245,10 @@ public int enterTokens () {
        //starting from the bottom check each place in column to see if token
         //there. If there is a token move to next spot until an empty one is found.
         //Place token in the empty spot.
-        Token location = tokenGrid[i][Integer.parseInt(placement)-1];
+        SuperToken location = tokenGrid[i][Integer.parseInt(placement)-1];
         if(location == null) {
-            Token blueToken = new Token();
-            blueToken.setTokenColor(1);
+            TokenB blueToken = new TokenB();
+            blueToken.settokenColor(1);
            tokenGrid[i][Integer.parseInt(placement)-1] = blueToken;
            xInserted = i;
            yInserted = Integer.parseInt(placement)-1;
@@ -279,9 +279,9 @@ public int enterTokens () {
        //starting from the bottom check each place in column to see if token
         //there. If there is a token move to next spot until an empty one is found.
         //Place token in the empty spot.
-        Token location = tokenGrid[i][x];
+        SuperToken location = tokenGrid[i][x];
         if(location == null) {
-            Token redToken = new Token();
+            TokenR redToken = new TokenR();
             redToken.settokenColor(2);
            tokenGrid[i][x] = redToken;
            xInserted = i;
