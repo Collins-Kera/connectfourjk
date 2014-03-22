@@ -1,5 +1,6 @@
 package crazyconnectfour.kj;
 
+import kj.crazyconnectfour.controls.CrazyConnectFour;
 import java.util.Scanner;
 
 

@@ -6,22 +6,25 @@
 
 package crazyconnectfour.kj;
 
+import kj.crazyconnectfour.enums.TokenColor;
+
 /**
  *
  * @author Jeanette
  */
 public abstract class SuperToken {
     //private and final or public?
-    public int tokenColor;
+    private TokenColor tokenColor;
     
-    public SuperToken(int tokenColor) {
+    public SuperToken(TokenColor tokenColor) {
+        this.tokenColor = tokenColor;
     }
     
-     public int gettokenColor() {
+     public TokenColor getTokenColor() {
         return tokenColor;
     }
 
-    public int settokenColor(int tokenColor) {
+    public TokenColor setTokenColor(TokenColor tokenColor) {
         this.tokenColor = tokenColor;
         return tokenColor;
     }

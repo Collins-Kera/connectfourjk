@@ -12,6 +12,6 @@ package kj.crazyconnectfour.interfaces;
  */
 public interface EnterInfo {
     
-    Object getInput(Object object);
+    String getInput();
     
 }

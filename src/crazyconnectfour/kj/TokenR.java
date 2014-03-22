@@ -6,6 +6,8 @@
 
 package crazyconnectfour.kj;
 
+import kj.crazyconnectfour.enums.TokenColor;
+
 /**
  *
  * @author Jeanette
@@ -13,7 +15,7 @@ package crazyconnectfour.kj;
 public class TokenR extends SuperToken {
     
      public TokenR() {
-        super(2);
+        super(TokenColor.RED);
 
     }
     

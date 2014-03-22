@@ -7,8 +7,8 @@
 package kj.crazyconnectfour.menu.views;
 
 
-import crazyconnectfour.kj.CrazyConnectFourError;
-import crazyconnectfour.kj.HelpMenuControl;
+import kj.crazyconnectfour.controls.CrazyConnectFourError;
+import kj.crazyconnectfour.controls.HelpMenuControl;
 import java.util.Scanner;
 
 /**

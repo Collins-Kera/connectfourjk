@@ -6,8 +6,8 @@
 
 package kj.crazyconnectfour.menu.views;
 
-import crazyconnectfour.kj.CrazyConnectFour;
-import crazyconnectfour.kj.CrazyConnectFourError;
+import kj.crazyconnectfour.controls.CrazyConnectFour;
+import kj.crazyconnectfour.controls.CrazyConnectFourError;
 import java.util.Scanner;
 import kj.crazyconnectfour.interfaces.DisplayInfo;
 import kj.crazyconnectfour.interfaces.EnterInfo;
@@ -16,7 +16,7 @@ import kj.crazyconnectfour.interfaces.EnterInfo;
  *
  * @author Kera
  */
-public abstract class Menu{
+public abstract class Menu implements DisplayInfo, EnterInfo{
     
     private String[][] menuItems = null;
 
@@ -40,6 +40,7 @@ public abstract class Menu{
       //  void display();
    // }
 
+    @Override
     public void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
@@ -61,7 +62,8 @@ public abstract class Menu{
         return false;
     }
 
-    protected final String getInput() {
+    @Override
+    public final String getInput() {
 
         Scanner inFile = CrazyConnectFour.getInputFile();
         String command;

@@ -6,9 +6,9 @@
 
 package kj.crazyconnectfour.menu.views;
 
-import crazyconnectfour.kj.CrazyConnectFourError;
+import kj.crazyconnectfour.controls.CrazyConnectFourError;
 import crazyconnectfour.kj.GameBoard;
-import crazyconnectfour.kj.NewGameControl;
+import kj.crazyconnectfour.controls.NewGameControl;
 import crazyconnectfour.kj.Player;
 import crazyconnectfour.kj.Scoreboard;
 import kj.crazyconnectfour.menu.views.HelpMenuView;

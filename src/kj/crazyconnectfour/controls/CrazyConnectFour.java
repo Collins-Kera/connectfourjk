@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package crazyconnectfour.kj;
+package kj.crazyconnectfour.controls;
 
 import kj.crazyconnectfour.menu.views.MainMenuView;
 import java.io.Serializable;

@@ -6,11 +6,13 @@
 
 package crazyconnectfour.kj;
 
+import kj.crazyconnectfour.interfaces.PlayToken;
+
 /**
  *
  * @author Kera
  */
-public abstract class SuperPlayer {
+public abstract class SuperPlayer implements PlayToken{
     
     private String name = "";
 
@@ -27,6 +29,7 @@ public abstract class SuperPlayer {
     
       // This is an abstract function. It specifies that all sub-classes must
     // implement this function.
+    @Override
     public abstract String playToken();
 }
 

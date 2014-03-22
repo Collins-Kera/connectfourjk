@@ -4,14 +4,15 @@
  * and open the template in the editor.
  */
 
-package kj.crazyconnectfour.interfaces;
+package kj.crazyconnectfour.enums;
 
 /**
  *
  * @author Kera
  */
-public interface DisplayInfo {
+public enum TokenColor {
+    BLUE,
+    RED
     
-    void display();
     
 }

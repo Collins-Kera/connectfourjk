@@ -7,6 +7,7 @@
 package crazyconnectfour.kj;
 
 import java.io.Serializable;
+import kj.crazyconnectfour.enums.TokenColor;
 
 /**
  *
@@ -15,7 +16,7 @@ import java.io.Serializable;
 public class TokenB extends SuperToken {
     
      public TokenB() {
-        super(1);
+        super(TokenColor.BLUE);
    
     }
     

@@ -10,8 +10,8 @@ package kj.crazyconnectfour.interfaces;
  *
  * @author Kera
  */
-public interface DisplayInfo {
+public interface PlayToken {
     
-    void display();
+    String playToken();
     
 }
