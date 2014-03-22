@@ -11,10 +11,15 @@ package kj.crazyconnectfour.enums;
  * @author Jeanette
  */
 public enum ErrorMessages {
-    ERROR101 (" "),
-    ERROR102 (" "),
-    ERROR103 (" "),
-    ERROR104 (" "),
+    
+    ERROR101 ("Invalid input"), //scoreboard 59 
+    ERROR102 ("You must enter either 1, 2, 3 or 4 for it to be valid."), //optionsmenucontrol 60,
+    //a ton from getplayerlistview
+    ERROR103 ("Invalid entry. Please enter a valid letter."), //helpmenuview 76, mainmenuview 58, newgameview 1, optionsmenuview 53
+    ERROR104 ("Invalid command. Please enter a valid command."), //menu 76
+    
+    
+    //a ton from getplayerlistview, gameboard
     ERROR105 (" "),
     ERROR106 (" "),
     ERROR107 (" "),

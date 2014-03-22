@@ -10,7 +10,7 @@ package kj.crazyconnectfour.interfaces;
  *
  * @author Jeanette
  */
-public interface Borders {
+public interface TokenLetter {
     
-    String borders ();
+    String tokenLetter();
 }
