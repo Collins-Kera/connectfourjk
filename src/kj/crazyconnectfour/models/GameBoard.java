@@ -5,6 +5,14 @@ import java.util.Random;
 import java.util.Scanner;
 import kj.crazyconnectfour.menu.views.BoardView;
 
+//trying to find where the problem lies
+import crazyconnectfour.kj.SuperToken;
+import crazyconnectfour.kj.TokenB;
+import crazyconnectfour.kj.TokenR;
+import crazyconnectfour.kj.Scoreboard;
+import kj.crazyconnectfour.enums.TokenColor;
+
+
 /**
  *
  * @author Kera and Jeanette
