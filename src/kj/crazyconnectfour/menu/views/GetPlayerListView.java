@@ -1,7 +1,7 @@
 package kj.crazyconnectfour.menu.views;
 
 import kj.crazyconnectfour.controls.CrazyConnectFourError;
-import crazyconnectfour.kj.Player;
+import kj.crazyconnectfour.models.Player;
 import java.io.Serializable;
 import java.util.Scanner;
 

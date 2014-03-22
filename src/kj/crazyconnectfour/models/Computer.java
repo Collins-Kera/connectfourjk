@@ -4,16 +4,16 @@
  * and open the template in the editor.
  */
 
-package crazyconnectfour.kj;
+package kj.crazyconnectfour.models;
 
+import crazyconnectfour.kj.SuperPlayer;
 import java.util.Random;
-import kj.crazyconnectfour.interfaces.PlayToken;
 
 /**
  *
  * @author Kera
  */
-public class Computer extends SuperPlayer implements PlayToken {
+public class Computer extends SuperPlayer {
 
     public Computer() {
         super();

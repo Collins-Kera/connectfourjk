@@ -1,8 +1,8 @@
-package crazyconnectfour.kj;
+package kj.crazyconnectfour.models;
 
 import kj.crazyconnectfour.controls.CrazyConnectFour;
+import crazyconnectfour.kj.SuperPlayer;
 import java.util.Scanner;
-import kj.crazyconnectfour.interfaces.PlayToken;
 
 
 /*
@@ -15,7 +15,7 @@ import kj.crazyconnectfour.interfaces.PlayToken;
  *
  * @author Jeanette
  */
-public class Player extends SuperPlayer implements PlayToken{
+public class Player extends SuperPlayer{
 
     public Player() {
         super();
