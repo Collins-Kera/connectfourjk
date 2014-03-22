@@ -12,5 +12,5 @@ package kj.crazyconnectfour.interfaces;
  */
 public interface TokenLetter {
     
-    String tokenLetter();
+    String getTokenColorLetter();
 }

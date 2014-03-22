@@ -7,12 +7,13 @@
 package kj.crazyconnectfour.models;
 
 import kj.crazyconnectfour.enums.TokenColor;
+import kj.crazyconnectfour.interfaces.TokenLetter;
 
 /**
  *
  * @author Jeanette
  */
-public abstract class SuperToken {
+public abstract class SuperToken implements TokenLetter{
     //private and final or public?
     private TokenColor tokenColor;
     

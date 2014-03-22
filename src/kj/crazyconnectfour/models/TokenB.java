@@ -9,12 +9,13 @@ package kj.crazyconnectfour.models;
 import kj.crazyconnectfour.models.SuperToken;
 import java.io.Serializable;
 import kj.crazyconnectfour.enums.TokenColor;
+import kj.crazyconnectfour.interfaces.TokenLetter;
 
 /**
  *
  * @author Kera
  */
-public class TokenB extends SuperToken {
+public class TokenB extends SuperToken implements TokenLetter {
     
      public TokenB() {
         super(TokenColor.BLUE);

@@ -8,12 +8,13 @@ package kj.crazyconnectfour.models;
 
 import kj.crazyconnectfour.models.SuperToken;
 import kj.crazyconnectfour.enums.TokenColor;
+import kj.crazyconnectfour.interfaces.TokenLetter;
 
 /**
  *
  * @author Jeanette
  */
-public class TokenR extends SuperToken {
+public class TokenR extends SuperToken implements TokenLetter {
     
      public TokenR() {
         super(TokenColor.RED);
