@@ -5,7 +5,6 @@ import java.util.Random;
 import java.util.Scanner;
 import kj.crazyconnectfour.menu.views.BoardView;
 
-//trying to find where the problem lies
 import kj.crazyconnectfour.enums.TokenColor;
 
 
