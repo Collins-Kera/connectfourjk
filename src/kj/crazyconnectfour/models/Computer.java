@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package crazyconnectfour.kj;
+package kj.crazyconnectfour.models;
 
+import crazyconnectfour.kj.SuperPlayer;
 import java.util.Random;
 
 /**

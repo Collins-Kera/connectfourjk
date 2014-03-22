@@ -1,6 +1,7 @@
-package crazyconnectfour.kj;
+package kj.crazyconnectfour.models;
 
 import kj.crazyconnectfour.controls.CrazyConnectFour;
+import crazyconnectfour.kj.SuperPlayer;
 import java.util.Scanner;
 
 

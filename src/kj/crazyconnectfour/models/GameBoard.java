@@ -1,9 +1,8 @@
-package crazyconnectfour.kj;
+package kj.crazyconnectfour.models;
 
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
-import kj.crazyconnectfour.enums.TokenColor;
 import kj.crazyconnectfour.menu.views.BoardView;
 
 /**
@@ -59,9 +58,9 @@ public class GameBoard implements Serializable{
          
          SuperToken insertedToken = tokenGrid[x][y];
          
-         TokenColor insertedTokenColor = insertedToken.getTokenColor();
+         int insertedTokenColor = insertedToken.gettokenColor();
          
-         if (insertedTokenColor != TokenColor.BLUE && insertedTokenColor != TokenColor.RED){
+         if (insertedTokenColor <1 || insertedTokenColor >2){
              System.out.println ("Invalid token color.");
              return 0;
          }
@@ -79,7 +78,7 @@ public class GameBoard implements Serializable{
             if (a == null) {
                  break;
              }
-            TokenColor tokenColor = a.getTokenColor();
+            int tokenColor = a.gettokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenRight += 1;  
@@ -90,7 +89,7 @@ public class GameBoard implements Serializable{
         }
         
         if((int)numberTokenRight == 3){
-            if(insertedTokenColor == TokenColor.BLUE) {//player won
+            if(insertedTokenColor == 1) {//player won
                 System.out.println("\"Congrats, you have won the round!\"\n");
                 return 1;
             }
@@ -109,7 +108,7 @@ public class GameBoard implements Serializable{
             if (a == null) {
                  break;
              }
-            TokenColor tokenColor = a.getTokenColor();
+            int tokenColor = a.gettokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenLeft += 1;  
@@ -120,7 +119,7 @@ public class GameBoard implements Serializable{
         }
         
         if(numberTokenRight + numberTokenLeft == 3){
-            if(insertedTokenColor == TokenColor.BLUE){ //player won
+            if(insertedTokenColor == 1){ //player won
                 System.out.println("\"Congrats, you have won the round!\"\n");
                 return 1;
             }
@@ -144,7 +143,7 @@ public class GameBoard implements Serializable{
             if (a == null) {
                  break;
              }
-            TokenColor tokenColor = a.getTokenColor();
+            int tokenColor = a.gettokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenUp += 1;  
@@ -155,7 +154,7 @@ public class GameBoard implements Serializable{
         }
         
         if((int)numberTokenUp == 3){
-            if(insertedTokenColor == TokenColor.BLUE) {//player won
+            if(insertedTokenColor == 1) {//player won
                 System.out.println("\"Congrats, you have won the round!\"\n");
                 return 1;
             }
@@ -174,7 +173,7 @@ public class GameBoard implements Serializable{
             if (a == null) {
                  break;
              }
-            TokenColor tokenColor = a.getTokenColor();
+            int tokenColor = a.gettokenColor();
             
             if (insertedTokenColor == tokenColor){
                 numberTokenDown += 1;  
@@ -185,7 +184,7 @@ public class GameBoard implements Serializable{
         }
         
         if(numberTokenUp + numberTokenDown == 3){
-            if(insertedTokenColor == TokenColor.BLUE){ //player won
+            if(insertedTokenColor == 1){ //player won
                 System.out.println("\"Congrats, you have won the round!\"\n");
                 return 1;
             }
@@ -250,7 +249,7 @@ public int enterTokens () {
         SuperToken location = tokenGrid[i][Integer.parseInt(placement)-1];
         if(location == null) {
             TokenB blueToken = new TokenB();
-            blueToken.setTokenColor(TokenColor.BLUE);
+            blueToken.settokenColor(1);
            tokenGrid[i][Integer.parseInt(placement)-1] = blueToken;
            xInserted = i;
            yInserted = Integer.parseInt(placement)-1;
@@ -284,7 +283,7 @@ public int enterTokens () {
         SuperToken location = tokenGrid[i][x];
         if(location == null) {
             TokenR redToken = new TokenR();
-            redToken.setTokenColor(TokenColor.RED);
+            redToken.settokenColor(2);
            tokenGrid[i][x] = redToken;
            xInserted = i;
            yInserted = x;
