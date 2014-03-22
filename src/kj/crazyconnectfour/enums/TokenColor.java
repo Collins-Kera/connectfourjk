@@ -13,6 +13,4 @@ package kj.crazyconnectfour.enums;
 public enum TokenColor {
     BLUE,
     RED
-    
-    
 }

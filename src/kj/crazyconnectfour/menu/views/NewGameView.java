@@ -10,7 +10,7 @@ import kj.crazyconnectfour.controls.CrazyConnectFourError;
 import kj.crazyconnectfour.models.GameBoard;
 import kj.crazyconnectfour.controls.NewGameControl;
 import kj.crazyconnectfour.models.Player;
-import crazyconnectfour.kj.Scoreboard;
+import kj.crazyconnectfour.models.Scoreboard;
 import kj.crazyconnectfour.menu.views.HelpMenuView;
 import java.util.Scanner;
 /**

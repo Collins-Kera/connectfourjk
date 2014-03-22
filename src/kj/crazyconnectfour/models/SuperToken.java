@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package crazyconnectfour.kj;
+package kj.crazyconnectfour.models;
 
 import kj.crazyconnectfour.enums.TokenColor;
 

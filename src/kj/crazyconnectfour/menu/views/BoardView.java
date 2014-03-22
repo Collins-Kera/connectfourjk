@@ -7,7 +7,7 @@
 package kj.crazyconnectfour.menu.views;
 
 import kj.crazyconnectfour.models.GameBoard;
-import crazyconnectfour.kj.SuperToken;
+import kj.crazyconnectfour.models.SuperToken;
 import java.io.Serializable;
 
 /**

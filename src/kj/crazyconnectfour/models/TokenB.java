@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package crazyconnectfour.kj;
+package kj.crazyconnectfour.models;
 
+import kj.crazyconnectfour.models.SuperToken;
 import java.io.Serializable;
 import kj.crazyconnectfour.enums.TokenColor;
 

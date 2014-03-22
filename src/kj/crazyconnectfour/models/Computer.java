@@ -6,14 +6,14 @@
 
 package kj.crazyconnectfour.models;
 
-import crazyconnectfour.kj.SuperPlayer;
 import java.util.Random;
+import kj.crazyconnectfour.interfaces.PlayToken;
 
 /**
  *
  * @author Kera
  */
-public class Computer extends SuperPlayer {
+public class Computer extends SuperPlayer implements PlayToken {
 
     public Computer() {
         super();
@@ -29,3 +29,4 @@ public class Computer extends SuperPlayer {
        return placement; 
     }
 }
+
