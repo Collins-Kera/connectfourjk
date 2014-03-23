@@ -9,6 +9,7 @@ package kj.crazyconnectfour.menu.views;
 import kj.crazyconnectfour.controls.CrazyConnectFourError;
 import kj.crazyconnectfour.menu.views.HelpMenuView;
 import java.util.Scanner;
+import kj.crazyconnectfour.enums.ErrorMessages;
 
 /**
  *
@@ -55,7 +56,8 @@ public String display(Object object) {
                 case "Q": 
                     break;
                 default:
-                    new CrazyConnectFourError().displayError("Invalid entry. Please enter a valid letter.");
+                    //is calling automatically from the Menu class
+                   new CrazyConnectFourError().displayError("Invalid entry. Please enter a valid letter.");
                     continue;
             }
         } while (!command.equals("Q"));  

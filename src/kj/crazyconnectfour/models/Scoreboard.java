@@ -7,6 +7,7 @@
 package kj.crazyconnectfour.models;
 
 import java.io.Serializable;
+import kj.crazyconnectfour.enums.ErrorMessages;
 
 /**
  *
@@ -56,7 +57,7 @@ public class Scoreboard implements Serializable {
             System.out.println("It's a tie!");
         }
         else {
-            System.out.println("Invalid input");
+            System.out.println(ErrorMessages.ERROR101.getMessage());
             return;
         }
         System.out.println("SCORES:" + "\n" + player + " - " + numberPlayerWins + "\t" + 

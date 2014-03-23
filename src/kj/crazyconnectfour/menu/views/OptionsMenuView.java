@@ -51,6 +51,7 @@ public String display(Object object) {
                     break;
                 default:
                     new CrazyConnectFourError().displayError("Invalid entry. Please enter a valid letter.");
+                    
                     continue;
             }
         } while (!command.equals("Q"));  

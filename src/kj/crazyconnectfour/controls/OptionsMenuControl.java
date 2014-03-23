@@ -7,6 +7,7 @@
 package kj.crazyconnectfour.controls;
 
 import java.util.Scanner;
+import kj.crazyconnectfour.enums.ErrorMessages;
 
 /**
  *
@@ -56,8 +57,9 @@ public class OptionsMenuControl {
                 return 4;
             }
             else { // wrong number of values entered.
-                    new CrazyConnectFourError().displayError(
-                        "You must enter either 1, 2, 3 or 4 for it to be valid.");
+                    //new CrazyConnectFourError().displayError(
+                    //    "You must enter either 1, 2, 3 or 4 for it to be valid.");
+                System.out.println(ErrorMessages.ERROR102.getMessage());
             }
         
        } return 0;

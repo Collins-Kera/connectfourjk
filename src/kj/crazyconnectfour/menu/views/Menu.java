@@ -9,6 +9,7 @@ package kj.crazyconnectfour.menu.views;
 import kj.crazyconnectfour.controls.CrazyConnectFour;
 import kj.crazyconnectfour.controls.CrazyConnectFourError;
 import java.util.Scanner;
+import kj.crazyconnectfour.enums.ErrorMessages;
 import kj.crazyconnectfour.interfaces.DisplayInfo;
 import kj.crazyconnectfour.interfaces.EnterInfo;
 
@@ -73,7 +74,7 @@ public abstract class Menu implements DisplayInfo, EnterInfo{
             command = command.trim().toUpperCase();
             valid = validCommand(command);
             if (!validCommand(command)) {
-                new CrazyConnectFourError().displayError("Invalid command. Please enter a valid command.");
+                System.out.println(ErrorMessages.ERROR103.getMessage());
                 continue;
             }
                 
