@@ -9,7 +9,10 @@ package kj.crazyconnectfour.menu.views;
 import kj.crazyconnectfour.controls.CrazyConnectFour;
 import kj.crazyconnectfour.controls.CrazyConnectFourError;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import kj.crazyconnectfour.enums.ErrorMessages;
+import kj.crazyconnectfour.exceptions.MenuException;
 import kj.crazyconnectfour.interfaces.DisplayInfo;
 import kj.crazyconnectfour.interfaces.EnterInfo;
 
@@ -74,8 +77,12 @@ public abstract class Menu implements DisplayInfo, EnterInfo{
             command = command.trim().toUpperCase();
             valid = validCommand(command);
             if (!validCommand(command)) {
-                System.out.println(ErrorMessages.ERROR103.getMessage());
-                continue;
+                try {
+                    throw (new MenuException (ErrorMessages.ERROR103.getMessage()));
+                } catch (MenuException ex) {
+                    System.out.println (ex.getMessage());
+                    Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
                 
         } while (!valid);

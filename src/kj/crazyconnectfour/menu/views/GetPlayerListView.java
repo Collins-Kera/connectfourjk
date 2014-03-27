@@ -4,6 +4,9 @@ import kj.crazyconnectfour.controls.CrazyConnectFourError;
 import kj.crazyconnectfour.models.Player;
 import java.io.Serializable;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import kj.crazyconnectfour.exceptions.MenuException;
 
 /**
  *
@@ -46,32 +49,33 @@ public class GetPlayerListView implements Serializable {
             playersName = inFile.nextLine();
             playersName = playersName.trim();
 
-            if (playersName.length() < 1) {
-                new CrazyConnectFourError().displayError("A name must be at least "
-                        + "one character long. "
-                        + "\n\tTry again or enter \"Q\" to quit.");
-                continue;
-            }
-            
-            if (playersName.equals("Computer")) {
-                new CrazyConnectFourError().displayError(
-                        "This is a reserved name. You can not use it. "
-                        + "\n\tTry again or enter \"Q\" to quit.");
-                continue;
-            }
-                            
-            if (alreadyInList(listofPlayers, playersName)) {
-                new CrazyConnectFourError().displayError(
-                        "That name has already been entered. "
-                        + "\n\tTry again or enter \"Q\" to quit.");
-                continue;
-            }
+            try {
+                if (playersName.length() < 1) {
+                    throw (new MenuException ("A name must be at least "
+                            + "one character long. "
+                            + "\n\tTry again or enter \"Q\" to quit."));
+                }
 
-            if (playersName.toUpperCase().equals("Q")) { // quit?
-                done = true;
-                break;
-            } 
-            
+                if (playersName.equals("Computer")) {
+                     throw (new MenuException ("This is a reserved name. You can not use it. "
+                            + "\n\tTry again or enter \"Q\" to quit."));
+                }
+
+                if (alreadyInList(listofPlayers, playersName)) {
+                    throw (new MenuException ("That name has already been entered. "
+                            + "\n\tTry again or enter \"Q\" to quit."));
+                }
+
+                if (playersName.toUpperCase().equals("Q")) { // quit?
+                    done = true;
+                    break;
+                } 
+            }catch(MenuException ex)
+            {
+              System.out.println (ex.getMessage()); 
+              Logger.getLogger(GetPlayerListView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           
             // add name to list of player names
             listofPlayers[playerIndex]= new Player();
             this.listofPlayers[playerIndex].setName(playersName); 
@@ -166,36 +170,39 @@ public class GetPlayerListView implements Serializable {
         boolean valid = false;
         do {
             String strNumber = inFile.nextLine();
-            
-            if (strNumber.length() < 1) { // was a value entered ?
-                new CrazyConnectFourError().displayError("You must enter a name or enter a \"Q\" to quit. Try again.");
-                continue;
-            }
-            
-            strNumber = strNumber.trim(); // trim off all blanks from front and back    
-            strNumber = strNumber.substring(0, 1); // get only the first character
-            
-            if (strNumber.toUpperCase().equals("Q")) { // quit?
-                return null;
-            }
-                       
-            if (!strNumber.matches("[0-9]+")) { // is the value entered a number?
-                new CrazyConnectFourError().displayError("You must enter a number in the list. Try again.");
-                continue;
-            }
-            
-            int numberSelected = Integer.parseInt(strNumber); // convert string to integer
-            
-            // is the number outside the range of the list of names
-            if (numberSelected < 1  ||  numberSelected > nameList.length) {
-                new CrazyConnectFourError().displayError(
-                        "You must enter a number from the list. Try again.");
-                continue;
-            }
+            try {
+                if (strNumber.length() < 1) { // was a value entered ?
+                    throw (new MenuException ("You must enter a name or enter a \"Q\" to quit. Try again."));
+                }
+
+                strNumber = strNumber.trim(); // trim off all blanks from front and back    
+                strNumber = strNumber.substring(0, 1); // get only the first character
+
+                if (strNumber.toUpperCase().equals("Q")) { // quit?
+                    return null;
+                }
+
+                if (!strNumber.matches("[0-9]+")) { // is the value entered a number?
+                    throw (new MenuException ("You must enter a number in the list. Try again."));
+                }
+
+                int numberSelected = Integer.parseInt(strNumber); // convert string to integer
+
+                // is the number outside the range of the list of names
+                if (numberSelected < 1  ||  numberSelected > nameList.length) {
+                    throw (new MenuException ("You must enter a number from the list. Try again."));
+                }
             
             name = nameList[numberSelected-1].getName(); // get the name from the list
             
             valid = true; // names selected successfully
+            
+            } catch (MenuException ex)
+                {
+                    System.out.println(ex.getMessage());
+                    Logger.getLogger(GetPlayerListView.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
       
         } while (!valid);
         

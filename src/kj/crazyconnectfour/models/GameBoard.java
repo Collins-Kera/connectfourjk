@@ -6,6 +6,7 @@ import java.util.Scanner;
 import kj.crazyconnectfour.menu.views.BoardView;
 
 import kj.crazyconnectfour.enums.TokenColor;
+import kj.crazyconnectfour.exceptions.GameException;
 
 
 /**
@@ -217,24 +218,27 @@ public int enterTokens () {
        if ("Q".equals(placement) || "q".equals(placement)) {
                 return 5;
        }
-       
        try{
-        //if it is greater then an option, show an error     
-        if (Integer.parseInt(placement)>boardSize){   
-            System.out.println("Invalid entry!");
-                continue; 
-                }
-        else if (Integer.parseInt(placement)< 1) {  
-            System.out.println("Invalid entry!");
-                continue; 
-                } 
-        else {
-           x = false;
-             }  
-       } catch(NumberFormatException ex)
+            try{
+                //if it is greater then an option, show an error     
+                if (Integer.parseInt(placement)>boardSize){   
+                    System.out.println("Invalid entry!");
+                        continue; 
+                        }
+                else if (Integer.parseInt(placement)< 1) {  
+                    System.out.println("Invalid entry!");
+                        continue; 
+                        } 
+                else {
+                   x = false;
+                     }  
+            } catch(NumberFormatException ex)
+                 {
+                     throw (new GameException ("Invalid entry!", ex  ));
+                 }
+       }catch (GameException ex)
             {
-                System.out.println("Invalid entry!");
-                continue;
+                System.out.println (ex.getMessage());
             }
        if (tokenGrid[5][Integer.parseInt(placement)-1] != null){
            System.out.println("This column is full. Try again.");

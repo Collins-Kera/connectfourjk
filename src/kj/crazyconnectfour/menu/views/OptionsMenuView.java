@@ -10,6 +10,9 @@ import kj.crazyconnectfour.controls.CrazyConnectFourError;
 import kj.crazyconnectfour.controls.OptionsMenuControl;
 import kj.crazyconnectfour.menu.views.HelpMenuView;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import kj.crazyconnectfour.exceptions.MenuException;
 
 /**
  *
@@ -33,14 +36,14 @@ public OptionsMenuView() {
     } 
 
 public String display(Object object) {    
-    String command;
+    String command = "";
         
         do {
-            
+        try {            
             this.display(); // display the menu
             command = this.getInput();
-             
-        switch (command) {
+            
+            switch (command) {
                 case "T":
                     this.optionsMenuControl.getTokenColor();
                     break;                  
@@ -50,10 +53,12 @@ public String display(Object object) {
                 case "Q":
                     break;
                 default:
-                    new CrazyConnectFourError().displayError("Invalid entry. Please enter a valid letter.");
-                    
-                    continue;
-            }
+                    throw (new MenuException("Invalid entry. Please enter a valid letter."));
+                            }
+        } catch (MenuException ex) {
+            System.out.println (ex.getMessage());
+            Logger.getLogger(OptionsMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
         } while (!command.equals("Q"));  
         
          return command;

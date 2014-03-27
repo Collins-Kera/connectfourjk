@@ -9,6 +9,7 @@ package kj.crazyconnectfour.controls;
 import kj.crazyconnectfour.menu.views.MainMenuView;
 import java.io.Serializable;
 import java.util.Scanner;
+import kj.crazyconnectfour.exceptions.MenuException;
 
 
 /**
@@ -45,16 +46,25 @@ public class CrazyConnectFour implements Serializable{
 //    }
     
     public static void main(String[] args) {
-        System.out.println("\t***************************************************************");
+        
         CrazyConnectFour myGame = new CrazyConnectFour();
         myGame.displayHelp();
-        System.out.println("\t***************************************************************\n");
         
+        try {
         myGame.play();
+        } catch (Exception ex) {
+            System.out.println("An unexpected error was caught!" + ex.getMessage()); 
+            ex.printStackTrace();
+        }
+        finally {
+            CrazyConnectFour.inFile.close();
+        }
     }
   
     private void displayHelp(){
+        System.out.println("\t***************************************************************");
         System.out.println(getInstructions());
+        System.out.println("\t***************************************************************\n");
        }
     
   private void play(){

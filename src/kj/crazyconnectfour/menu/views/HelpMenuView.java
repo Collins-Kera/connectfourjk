@@ -10,6 +10,9 @@ package kj.crazyconnectfour.menu.views;
 import kj.crazyconnectfour.controls.CrazyConnectFourError;
 import kj.crazyconnectfour.controls.HelpMenuControl;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import kj.crazyconnectfour.exceptions.MenuException;
 
 /**
  *
@@ -45,37 +48,41 @@ public HelpMenuView() {
 
 //@Override
 public String display(Object object) {       
-           String command;
+           String command = "";
            
     do { 
-            this.display(); // display the menu 
-            command = this.getInput(); 
-    
-        switch (command) {
-                case "B":
-                    this.displayHelp(HelpMenuView.BOARD);
-                    break;
-                case "C":
-                    this.displayHelp(HelpMenuView.COMPUTER_PLAYER);
-                    break;
-                case "G":
-                    this.displayHelp(HelpMenuView.GAME);
-                    break;                  
-                case "L":
-                    this.displayHelp(HelpMenuView.LOCATION);
-                    break;
-                case "T":
-                    this.displayHelp(HelpMenuView.MARKER);
-                    break;
-                 case "P":
-                    this.displayHelp(HelpMenuView.REAL_PLAYER);
-                    break; 
-                case "Q": 
-                    break;
-                default:
-                    new CrazyConnectFourError().displayError("Invalid entry. Please enter a valid letter.");
-                    continue;
-            }
+               try {
+                   this.display(); // display the menu
+                   command = this.getInput();
+                   
+                   switch (command) {
+                       case "B":
+                           this.displayHelp(HelpMenuView.BOARD);
+                           break;
+                       case "C":
+                           this.displayHelp(HelpMenuView.COMPUTER_PLAYER);
+                           break;
+                       case "G":
+                           this.displayHelp(HelpMenuView.GAME);
+                           break;
+                       case "L":
+                           this.displayHelp(HelpMenuView.LOCATION);
+                           break;
+                       case "T":
+                           this.displayHelp(HelpMenuView.MARKER);
+                           break;
+                       case "P":
+                           this.displayHelp(HelpMenuView.REAL_PLAYER);
+                           break;
+                       case "Q":
+                           break;
+                       default:
+                           throw (new MenuException("Invalid entry. Please enter a valid letter."));
+                   }  
+               } catch (MenuException ex) {
+                       System.out.println(ex.getMessage());
+                       Logger.getLogger(HelpMenuView.class.getName()).log(Level.SEVERE, null, ex);
+               }
         } while (!command.equals("Q"));  
         
          return command;
