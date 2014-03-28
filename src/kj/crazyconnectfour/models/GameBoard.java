@@ -3,10 +3,14 @@ package kj.crazyconnectfour.models;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import kj.crazyconnectfour.menu.views.BoardView;
 
 import kj.crazyconnectfour.enums.TokenColor;
+import kj.crazyconnectfour.exceptions.BoardException;
 import kj.crazyconnectfour.exceptions.GameException;
+import kj.crazyconnectfour.menu.views.OptionsMenuView;
 
 
 /**
@@ -49,14 +53,13 @@ public class GameBoard implements Serializable{
     
     public int calculateWinLoss(int x, int y){
         
+        try{
         if (x <0 || x > 5){
-            System.out.println("Out of grid bounds.");
-            return 0;
+            throw (new BoardException("Out of grid bounds."));
         }
         
          if (y <0 || y > 5){
-            System.out.println("Out of grid bounds.");
-            return 0;
+            throw (new BoardException("Out of grid bounds."));
         }
         
          
@@ -65,9 +68,9 @@ public class GameBoard implements Serializable{
          TokenColor insertedTokenColor = insertedToken.getTokenColor();
          
          if (insertedTokenColor != TokenColor.BLUE && insertedTokenColor != TokenColor.RED){
-             System.out.println ("Invalid token color.");
-             return 0;
+             throw (new BoardException ("Invalid token color."));
          }
+         
         //checks horizontally
         double numberTokenRight = 0;
         
@@ -196,9 +199,15 @@ public class GameBoard implements Serializable{
                 System.out.println("\"Sorry, you lost the round!\" \n");
                 return 2; //computer won
             }
-        }
+       }
+        
+         } catch (BoardException ex)
+                {
+                    System.out.println (ex.getMessage());
+                    Logger.getLogger(GameBoard.class.getName()).log(Level.SEVERE, null, ex);
+                }
         return 0;//default, no one has won yet
-    }
+    }  
 }
 
    
@@ -221,13 +230,11 @@ public int enterTokens () {
        try{
             try{
                 //if it is greater then an option, show an error     
-                if (Integer.parseInt(placement)>boardSize){   
-                    System.out.println("Invalid entry!");
-                        continue; 
+                if (Integer.parseInt(placement)>boardSize){
+                    throw (new GameException ("Invalid entry!"));
                         }
                 else if (Integer.parseInt(placement)< 1) {  
-                    System.out.println("Invalid entry!");
-                        continue; 
+                    throw (new GameException ("Invalid entry!"));
                         } 
                 else {
                    x = false;
@@ -240,10 +247,15 @@ public int enterTokens () {
             {
                 System.out.println (ex.getMessage());
             }
+       try {
        if (tokenGrid[5][Integer.parseInt(placement)-1] != null){
-           System.out.println("This column is full. Try again.");
-           continue;
+           throw (new BoardException("This column is full. Try again."));
        }
+       } catch (BoardException ex)
+               {
+                  System.out.println (ex.getMessage());
+                  Logger.getLogger(GameBoard.class.getName()).log(Level.SEVERE, null, ex); 
+               }
     }
     
     int xInserted = 0;
