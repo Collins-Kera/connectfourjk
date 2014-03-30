@@ -7,8 +7,10 @@
 package kj.crazyconnectfour.controls;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import kj.crazyconnectfour.enums.ErrorMessages;
-
+import kj.crazyconnectfour.exceptions.TokenException;
 /**
  *
  * @author Kera
@@ -40,6 +42,7 @@ public class OptionsMenuControl {
             // replace any commas enter with blanks
             tokenColor = tokenColor.replace(',', ' '); 
             
+           
             if (Integer.parseInt(tokenColor) == 1) { 
                 System.out.println("\n\n\tPlayer 1 you are now token color yellow");
                 return 1;
@@ -56,10 +59,12 @@ public class OptionsMenuControl {
                 System.out.println("\n\n\tPlayer 1 you are now token color green.");
                 return 4;
             }
-            else { // wrong number of values entered.
-                    //new CrazyConnectFourError().displayError(
-                    //    "You must enter either 1, 2, 3 or 4 for it to be valid.");
-                System.out.println(ErrorMessages.ERROR102.getMessage());
+            else {  try {
+                throw (new TokenException (ErrorMessages.ERROR102.getMessage()));
+                } catch (TokenException ex) {
+                    System.out.println (ex.getMessage());
+                    Logger.getLogger(OptionsMenuControl.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         
        } return 0;
