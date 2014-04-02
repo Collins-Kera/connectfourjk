@@ -7,7 +7,6 @@
 package kj.crazyconnectfour.menu.views;
 
 import kj.crazyconnectfour.controls.CrazyConnectFour;
-import kj.crazyconnectfour.controls.CrazyConnectFourError;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;

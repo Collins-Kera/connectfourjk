@@ -6,10 +6,9 @@
 
 package kj.crazyconnectfour.controls;
 
-import kj.crazyconnectfour.menu.views.MainMenuView;
 import java.io.Serializable;
 import java.util.Scanner;
-import kj.crazyconnectfour.exceptions.MenuException;
+import kj.crazyconnectfour.frames.MainFrame;
 
 
 /**
@@ -20,6 +19,7 @@ public class CrazyConnectFour implements Serializable{
     
     private static Scanner inFile = new Scanner (System.in);
     //private static final MainMenuView MainMenu = new MainMenuView();
+    private static MainFrame mainFrame;
 
     public CrazyConnectFour(){
     }
@@ -41,34 +41,43 @@ public class CrazyConnectFour implements Serializable{
         this.instructions = instructions;
     }
     
-//    public static MainMenuView getMainMenuView() {
-//        return MainMenu;
-//    }
-    
     public static void main(String[] args) {
-        
-        CrazyConnectFour myGame = new CrazyConnectFour();
-        myGame.displayHelp();
+        CrazyConnectFour crazyConnectFour = null;
+      //  CrazyConnectFour myGame = new CrazyConnectFour();
+        //myGame.displayHelp();
         
         try {
-        myGame.play();
-        } catch (Exception ex) {
+            crazyConnectFour = new CrazyConnectFour();
+            java.awt.EventQueue.invokeLater(new Runnable() {
+
+            public void run() {
+                CrazyConnectFour.mainFrame = new MainFrame();
+                CrazyConnectFour.mainFrame.setVisible(true);
+            }
+        });
+       }
+ //       myGame.play();
+        catch (Exception ex) {
             System.out.println("An unexpected error was caught!" + ex.getMessage()); 
             ex.printStackTrace();
         }
         finally {
-            CrazyConnectFour.inFile.close();
+           if(CrazyConnectFour.mainFrame != null) {
+              CrazyConnectFour.mainFrame.dispose();
+              //CrazyConnectFour.inFile.close();
+           }
         }
     }
-  
-    private void displayHelp(){
-        System.out.println("\t***************************************************************");
-        System.out.println(getInstructions());
-        System.out.println("\t***************************************************************\n");
-       }
-    
-  private void play(){
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.display(this);
-    }
 }
+
+//    private void displayHelp(){
+//        System.out.println("\t***************************************************************");
+//        System.out.println(getInstructions());
+//        System.out.println("\t***************************************************************\n");
+//       }
+//    
+//  private void play(){
+//        MainMenuView mainMenu = new MainMenuView();
+//        mainMenu.display(this);
+//    }
+
