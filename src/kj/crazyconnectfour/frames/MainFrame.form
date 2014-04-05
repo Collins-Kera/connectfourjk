@@ -68,7 +68,7 @@
           <Color blue="cc" green="ff" red="cc" type="rgb"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
             <BevelBorder/>
           </Border>
         </Property>
@@ -78,7 +78,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="1" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace pref="35" max="32767" attributes="0"/>
+                  <EmptySpace pref="39" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jpMenuItems" min="-2" max="-2" attributes="0"/>
@@ -104,7 +104,7 @@
                       <Component id="jpMenuItems" max="32767" attributes="0"/>
                       <Component id="jScrollPane1" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="54" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -116,7 +116,7 @@
               <Color blue="ff" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+              <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
               </Border>
             </Property>
@@ -164,6 +164,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Start"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuStartButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="menuOptionsButton">
               <Properties>
@@ -172,6 +175,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Options"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuOptionsButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="menuHelpButton">
               <Properties>
@@ -180,6 +186,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Help"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuHelpButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="menuExitButton">
               <Properties>
@@ -188,6 +197,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuExitButtonActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -221,10 +233,8 @@
                 <Property name="text" type="java.lang.String" value="Welcome, this is the game Crazy Connect Four!&#xa;&#xa;To win this game you have to connect four tokens in a row before your competitor -- the computer!&#xa;&#xa;Have fun!!"/>
                 <Property name="wrapStyleWord" type="boolean" value="true"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                    <BevelBorder>
-                      <Color PropertyName="shadowOuter" blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
-                    </BevelBorder>
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
                   </Border>
                 </Property>
                 <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">

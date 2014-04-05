@@ -39,8 +39,9 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         j.setText("jLabel1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Enter Player Names");
+        setAlwaysOnTop(true);
 
         jpPlayerNames.setBackground(new java.awt.Color(204, 255, 204));
         jpPlayerNames.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -63,7 +64,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jpPlayerTitleLayout.setVerticalGroup(
             jpPlayerTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPlayerTitleLayout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jlPlayerTitle)
                 .addContainerGap())
         );

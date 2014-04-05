@@ -6,6 +6,10 @@
 
 package kj.crazyconnectfour.frames;
 
+import kj.crazyconnectfour.controls.HelpMenuControl;
+import kj.crazyconnectfour.controls.NewGameControl;
+import kj.crazyconnectfour.menu.views.NewGameView;
+
 /**
  *
  * @author Jeanette
@@ -57,22 +61,42 @@ public class MainFrame extends javax.swing.JFrame {
         setBackground(new java.awt.Color(204, 204, 255));
 
         jpBody.setBackground(new java.awt.Color(204, 255, 204));
-        jpBody.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jpBody.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jpMenuItems.setBackground(new java.awt.Color(204, 204, 255));
-        jpMenuItems.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jpMenuItems.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         menuStartButton.setFont(new java.awt.Font("HanziPen SC", 1, 18)); // NOI18N
         menuStartButton.setText("Start");
+        menuStartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuStartButtonActionPerformed(evt);
+            }
+        });
 
         menuOptionsButton.setFont(new java.awt.Font("HanziPen SC", 1, 18)); // NOI18N
         menuOptionsButton.setText("Options");
+        menuOptionsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuOptionsButtonActionPerformed(evt);
+            }
+        });
 
         menuHelpButton.setFont(new java.awt.Font("HanziPen SC", 1, 18)); // NOI18N
         menuHelpButton.setText("Help");
+        menuHelpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuHelpButtonActionPerformed(evt);
+            }
+        });
 
         menuExitButton.setFont(new java.awt.Font("HanziPen SC", 1, 18)); // NOI18N
         menuExitButton.setText("Exit");
+        menuExitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuExitButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpMenuItemsLayout = new javax.swing.GroupLayout(jpMenuItems);
         jpMenuItems.setLayout(jpMenuItemsLayout);
@@ -114,7 +138,7 @@ public class MainFrame extends javax.swing.JFrame {
         jtWelcome.setRows(5);
         jtWelcome.setText("Welcome, this is the game Crazy Connect Four!\n\nTo win this game you have to connect four tokens in a row before your competitor -- the computer!\n\nHave fun!!");
         jtWelcome.setWrapStyleWord(true);
-        jtWelcome.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray));
+        jtWelcome.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jtWelcome.setMargin(new java.awt.Insets(5, 5, 5, 5));
         jScrollPane1.setViewportView(jtWelcome);
 
@@ -123,7 +147,7 @@ public class MainFrame extends javax.swing.JFrame {
         jpBodyLayout.setHorizontalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jpBodyLayout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
                         .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -143,7 +167,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jpMenuItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
-                .addGap(0, 50, Short.MAX_VALUE))
+                .addGap(0, 54, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -161,6 +185,26 @@ public class MainFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExitButtonActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_menuExitButtonActionPerformed
+
+    private void menuHelpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuHelpButtonActionPerformed
+        HelpMenuControl.displayGameHelp();
+        jtWelcome.setText("");
+        jtWelcome.append("Check this out@");
+    }//GEN-LAST:event_menuHelpButtonActionPerformed
+
+    private void menuOptionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuOptionsButtonActionPerformed
+        EnterPlayerNames win = new EnterPlayerNames();
+        win.setVisible(true);
+    }//GEN-LAST:event_menuOptionsButtonActionPerformed
+
+    private void menuStartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuStartButtonActionPerformed
+        NewGameControl.displayGameStart();
+        
+    }//GEN-LAST:event_menuStartButtonActionPerformed
 
     /**
      * @param args the command line arguments
