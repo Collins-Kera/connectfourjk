@@ -65,4 +65,20 @@ public class Scoreboard implements Serializable {
         percentageWins =  (double)numberPlayerWins/(numberPlayerWins + numberComputerWins + numberOfTies)* 100;
         System.out.println("You have won " + (int)percentageWins + "%" + " of the rounds so far.");
     }
+
+    public static int getNumberPlayerWins() {
+        return numberPlayerWins;
+    }
+
+    public static int getNumberComputerWins() {
+        return numberComputerWins;
+    }
+
+    public static int getNumberOfTies() {
+        return numberOfTies;
+    }
+
+    public static double getPercentageWins() {
+        return percentageWins;
+    }
 }

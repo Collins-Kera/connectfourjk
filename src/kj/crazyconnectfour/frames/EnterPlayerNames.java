@@ -76,12 +76,6 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jtPlayerText.setText("Player Name:");
         jtPlayerText.setBorder(null);
 
-        playerNameInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playerNameInputActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jpPlayerFormLayout = new javax.swing.GroupLayout(jpPlayerForm);
         jpPlayerForm.setLayout(jpPlayerFormLayout);
         jpPlayerFormLayout.setHorizontalGroup(

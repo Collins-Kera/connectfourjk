@@ -47,7 +47,8 @@ public class GameBoard implements Serializable{
     }
     
     FourConnectingTokenCheck calculateWinLoss = new FourConnectingTokenCheck();
-    
+
+
     public class FourConnectingTokenCheck {
     
     
@@ -258,6 +259,14 @@ public int enterTokens () {
                }
     }
     
+    int win = playTokenInColumn(placement);
+    
+    return win;
+}
+
+
+public int playTokenInColumn(String placement) {
+    
     int xInserted = 0;
     int yInserted = 0;
     //place token in desired column
@@ -267,8 +276,8 @@ public int enterTokens () {
         //Place token in the empty spot.
         SuperToken location = tokenGrid[i][Integer.parseInt(placement)-1];
         if(location == null) {
-            TokenB blueToken = new TokenB();
-            blueToken.setTokenColor(TokenColor.BLUE);
+           TokenB blueToken = new TokenB();
+           blueToken.setTokenColor(TokenColor.BLUE);
            tokenGrid[i][Integer.parseInt(placement)-1] = blueToken;
            xInserted = i;
            yInserted = Integer.parseInt(placement)-1;
@@ -276,10 +285,8 @@ public int enterTokens () {
         }
     } 
     int win = calculateWinLoss.calculateWinLoss(xInserted, yInserted);
-    
     return win;
 }
-
 
  public int computerPlay() {
      int x;
