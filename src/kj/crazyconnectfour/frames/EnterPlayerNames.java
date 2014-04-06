@@ -99,6 +99,11 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         playerContinueButton.setFont(new java.awt.Font("Heiti SC", 0, 13)); // NOI18N
         playerContinueButton.setText("Continue");
+        playerContinueButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerContinueButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpPlayerNamesLayout = new javax.swing.GroupLayout(jpPlayerNames);
         jpPlayerNames.setLayout(jpPlayerNamesLayout);
@@ -145,6 +150,10 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void playerContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerContinueButtonActionPerformed
+          this.dispose();
+    }//GEN-LAST:event_playerContinueButtonActionPerformed
 
     /**
      * @param args the command line arguments

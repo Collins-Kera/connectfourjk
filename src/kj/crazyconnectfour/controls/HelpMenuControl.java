@@ -75,7 +75,7 @@ public class HelpMenuControl {
         System.out.println( 
                "\tThe human player can pick their color of token in the options menu."
                 + "\n\tThe tokens are displayed as the first letter of the color."
-                + "\n\tThe computer is letter 'C'. "
+                + "\n\tThe computer is letter 'C'."
                 ); 
         displayBorder();
     } 
