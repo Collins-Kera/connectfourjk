@@ -91,7 +91,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         menuExitButton.setFont(new java.awt.Font("HanziPen SC", 1, 18)); // NOI18N
-        menuExitButton.setText("Exit");
+        menuExitButton.setText("Exit Game");
         menuExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuExitButtonActionPerformed(evt);
@@ -105,12 +105,12 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuItemsLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(menuOptionsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(menuExitButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(menuHelpButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(menuStartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(menuStartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jpMenuItemsLayout.createSequentialGroup()
+                        .addComponent(menuExitButton)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(menuOptionsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jpMenuItemsLayout.setVerticalGroup(
@@ -122,9 +122,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(menuOptionsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuHelpButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuExitButton)
-                .addContainerGap())
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jlTitle.setFont(new java.awt.Font("HanziPen SC", 1, 36)); // NOI18N
@@ -147,7 +147,7 @@ public class MainFrame extends javax.swing.JFrame {
         jpBodyLayout.setHorizontalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jpBodyLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
                         .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -167,38 +167,42 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jpMenuItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
-                .addGap(0, 54, Short.MAX_VALUE))
+                .addGap(0, 30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jpBody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpBody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menuExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExitButtonActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_menuExitButtonActionPerformed
-
     private void menuHelpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuHelpButtonActionPerformed
-        HelpMenuControl.displayGameHelp();
+        HelpFrame helpmenu = new HelpFrame();
+        helpmenu.setVisible(true);
         jtWelcome.setText("");
-        jtWelcome.append("Check this out@");
+        jtWelcome.append("Help Menu Topics:"
+                + "\n\nCrazy Connect Four game"
+                + "\nBoard"
+                + "\nComputer Player"
+                + "\nRegular Player"
+                + "\nToken "
+                + "\nToken Location"
+                );
+        
+   
     }//GEN-LAST:event_menuHelpButtonActionPerformed
 
     private void menuOptionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuOptionsButtonActionPerformed
-        EnterPlayerNames win = new EnterPlayerNames();
-        win.setVisible(true);
+        OptionFrame option = new OptionFrame();
+        option.setVisible(true);
     }//GEN-LAST:event_menuOptionsButtonActionPerformed
 
     private void menuStartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuStartButtonActionPerformed
@@ -206,6 +210,10 @@ public class MainFrame extends javax.swing.JFrame {
         play.setVisible(true);
         
     }//GEN-LAST:event_menuStartButtonActionPerformed
+
+    private void menuExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExitButtonActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_menuExitButtonActionPerformed
 
     /**
      * @param args the command line arguments

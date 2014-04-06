@@ -157,15 +157,8 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void playerNameInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerNameInputActionPerformed
-//         this.newGetPlayerListView.getPlayerNameInput(); // has them put in  name list
-//         playerName = this.newGetPlayerListView.pickPlayerName(); // has them pick their name
-//         newScoreBoard.setPlayer(playerName);
-//         break;
-    }//GEN-LAST:event_playerNameInputActionPerformed
-
     private void playerContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerContinueButtonActionPerformed
-        this.dispose();
+          this.dispose();
     }//GEN-LAST:event_playerContinueButtonActionPerformed
 
     /**
