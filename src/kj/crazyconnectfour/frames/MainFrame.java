@@ -202,7 +202,8 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_menuOptionsButtonActionPerformed
 
     private void menuStartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuStartButtonActionPerformed
-        NewGameControl.displayGameStart();
+        GamePlay play = new GamePlay();
+        play.setVisible(true);
         
     }//GEN-LAST:event_menuStartButtonActionPerformed
 

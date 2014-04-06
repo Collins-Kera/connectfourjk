@@ -76,6 +76,12 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jtPlayerText.setText("Player Name:");
         jtPlayerText.setBorder(null);
 
+        playerNameInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerNameInputActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpPlayerFormLayout = new javax.swing.GroupLayout(jpPlayerForm);
         jpPlayerForm.setLayout(jpPlayerFormLayout);
         jpPlayerFormLayout.setHorizontalGroup(
@@ -99,6 +105,11 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         playerContinueButton.setFont(new java.awt.Font("Heiti SC", 0, 13)); // NOI18N
         playerContinueButton.setText("Continue");
+        playerContinueButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerContinueButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpPlayerNamesLayout = new javax.swing.GroupLayout(jpPlayerNames);
         jpPlayerNames.setLayout(jpPlayerNamesLayout);
@@ -145,6 +156,17 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void playerNameInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerNameInputActionPerformed
+//         this.newGetPlayerListView.getPlayerNameInput(); // has them put in  name list
+//         playerName = this.newGetPlayerListView.pickPlayerName(); // has them pick their name
+//         newScoreBoard.setPlayer(playerName);
+//         break;
+    }//GEN-LAST:event_playerNameInputActionPerformed
+
+    private void playerContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerContinueButtonActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_playerContinueButtonActionPerformed
 
     /**
      * @param args the command line arguments
