@@ -69,6 +69,12 @@ public class GamePlay extends javax.swing.JFrame {
         columnFourPanel = new javax.swing.JPanel();
         columnFivePanel = new javax.swing.JPanel();
         columnSixPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jtPlayerText = new javax.swing.JTextField();
+        playerScore = new javax.swing.JTextField();
+        jtComputerText = new javax.swing.JTextField();
+        computerScore = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -194,19 +200,51 @@ public class GamePlay extends javax.swing.JFrame {
         columnSixPanel.setLayout(new javax.swing.BoxLayout(columnSixPanel, javax.swing.BoxLayout.PAGE_AXIS));
         gameBoardPanel.add(columnSixPanel);
 
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jtPlayerText.setBackground(new java.awt.Color(204, 255, 204));
+        jtPlayerText.setFont(new java.awt.Font("Heiti SC", 0, 14)); // NOI18N
+        jtPlayerText.setText("Player Score");
+        jtPlayerText.setBorder(null);
+
+        jtComputerText.setBackground(new java.awt.Color(204, 255, 204));
+        jtComputerText.setFont(new java.awt.Font("Heiti SC", 0, 14)); // NOI18N
+        jtComputerText.setText("Computer Score");
+        jtComputerText.setBorder(null);
+
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
         jpBody.setLayout(jpBodyLayout);
         jpBodyLayout.setHorizontalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jpBodyLayout.createSequentialGroup()
-                        .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(gameBoardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11))
-                    .addComponent(jlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 131, Short.MAX_VALUE)
+                        .addComponent(jlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpBodyLayout.createSequentialGroup()
+                        .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpBodyLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38))
+                            .addGroup(jpBodyLayout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
+                                        .addComponent(jtPlayerText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(8, 8, 8))
+                                    .addComponent(playerScore, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtComputerText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(computerScore, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1)
+                            .addComponent(gameBoardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE))
+                        .addGap(11, 11, 11)))
                 .addGap(18, 18, 18))
         );
         jpBodyLayout.setVerticalGroup(
@@ -215,10 +253,22 @@ public class GamePlay extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jlTitle)
                 .addGap(18, 18, 18)
-                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gameBoardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 54, Short.MAX_VALUE))
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jpBodyLayout.createSequentialGroup()
+                        .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jtPlayerText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(playerScore, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtComputerText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(computerScore))
+                    .addGroup(jpBodyLayout.createSequentialGroup()
+                        .addComponent(gameBoardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 44, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -250,124 +300,31 @@ public class GamePlay extends javax.swing.JFrame {
     }//GEN-LAST:event_menuExitButtonActionPerformed
 
     private void columnOnePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_columnOnePanelMouseClicked
-        int result = this.newGameBoard.playTokenInColumn("1");//prompt where they should play token
-        updateTokenGrid();
-        
-       if (result == 1) { //player won
-            //display tokens in GUI
-            updateTokenGrid();
-            
-            this.newScoreBoard.calculateWinnerScore(0);//display scoreboard
-            newGameBoard = new GameBoard(); //reset gameboard
-           // break;
-        }
-
-        result = this.newGameBoard.computerPlay();
-    
-        if (result == 2){ //computer won
-            updateTokenGrid();
-            this.newScoreBoard.calculateWinnerScore(1);//display scoreboard
-            newGameBoard = new GameBoard(); //reset gameboard
-           // break;
-        }
-
-  
+        playToken(1);
     }//GEN-LAST:event_columnOnePanelMouseClicked
 
     private void columnTwoPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_columnTwoPanelMouseClicked
-        int result = this.newGameBoard.playTokenInColumn("2");//prompt where they should play token
-        updateTokenGrid();
-        
-       if (result == 1) { //player won
-            //display tokens in GUI
-            updateTokenGrid();
-            
-            this.newScoreBoard.calculateWinnerScore(0);//display scoreboard
-            newGameBoard = new GameBoard(); //reset gameboard
-           // break;
-        }
-
-        result = this.newGameBoard.computerPlay();
-    
-        if (result == 2){ //computer won
-            updateTokenGrid();
-            this.newScoreBoard.calculateWinnerScore(1);//display scoreboard
-            newGameBoard = new GameBoard(); //reset gameboard
-           // break;
-        }
+        playToken(2);
     }//GEN-LAST:event_columnTwoPanelMouseClicked
 
     private void columnThreePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_columnThreePanelMouseClicked
-       int result = this.newGameBoard.playTokenInColumn("3");//prompt where they should play token
-        updateTokenGrid();
-        
-       if (result == 1) { //player won
-            //display tokens in GUI
-            updateTokenGrid();
-            
-            this.newScoreBoard.calculateWinnerScore(0);//display scoreboard
-            newGameBoard = new GameBoard(); //reset gameboard
-           // break;
-        }
-
-        result = this.newGameBoard.computerPlay();
-    
-        if (result == 2){ //computer won
-            updateTokenGrid();
-            this.newScoreBoard.calculateWinnerScore(1);//display scoreboard
-            newGameBoard = new GameBoard(); //reset gameboard
-           // break;
-        }
+        playToken(3);
     }//GEN-LAST:event_columnThreePanelMouseClicked
 
     private void columnFourPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_columnFourPanelMouseClicked
-        int result = this.newGameBoard.playTokenInColumn("4");//prompt where they should play token
-        updateTokenGrid();
-        
-       if (result == 1) { //player won
-            //display tokens in GUI
-            updateTokenGrid();
-            
-            this.newScoreBoard.calculateWinnerScore(0);//display scoreboard
-            newGameBoard = new GameBoard(); //reset gameboard
-           // break;
-        }
-
-        result = this.newGameBoard.computerPlay();
-    
-        if (result == 2){ //computer won
-            updateTokenGrid();
-            this.newScoreBoard.calculateWinnerScore(1);//display scoreboard
-            newGameBoard = new GameBoard(); //reset gameboard
-           // break;
-        }
+        playToken(4);
     }//GEN-LAST:event_columnFourPanelMouseClicked
 
     private void columnFivePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_columnFivePanelMouseClicked
-        int result = this.newGameBoard.playTokenInColumn("5");//prompt where they should play token
-        updateTokenGrid();
-        
-       if (result == 1) { //player won
-            //display tokens in GUI
-            updateTokenGrid();
-            
-            this.newScoreBoard.calculateWinnerScore(0);//display scoreboard
-            newGameBoard = new GameBoard(); //reset gameboard
-           // break;
-        }
-
-        result = this.newGameBoard.computerPlay();
-    
-        if (result == 2){ //computer won
-            updateTokenGrid();
-            this.newScoreBoard.calculateWinnerScore(1);//display scoreboard
-            newGameBoard = new GameBoard(); //reset gameboard
-           // break;
-        }
+        playToken(5);
     }//GEN-LAST:event_columnFivePanelMouseClicked
 
     private void columnSixPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_columnSixPanelMouseClicked
-         int result = this.newGameBoard.playTokenInColumn("6");//prompt where they should play token
+        playToken(6);
+    }//GEN-LAST:event_columnSixPanelMouseClicked
+
+    private void playToken(int column) {
+        int result = this.newGameBoard.playTokenInColumn(String.valueOf(column));//prompt where they should play token
         updateTokenGrid();
         
        if (result == 1) { //player won
@@ -375,6 +332,7 @@ public class GamePlay extends javax.swing.JFrame {
             updateTokenGrid();
             
             this.newScoreBoard.calculateWinnerScore(0);//display scoreboard
+            updateScoreboard();
             newGameBoard = new GameBoard(); //reset gameboard
            // break;
         }
@@ -384,11 +342,17 @@ public class GamePlay extends javax.swing.JFrame {
         if (result == 2){ //computer won
             updateTokenGrid();
             this.newScoreBoard.calculateWinnerScore(1);//display scoreboard
+            updateScoreboard();
             newGameBoard = new GameBoard(); //reset gameboard
            // break;
         }
-    }//GEN-LAST:event_columnSixPanelMouseClicked
-
+    }
+    
+    private void updateScoreboard() {
+        playerScore.setText(String.valueOf(Scoreboard.getNumberPlayerWins()));
+        computerScore.setText(String.valueOf(Scoreboard.getNumberComputerWins()));
+    }
+    
     private void updateTokenGrid() {
         SuperToken[][] tokenGrid = newGameBoard.getTokenGrid();
         
@@ -493,41 +457,6 @@ public class GamePlay extends javax.swing.JFrame {
     javax.swing.JLabel[] column5 = new javax.swing.JLabel[6];
     javax.swing.JLabel[] column6 = new javax.swing.JLabel[6];
     
-    
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(GamePlay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(GamePlay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(GamePlay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(GamePlay.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new GamePlay().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel columnFivePanel;
@@ -536,12 +465,18 @@ public class GamePlay extends javax.swing.JFrame {
     private javax.swing.JPanel columnSixPanel;
     private javax.swing.JPanel columnThreePanel;
     private javax.swing.JPanel columnTwoPanel;
+    private javax.swing.JTextField computerScore;
     private javax.swing.JPanel gameBoardPanel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JPanel jpBody;
     private javax.swing.JPanel jpMenuItems;
+    private javax.swing.JTextField jtComputerText;
+    private javax.swing.JTextField jtPlayerText;
     private javax.swing.JButton menuExitButton;
     private javax.swing.JButton menuHelpButton;
     private javax.swing.JButton menuPlayerStatsButton;
+    private javax.swing.JTextField playerScore;
     // End of variables declaration//GEN-END:variables
 }

@@ -18,7 +18,6 @@ import kj.crazyconnectfour.frames.MainFrame;
 public class CrazyConnectFour implements Serializable{
     
     private static Scanner inFile = new Scanner (System.in);
-    //private static final MainMenuView MainMenu = new MainMenuView();
     private static MainFrame mainFrame;
 
     public CrazyConnectFour(){
@@ -43,8 +42,6 @@ public class CrazyConnectFour implements Serializable{
     
     public static void main(String[] args) {
         CrazyConnectFour crazyConnectFour = null;
-      //  CrazyConnectFour myGame = new CrazyConnectFour();
-        //myGame.displayHelp();
         
         try {
             crazyConnectFour = new CrazyConnectFour();
@@ -56,7 +53,6 @@ public class CrazyConnectFour implements Serializable{
             }
         });
        }
- //       myGame.play();
         catch (Exception ex) {
             System.out.println("An unexpected error was caught!" + ex.getMessage()); 
             ex.printStackTrace();
@@ -64,20 +60,9 @@ public class CrazyConnectFour implements Serializable{
         finally {
            if(CrazyConnectFour.mainFrame != null) {
               CrazyConnectFour.mainFrame.dispose();
-              //CrazyConnectFour.inFile.close();
            }
         }
     }
 }
 
-//    private void displayHelp(){
-//        System.out.println("\t***************************************************************");
-//        System.out.println(getInstructions());
-//        System.out.println("\t***************************************************************\n");
-//       }
-//    
-//  private void play(){
-//        MainMenuView mainMenu = new MainMenuView();
-//        mainMenu.display(this);
-//    }
 

@@ -1,16 +1,12 @@
 package kj.crazyconnectfour.models;
 
 import java.io.Serializable;
-import java.util.Random;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import kj.crazyconnectfour.menu.views.BoardView;
-
 import kj.crazyconnectfour.enums.TokenColor;
 import kj.crazyconnectfour.exceptions.BoardException;
 import kj.crazyconnectfour.exceptions.GameException;
-import kj.crazyconnectfour.menu.views.OptionsMenuView;
+
 
 
 /**

@@ -6,13 +6,11 @@
 
 package kj.crazyconnectfour.menu.views;
 
-import kj.crazyconnectfour.controls.CrazyConnectFourError;
+
 import kj.crazyconnectfour.models.GameBoard;
 import kj.crazyconnectfour.controls.NewGameControl;
 import kj.crazyconnectfour.models.Player;
 import kj.crazyconnectfour.models.Scoreboard;
-import kj.crazyconnectfour.menu.views.HelpMenuView;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import kj.crazyconnectfour.exceptions.MenuException;
@@ -25,7 +23,6 @@ public class NewGameView extends Menu {
     //calls from the different classes    
    private NewGameControl newGameControl = new NewGameControl();
    private Player playerName = new Player();
-   //private Computer computerName = new Computer();
    private HelpMenuView callHelpMenu = new HelpMenuView();
    private OptionsMenuView optMenu = new OptionsMenuView(); //calling gameboard and score board under S start 
    private GameBoard newGameBoard = new GameBoard();

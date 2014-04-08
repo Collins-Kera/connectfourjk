@@ -6,7 +6,6 @@
 
 package kj.crazyconnectfour.models;
 
-import kj.crazyconnectfour.models.SuperToken;
 import kj.crazyconnectfour.enums.TokenColor;
 import kj.crazyconnectfour.interfaces.TokenLetter;
 

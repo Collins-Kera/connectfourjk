@@ -6,7 +6,6 @@
 
 package kj.crazyconnectfour.exceptions;
 
-import java.lang.Exception;
 /**
  *
  * @author Kera

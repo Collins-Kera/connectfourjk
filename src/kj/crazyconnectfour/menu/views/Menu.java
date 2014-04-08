@@ -39,9 +39,6 @@ public abstract class Menu implements DisplayInfo, EnterInfo{
         this.menuItems = menuItems;
     }
     
-   // public interface DisplayInfo {
-      //  void display();
-   // }
 
     @Override
     public void display() {
@@ -89,7 +86,4 @@ public abstract class Menu implements DisplayInfo, EnterInfo{
         return command;
     }
 
-      // This is an abstract function. It specifies that all sub-classes must
-    // implement this function.
-    //public abstract String executeCommands(Object object);
 }

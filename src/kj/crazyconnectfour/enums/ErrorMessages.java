@@ -30,19 +30,6 @@ String message;
     }
 }
 
-    /*copied from code, not sure if it takes over the error class
-    public static void displayErorrMsg(String errorMessage) {
-        String fullMessage = "\t+ ERROR: " + errorMessage + " +";
-        int dividerLineLength = fullMessage.length();
-        StringBuilder dividerLine = new StringBuilder(dividerLineLength);
-        for (int i = 0; i < dividerLineLength; i++) {
-            dividerLine.insert(i, '+');
-        }
-        System.out.println("\t" + dividerLine.toString());
-        System.out.println(fullMessage);
-        System.out.println("\t" + dividerLine.toString());
-    }
-    */
 
 
     

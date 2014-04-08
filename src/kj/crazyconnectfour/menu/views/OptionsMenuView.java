@@ -6,10 +6,8 @@
 
 package kj.crazyconnectfour.menu.views;
 
-import kj.crazyconnectfour.controls.CrazyConnectFourError;
+
 import kj.crazyconnectfour.controls.OptionsMenuControl;
-import kj.crazyconnectfour.menu.views.HelpMenuView;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import kj.crazyconnectfour.exceptions.MenuException;

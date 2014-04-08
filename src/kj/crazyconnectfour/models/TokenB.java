@@ -6,8 +6,6 @@
 
 package kj.crazyconnectfour.models;
 
-import kj.crazyconnectfour.models.SuperToken;
-import java.io.Serializable;
 import kj.crazyconnectfour.enums.TokenColor;
 import kj.crazyconnectfour.interfaces.TokenLetter;
 
@@ -28,30 +26,3 @@ public class TokenB extends SuperToken implements TokenLetter {
           return "B";
       } 
 }
-
-
-
-/*
-//original code on week 9
-public class Token implements Serializable{
-    private int tokenColor = 1; //1 = Blue 2 = Red
-
-    public Token() {
-    }
-
-    public int getTokenColor() {
-        return tokenColor;
-    }
-
-    public void setTokenColor(int tokenColor) {
-        this.tokenColor = tokenColor;
-    }
-    
-    public String getTokenColorLetter() {
-        if(tokenColor==1)
-            return "B";
-        else
-            return "R" ;
-    }
-}
-*/
