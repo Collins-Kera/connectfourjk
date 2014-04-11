@@ -11,6 +11,7 @@ import kj.crazyconnectfour.models.GameBoard;
 import kj.crazyconnectfour.models.Scoreboard;
 import kj.crazyconnectfour.models.SuperToken;
 
+
 /**
  *
  * @author Kera
@@ -70,7 +71,7 @@ public class GamePlay extends javax.swing.JFrame {
         columnFivePanel = new javax.swing.JPanel();
         columnSixPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        gameplayTextArea = new javax.swing.JTextArea();
         jtPlayerText = new javax.swing.JTextField();
         playerScore = new javax.swing.JTextField();
         jtComputerText = new javax.swing.JTextField();
@@ -202,9 +203,9 @@ public class GamePlay extends javax.swing.JFrame {
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        gameplayTextArea.setColumns(20);
+        gameplayTextArea.setRows(5);
+        jScrollPane1.setViewportView(gameplayTextArea);
 
         jtPlayerText.setBackground(new java.awt.Color(204, 255, 204));
         jtPlayerText.setFont(new java.awt.Font("Heiti SC", 0, 14)); // NOI18N
@@ -333,6 +334,7 @@ public class GamePlay extends javax.swing.JFrame {
             
             this.newScoreBoard.calculateWinnerScore(0);//display scoreboard
             updateScoreboard();
+            updateTextField();
             newGameBoard = new GameBoard(); //reset gameboard
            // break;
         }
@@ -343,6 +345,7 @@ public class GamePlay extends javax.swing.JFrame {
             updateTokenGrid();
             this.newScoreBoard.calculateWinnerScore(1);//display scoreboard
             updateScoreboard();
+            updateTextField();
             newGameBoard = new GameBoard(); //reset gameboard
            // break;
         }
@@ -353,6 +356,10 @@ public class GamePlay extends javax.swing.JFrame {
         computerScore.setText(String.valueOf(Scoreboard.getNumberComputerWins()));
     }
     
+    private void updateTextField() {
+       // gameplayTextArea.setText(String.valueOf(Scoreboard.calculateWinnerScore()));
+   
+    }
     private void updateTokenGrid() {
         SuperToken[][] tokenGrid = newGameBoard.getTokenGrid();
         
@@ -467,8 +474,8 @@ public class GamePlay extends javax.swing.JFrame {
     private javax.swing.JPanel columnTwoPanel;
     private javax.swing.JTextField computerScore;
     private javax.swing.JPanel gameBoardPanel;
+    private javax.swing.JTextArea gameplayTextArea;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JPanel jpBody;
     private javax.swing.JPanel jpMenuItems;
