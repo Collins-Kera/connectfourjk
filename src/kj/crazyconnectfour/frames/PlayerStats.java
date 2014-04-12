@@ -6,6 +6,8 @@
 
 package kj.crazyconnectfour.frames;
 
+import java.text.DecimalFormat;
+import kj.crazyconnectfour.models.GameBoard;
 import kj.crazyconnectfour.models.Scoreboard;
 
 /**
@@ -19,9 +21,12 @@ public class PlayerStats extends javax.swing.JFrame {
      */
     public PlayerStats() {
         initComponents();
+        jtPlayerText.setText(GameBoard.getPlayer().getName() + "'s Score");
         playerScore.setText(String.valueOf(Scoreboard.getNumberPlayerWins()));
         computerScore.setText(String.valueOf(Scoreboard.getNumberComputerWins()));
-        jPercentageWon.setText(String.valueOf(Scoreboard.getPercentageWins()));
+        DecimalFormat myFormatter = new DecimalFormat("###.##");
+        String output = myFormatter.format(Scoreboard.getPercentageWins());
+        jPercentageWon.setText(output);
        
     }
 

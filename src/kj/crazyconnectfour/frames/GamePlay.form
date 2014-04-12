@@ -51,7 +51,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="23" pref="131" max="32767" attributes="0"/>
+                          <EmptySpace min="23" max="32767" attributes="0"/>
                           <Component id="jlTitle" min="-2" pref="472" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -76,8 +76,8 @@
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPane1" max="32767" attributes="0"/>
-                              <Component id="gameBoardPanel" pref="364" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" max="-2" attributes="0"/>
+                              <Component id="gameBoardPanel" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       </Group>
@@ -92,7 +92,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jlTitle" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jpMenuItems" min="-2" pref="153" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -102,15 +102,15 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jtComputerText" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="computerScore" max="32767" attributes="0"/>
+                          <Component id="computerScore" min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="gameBoardPanel" min="-2" pref="208" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="124" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -343,6 +343,8 @@
                 <LineBorder/>
               </Border>
             </Property>
+            <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
+            <Property name="verticalScrollBarPolicy" type="int" value="21"/>
           </Properties>
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -353,6 +355,9 @@
             <Component class="javax.swing.JTextArea" name="gameplayTextArea">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Monospaced" size="36" style="1"/>
+                </Property>
                 <Property name="rows" type="int" value="5"/>
               </Properties>
             </Component>
@@ -373,6 +378,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="playerScore">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtComputerText">
           <Properties>
@@ -389,6 +397,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="computerScore">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

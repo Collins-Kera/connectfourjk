@@ -63,7 +63,7 @@ public class Scoreboard implements Serializable {
         System.out.println("SCORES:" + "\n" + player + " - " + numberPlayerWins + "\t" + 
                 "Computer - " + numberComputerWins + "\t" /*+ "Ties - " + numberOfTies + "\n"*/);
         percentageWins =  (double)numberPlayerWins/(numberPlayerWins + numberComputerWins + numberOfTies)* 100;
-        System.out.println("You have won " + (int)percentageWins + "%" + " of the rounds so far.");
+        System.out.println("You have won " +  (double)percentageWins + "%" + " of the rounds so far.");
     }
 
     public static int getNumberPlayerWins() {

@@ -17,6 +17,15 @@ public class GameBoard implements Serializable{
     
     public SuperToken[][] tokenGrid = new SuperToken [6][6]; //0,0 is the bottom left hand corner 0,1 is moving to the right & 1,0 is moving up
     private static int boardSize = 6;
+    
+    private static Player player = new Player();
+    private static Computer computer= new Computer();
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+   
 
     public SuperToken[][] getTokenGrid() {
         return tokenGrid;
@@ -218,8 +227,8 @@ public int enterTokens () {
     
     while(x){ 
        //ask player where they want to play and get column input from them  
-       Player input = new Player();
-       placement=input.playToken();
+       
+       placement=player.playToken();
             
        if ("Q".equals(placement) || "q".equals(placement)) {
                 return 5;
@@ -289,8 +298,8 @@ public int playTokenInColumn(String placement) {
      String placement;
      
      while(true) {
-       Computer input = new Computer();
-       placement=input.playToken();
+       
+       placement=computer.playToken();
        x = Integer.parseInt(placement);
         if (tokenGrid[5][x] == null){
             break;

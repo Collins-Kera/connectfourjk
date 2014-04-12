@@ -6,6 +6,8 @@
 
 package kj.crazyconnectfour.frames;
 
+import kj.crazyconnectfour.models.GameBoard;
+
 /**
  *
  * @author Jeanette
@@ -152,7 +154,9 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void playerContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerContinueButtonActionPerformed
-          this.dispose();
+        String name = playerNameInput.getText();
+        GameBoard.getPlayer().setName(name);
+        this.dispose();
     }//GEN-LAST:event_playerContinueButtonActionPerformed
 
     

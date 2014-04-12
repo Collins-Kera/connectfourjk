@@ -24,6 +24,7 @@ public class GamePlay extends javax.swing.JFrame {
      * Creates new form GamePlay
      */
     public GamePlay() {
+         
         for(int i=0;i<6;i++)
         {
             column1[i] = new javax.swing.JLabel();
@@ -45,7 +46,8 @@ public class GamePlay extends javax.swing.JFrame {
             columnFivePanel.add(column5[i]);
             columnSixPanel.add(column6[i]);
         }
-      
+
+        jtPlayerText.setText(GameBoard.getPlayer().getName() + "'s Score");
     }
 
     /**
@@ -202,8 +204,11 @@ public class GamePlay extends javax.swing.JFrame {
         gameBoardPanel.add(columnSixPanel);
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         gameplayTextArea.setColumns(20);
+        gameplayTextArea.setFont(new java.awt.Font("Monospaced", 1, 36)); // NOI18N
         gameplayTextArea.setRows(5);
         jScrollPane1.setViewportView(gameplayTextArea);
 
@@ -212,10 +217,14 @@ public class GamePlay extends javax.swing.JFrame {
         jtPlayerText.setText("Player Score");
         jtPlayerText.setBorder(null);
 
+        playerScore.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         jtComputerText.setBackground(new java.awt.Color(204, 255, 204));
         jtComputerText.setFont(new java.awt.Font("Heiti SC", 0, 14)); // NOI18N
         jtComputerText.setText("Computer Score");
         jtComputerText.setBorder(null);
+
+        computerScore.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
         jpBody.setLayout(jpBodyLayout);
@@ -224,7 +233,7 @@ public class GamePlay extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jpBodyLayout.createSequentialGroup()
-                        .addGap(23, 131, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpBodyLayout.createSequentialGroup()
                         .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,8 +252,8 @@ public class GamePlay extends javax.swing.JFrame {
                                     .addComponent(computerScore, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1)
-                            .addComponent(gameBoardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(gameBoardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(11, 11, 11)))
                 .addGap(18, 18, 18))
         );
@@ -254,7 +263,7 @@ public class GamePlay extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jlTitle)
                 .addGap(18, 18, 18)
-                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpBodyLayout.createSequentialGroup()
                         .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -264,12 +273,12 @@ public class GamePlay extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jtComputerText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(computerScore))
+                        .addComponent(computerScore, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpBodyLayout.createSequentialGroup()
                         .addComponent(gameBoardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 44, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -331,11 +340,11 @@ public class GamePlay extends javax.swing.JFrame {
        if (result == 1) { //player won
             //display tokens in GUI
             updateTokenGrid();
-            
             this.newScoreBoard.calculateWinnerScore(0);//display scoreboard
             updateScoreboard();
-            updateTextField();
+            gameplayTextArea.setText("You won");
             newGameBoard = new GameBoard(); //reset gameboard
+            updateTokenGrid();
            // break;
         }
 
@@ -345,9 +354,10 @@ public class GamePlay extends javax.swing.JFrame {
             updateTokenGrid();
             this.newScoreBoard.calculateWinnerScore(1);//display scoreboard
             updateScoreboard();
-            updateTextField();
+            gameplayTextArea.setText("Computer won");
             newGameBoard = new GameBoard(); //reset gameboard
-           // break;
+            updateTokenGrid();
+            // break;
         }
     }
     
@@ -356,10 +366,6 @@ public class GamePlay extends javax.swing.JFrame {
         computerScore.setText(String.valueOf(Scoreboard.getNumberComputerWins()));
     }
     
-    private void updateTextField() {
-       // gameplayTextArea.setText(String.valueOf(Scoreboard.calculateWinnerScore()));
-   
-    }
     private void updateTokenGrid() {
         SuperToken[][] tokenGrid = newGameBoard.getTokenGrid();
         
